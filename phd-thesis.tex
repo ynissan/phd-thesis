@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,final]{book}
+\documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -7,8 +7,13 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref} 
 \usepackage{graphicx}
+\usepackage{ifthen}
+\hypersetup{pdftitle={Search for compressed mass Higgsino production with soft
+lepton tracks with the CMS experiment in pp collision data at 13 TeV}, pdfauthor={Yuval Nissan}}
+\usepackage{ptdr-definitions}
+\usepackage[nomargin,inline,index]{fixme}
 
-\hypersetup{pdftitle={Search for exotic long-lived particles using disappearing tracks with the CMS experiment in pp collision data at 13 TeV}, pdfauthor={Yuval Nissan}}
+\fxsetup{inline=true,status=draft}
 
 \input{commands}
 
@@ -55,25 +60,30 @@ lepton tracks with the CMS experiment in proton-proton collision data at $\mathb
 
 
 \pagebreak
-\pagenumbering{roman}
-\setcounter{page}{1}
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+\include{abstract}
 \tableofcontents
-\listoffigures
-\listoftables
-
-\pagebreak
-
 
 % this is for book class what comes as the main book 
 \mainmatter
-\pagenumbering{arabic}
-\setcounter{page}{1}
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
 
+
+\include{introduction}
+\include{standard-model}
+\include{susy}
+\include{bdt}
+\include{detector}
+\include{search}
+\include{non-isolated-bg}
+\include{Summary}
+
+
+\listoffixmes
 %\part{Feynman Diagrams and Quantum Electrodynamics}
-\include{KG}
-
 %\part{Renormalization}
-
 %\part{Definitions and Mathematical tools}
 
 
@@ -83,5 +93,7 @@ lepton tracks with the CMS experiment in proton-proton collision data at $\mathb
 \newpage{}
 \bibliographystyle{utphys}
 \bibliography{references} 
+\listoffigures
+\listoftables
 
 \end{document}
