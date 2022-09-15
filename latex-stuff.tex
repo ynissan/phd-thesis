@@ -1,0 +1,54 @@
+\chapter{Latex stuff}
+
+\section{Some examples}
+
+\subsection{Multiline comment}
+%% This is a multiline comment
+\comment{
+This is a comment
+}
+This is a line in introduction.
+\subsection{Fixme note}
+This is the introduction to the thesis. \fxnote{This is a fixme note}
+\fxnote[inline]{what}
+\fxnote[inline=true]{WHAT THE HELL}
+AFTER
+
+\subsection{Tables}
+
+\begin{table}[hp]
+	\centering
+	\label{tab:mytab}
+		\caption{Table captions are above the table whereas figure captions are below.}
+		%\vspace{1mm}
+			\begin{tabular}{lcc} \hline
+			Parameter & Value 1 & Value 2 \\ \hline
+			$s$ & 10.0 & 20.0 \\
+			$t$ & 20.0 & 30.0 \\
+			$u$ & 30.0 & 40.0 \\ \hline
+			\end{tabular}
+\end{table}
+
+\subsection{Cross References}
+\label{subsec:marker}
+
+\ref{subsec:marker}
+\pageref{subsec:marker}
+section~\ref{subsec:marker}
+
+\subsection{Particles}
+Hello World $\PSGczDo \PGp \PGhc \GeV \ETm$ hey \GeV \ETm \PGp
+new one \neuto
+ \PSGczDo
+\subsection{Citing}
+\cite{sos} SOS analysis 
+\subsection{Glossary}
+Using glossary for compter \gls{symb:computer} plural form \glspl{symb:computer}
+upper case first \Gls{symb:computer} upper case first plural \Glspl{symb:computer}. To use for symbol \glssymbol{symb:pi}
+
+\subsection{Acronyms}
+First use of acronym \gls{sos} and second \gls{sos}. 
+You can reset this and do again \glsreset{sos} \gls{sos} and second time again \gls{sos}. 
+Long version \acrlong{sos}.
+Full version \acrfull{sos}.
+Short version \acrshort{sos}.

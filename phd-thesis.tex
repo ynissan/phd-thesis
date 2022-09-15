@@ -7,16 +7,27 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref} 
 \usepackage{graphicx}
+\usepackage[xindy,toc,acronym]{glossaries}
 \usepackage{ifthen}
+%\usepackage{utphys}
 \hypersetup{pdftitle={Search for compressed mass Higgsino production with soft
 lepton tracks with the CMS experiment in pp collision data at 13 TeV}, pdfauthor={Yuval Nissan}}
 \usepackage{ptdr-definitions}
+%\usepackage{heppennames2}
+\usepackage[pazoGreek]{heppennames2}
+%\usepackage[italic,italicGreek]{heppennames2}
 \usepackage[nomargin,inline,index]{fixme}
 
 \fxsetup{inline=true,status=draft}
+% this is to make table captions on top
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+
+\makeglossaries
 
 \input{commands}
-
+\input{glossary}
+\input{acronyms}
 
 \begin{document}
 
@@ -78,14 +89,15 @@ lepton tracks with the CMS experiment in proton-proton collision data at $\mathb
 \include{detector}
 \include{search}
 \include{non-isolated-bg}
-\include{Summary}
-
+\include{summary}
+\include{latex-stuff}
 
 \listoffixmes
 %\part{Feynman Diagrams and Quantum Electrodynamics}
 %\part{Renormalization}
 %\part{Definitions and Mathematical tools}
-
+%\printglossary[type=\acronymtype]
+\printglossaries
 
 
 % this is for book class what comes as the back of book 
