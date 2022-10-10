@@ -1,12 +1,13 @@
+\clearpage
 \section{Signal signature and base selection}
 \label{sec:signal-signature}
 To build an effective analysis strategy, the signal kinematics must be studied and exploited. The electroweakino production in question exhibit unique features which can be used in order to discriminate between the signal and the \gls{sm} background. It is important to explore these signal distributions in order to define a preselection, or a base cut, that will serve the purpose of retaining as much signal as possible while rejecting as much background. All of the following distributions were plotted by weighting the simulation to Run II luminosity of $\lumi = 135 \fbinv$ and requiring at least one jet in the event with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$. Further selection might apply and will be listed in each section in that case.
 
 \subsection{Missing Transverse Energy}
 \label{subsec:signal-met-mht}
-One property that essentially all \gls{dm} searches have in common is the presence of a \gls{dm} candidate in the production. The exact identity and properties of said particle (or particles in the case multiple \gls{dm}  candidates) vary, but they do share a lot in common. The \gls{dm} candidate in our \gls{susy} search is the \gls{neutralino}, which is a type of \gls{dm} candidate referred to as a \gls{wimp}. A \gls{wimp}, broadly speaking, is a new elementary particle which interacts via gravity and any other force (or forces), potentially not part of the \gls{sm} itself, which is as weak as or weaker than the weak nuclear force, but also non-vanishing in its strength. That essentially means that such candidate is neutral, and therefore not interacting via the electromagnetic force. A neutral particle that interacts neither electromagnetically nor via the strong force (\ie colorless) will escape detection and will leave traces in the form of a transverse momentum imbalance, which we refer to as \gls{met} (Missing Transverse Energy or Missing Transverse Momentum). Our signal contains two \gls{dm} candidates in the production, which are the \glspl{lsp}, the \glspl{neutralino} \neuto. We therefore expect the signal to contain considerable magnitude of \gls{met}. As described in~\ref{subsec:met}, \fxnote{make sure we described both met and mht} we are more interesting in \gls{mht}, which is highly correlated with \gls{met}, due to our definition of lepton isolation and its use in the background estimation methods. Nonetheless, we will look at both $\MET$ and $\mht$ observables.
+One property that essentially all \gls{dam} searches have in common is the presence of a \gls{dam} candidate in the production. The exact identity and properties of said particle (or particles in the case multiple \gls{dam}  candidates) vary, but they do share a lot in common. The \gls{dam} candidate in our \gls{susy} search is the \gls{neutralino}, which is a type of \gls{dam} candidate referred to as a \gls{wimp}. A \gls{wimp}, broadly speaking, is a new elementary particle which interacts via gravity and any other force (or forces), potentially not part of the \gls{sm} itself, which is as weak as or weaker than the weak nuclear force, but also non-vanishing in its strength. That essentially means that such candidate is neutral, and therefore not interacting via the electromagnetic force. A neutral particle that interacts neither electromagnetically nor via the strong force (\ie colorless) will escape detection and will leave traces in the form of a transverse momentum imbalance, which we refer to as \gls{met} (Missing Transverse Energy or Missing Transverse Momentum). Our signal contains two \gls{dam} candidates in the production, which are the \glspl{lsp}, the \glspl{neutralino} \neuto. We therefore expect the signal to contain considerable magnitude of \gls{met}. As described in~\ref{subsec:met}, \fxnote{make sure we described both met and mht} we are more interesting in \gls{mht}, which is highly correlated with \gls{met}, due to our definition of lepton isolation and its use in the background estimation methods. Nonetheless, we will look at both $\MET$ and $\mht$ observables.
 \fxnote{make sure we define the different deltaM somewhere}
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_MET.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_MHT.pdf}  \\
@@ -21,7 +22,7 @@ As we expect, $\MET$ and $\mht$ are hardly affected by the different choices for
 \subsection{Jets and hardronic activity}
 
 Since the \glspl{neutralino} \neuto escaping the detector are the contributors to the \gls{mht} and in doing so the drivers of the sensitivity in high \gls{mht} region, we want them to be as boosted as possible, \ie, with the highest transverse momentum \gls{pt} as possible. A widely used approach is to require \fxnote{add citation} an \gls{isr} jet in the event. An \gls{isr} jet is formed when one of the incoming protons emit radiation (such as a photon or a gluon) before the interaction \fxnote{add citation and maybe reference to other section}. If a jet with high enough \gls{pt} is emitted, the rest of the interaction is recoiled against this jet and boosting it in the other direction. This way, the boosted \glspl{neutralino} \neuto will result in higher \gls{mht}. As described in \fxnote{ref}, we require the jets to have $\pt \geq 30\GeV$ and be located within the tracker acceptance $\left(\abs{\eta}<2.4\right)$. We require at least one such jet in the event.
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_NJets.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_LeadingJetPt.pdf}  \\
@@ -33,7 +34,7 @@ Since the \glspl{neutralino} \neuto escaping the detector are the contributors t
 
 Our signal signature does not include a \PQb-jet, \ie, a jet resulting from a bottom quark hadronization (either resulting from a top quark or not). We therefore seek to exploit this knowledge by vetoing \PQb-tagged jets in the event. As described in \fxnote{add ref} we are using \DEEPCSV flavor tagging discriminant with a medium working point. As can be seen in these distributions, most of the signal lie in the 0 bin, and we will therefore veto any \PQb-tagged jet, which retains most of the signal, but rejects a lot of \gls{sm} background, such as arising from \ttbar events. 
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_BTagsDeepMedium.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_dm/none_BTagsDeepMedium.pdf}  \\
@@ -43,7 +44,7 @@ Our signal signature does not include a \PQb-jet, \ie, a jet resulting from a bo
 
 Since we are requiring an \gls{isr} jet in the event, we expect the \gls{met} and the \gls{mht} to point in the opposite direction of the jet, or at least in an angel close to $\pi$. Events with multiple jets in the \gls{sm} background such as arising from \gls{qcd} will not exhibit such a feature. In order to reduce \gls{qcd} background, we require $\mindphimhtjets > 0.4$.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_MinDeltaPhiMetJets.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_common_distributions_fixed_mu/none_MinDeltaPhiMhtJets.pdf}  \\
@@ -57,7 +58,7 @@ Since we are requiring an \gls{isr} jet in the event, we expect the \gls{met} an
 
 We recap the section by summarizing the base selection of our analysis. This base selection, or preselection as we might use call it interchangeably, is applied to all analysis categories. 
 
-\begin{table}[hp]
+\begin{table}[!htb]
 	\centering
 	\label{tab:base-selection}
 		\caption{Base selection applied to all analysis categories}
@@ -84,7 +85,7 @@ The transverse momentum \gls{pt} distribution of the muons and our access to a s
 
 We begin by having a look at the generator level distribution of \gls{pt}, or in other words, the so-called \emph{truth} distributions, which do not exhibit any detector or reconstruction features, and compare to the reconstructed distribution.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_Muons_pt.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_Muons_m1_pt.pdf}  \,
@@ -98,7 +99,7 @@ We begin by having a look at the generator level distribution of \gls{pt}, or in
 
 By comparing the generator level to the reconstruction level of the inclusive \pt distribution, we see that a reshaping occurs at around $3 \GeV$. A significant portion of the generated muons with $\pt<3\GeV$ are being lost in reconstruction. The reconstructed subleading \pt distribution has a camel shape whereby the efficiency drops bellow \pt of $3\GeV$ and only partially regained at $\pt<3\GeV$. This is a detector effect and can be seen more clearly when we split the \pt distribution into a barrel ($\abs{\eta} < 1.2$) and encaps ($\abs{\eta} \geq 1.2$) portions.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen/none_Muons_pt_barrel.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen/none_Muons_pt_endcape.pdf}  \\
@@ -112,7 +113,7 @@ The picture becomes much clearer in regards to the reconstruction efficiency as 
 
 Since the barrel and endcaps are seperated by different regions of $\eta$, $\abs{\eta} < 1.2$ for barrel and $\abs{\eta} \geq 1.2$ for endcaps, it worth taking a look at the $\eta$ distributions of the muons as well.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_Muons_Eta.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_Muons_m1_eta.pdf}  \,
@@ -133,7 +134,7 @@ With the understanding of the reconstruction effects on the \pt and $\eta$ distr
 
 The invariant mass of the two leptons that result from the decay of the \neutt has a unique shape due to the limited allowed phase space of the leptons as part of the 3-body decay. Since the \neutt decays into \neuto and \ellell through a \PZstar, the allowed phase space of the dilepton pair is restricted to the mass difference between \neutt and \neuto, \ie, \dm. We therefore expect the \gls{mll} distribution to have an edge at \dm.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_gen_invMass.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_gen_invMass_cut.pdf}  \,
@@ -146,7 +147,7 @@ We see the original invariant mass of the muons \mmumu on the left. For each sig
 
 To understand the reshaping that happens to the \mmumu shape, we look at the relationship between the \pt of the muons (leading muon denoted $\mu_1$ while subleading muon is denoted $\mu_2$) and the invariant mass one a signal with low \dm of $1.13\GeV$ and one with high \dm of $5.63\GeV$.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen_delta_r_vs_pt/none_gen_invmass_vs_pt_1.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen_delta_r_vs_pt/none_gen_invmass_vs_pt_2.pdf}  \\
@@ -158,7 +159,7 @@ To understand the reshaping that happens to the \mmumu shape, we look at the rel
 
 We have established earlier that the invariant mass distribution has an edge at the \dm and one can read the value of \dm from these plots. Another interesting feature to notice in these plots is that there is also a lower edge in the \dm distribution at around $\sim 0.2\GeV$ and that is of course due to each muon having a mass of around $\sim 0.1\GeV$. We can clearly see now that by cutting on both muons at $\pt\geq 2\GeV$, we are loosing a lot of the signal. This effect, in fact, becomes quite substantial for the low $\dm=1.13\GeV$ (top row). We quantify this effect by making a cutflow table where each row represents a cut, and its efficiency is calculated by dividing the number of events passing the cut by the number of events in the line before it. The first line is our baseline of all dimuon events with at least one jet with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$ and has an efficiency of 1 by definition. The event number is weighted to Run II luminosity of $\lumi = 135 \fbinv$.
 
-\begin{table}[hp]
+\begin{table}[!htb]
 	\centering
 	\label{tab:gen-muon-pt-dr-efficiency}
 		\caption{Generator level efficiency on muons selections}
@@ -177,7 +178,7 @@ We observe that for the low \dm of $1.13\GeV$ the cut of $\pt\geq 2\GeV$ is real
 
 Since we have just established that due to the relationship between \pt and \mll, the \pt distribution directly effects \mll, we should also have a look at how to reconstruction effects discussed at~\ref{sec:muon-eta-pt} might effect the \mmumu distribution as well.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_muons/none_invMassCorrJetNoMultIso10Dr0.6.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_muons/none_invMassCorrJetNoMultIso10Dr0.6_orth.pdf}  \\
@@ -194,7 +195,7 @@ The lepton separation is defined by $\DR=\sqrt{\left(\deta\right)^2+\left(\dphi\
 
 In similar fashion to the invariant mass in~\ref{sec:gen-invariant-mass}, we look at distributions of \gls{dr} for various choices of \dm with different cuts applied, and observe their effect.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_gen_deltaR.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/signal_muons_gen/none_gen_deltaR_cut.pdf}  \,
@@ -206,7 +207,7 @@ In similar fashion to the invariant mass in~\ref{sec:gen-invariant-mass}, we loo
 As can be seen on the left plot, roughly the same amount of events are produced for all \dm model points, but when applying a cut of $\pt\left(\mu\right)>2\GeV$, a hierarchy of \dm points forms, with less events as \dm becomes smaller (middle plot). The spike on the right plot is due to the \gls{sos} orthogonality condition which requires $\drll\leq 0.3$ as one of two conditions in an or statement.
 To understand the shaping and hierarchy formation due to the \gls{pt} cut, we repeat the trick from the \mmumu in~\ref{sec:gen-invariant-mass} and plot the \pt of the muons \vs \drll.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen_delta_r_vs_pt/none_gen_delta_r_vs_pt_1.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_muons_gen_delta_r_vs_pt/none_gen_delta_r_vs_pt_2.pdf}  \\
@@ -222,7 +223,7 @@ We conclude therefore, that even before taking into consideration reconstruction
 
 As we have seen for \mmumu in~\ref{sec:gen-invariant-mass}, reconstruction has an effect on both the shape and overall count of events. We look here at those effects on the \drmm distributions.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/signal_muons/none_deltaRCorrJetNoMultIso10Dr0.6.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/signal_muons/none_deltaRCorrJetNoMultIso10Dr0.6_orth.pdf}  \\
