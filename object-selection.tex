@@ -194,8 +194,29 @@ We summaries this section with the full selection of the analysis muons:
 \label{subsec:met}
 
 
-
+\clearpage
 \subsection{Tracks and multivariate selection }
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Muons_Phase_0.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Muons_Phase_1.pdf}  \\
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_0.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_1.pdf} \\
+\caption[Track BDT output plots]{Track BDT output plots for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Blue shows signal tracks, while Red are fake tracks. Test sample overlay on top of training sample.}
+\label{fig:track-bdt-output}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Muons_Phase_0.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Muons_Phase_1.pdf}  \\
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_0.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_1.pdf} \\
+\caption[Track BDT ROC curves]{Track BDT ROC curves for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Minimum working point showed as a red dot.}
+\label{fig:track-bdt-roc}
+\end{figure}
+
 
 \subsection{Isolation}
 \label{sec:isolation}
