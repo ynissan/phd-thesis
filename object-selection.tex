@@ -197,6 +197,73 @@ We summaries this section with the full selection of the analysis muons:
 \clearpage
 \subsection{Tracks and multivariate selection }
 
+The leptons \ellell produced in our decay \neuttdecay tend to have mostly very low transverse momentum \pt. We have seen in~\ref{sec:reconstruction-and-identification} that the identification and reconstruction of the muons get worst with lower \pt. Therefore, the aim of the exclusive track category is to try and regain lost leptons that didn't make the reconstruction or identification process. Since the tracking efficiency at our \pt ranges is well above 99\%, as we've seen in~\ref{sec:track-reconstruction}, we can try and pick up the track that corresponds to our missing lepton by applying our knowledge about the event kinematics specific to our signal. We are therefore, not enhancing the lepton identification in the general case, but identifying missed tracks in our specific signal signature.
+
+Since each event contains many tracks, we need a method to identify in the signal event, which track corresponds to our miss-identified lepton. In order to achieve this goal we train a \glsreset{bdt}\gls{bdt}. We train 4 \glspl{bdt} which correspond to the lepton flavor, Muons or Electrons, and for each, we train separately for phase 0 (2016) and phase 1 (2017-2018) of the tracker. All \glspl{bdt} use the same structure of 200 trees with a maximum depth of 3, with the TMVA package~\cite{tmva}. The \gls{bdt} training is performed with AdaBoost and GiniIndex separation. We are taking all other values as the defaults set by the TMVA package.
+
+For the training we take tracks from a pool of our privately produced \FASTSIM signal simulations which were listed in~\ref{signal-simulation}. Of those, we are selecting the full range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo in case of phase 1), but only the range of \dm we want to be most sensitive to. In phase 0, we select $\dmo\in [0.3,4.3]\GeV$ and $\mu\in [100-130]\GeV$. In phase 1 we select $\dmpm \in [0.3-4.6]\GeV$ and $\mu\in [100-500]\GeV$. Those signal events we then split into signal tracks, \ie, tracks originating from the decay \neuttdecay and been matched to the missing generated lepton in the generator level particles collection, and background tracks which do not match our wanted leptons. Therefore, our \glspl{bdt} are useful to reject in-signal background of unwanted tracks. The samples for muons contain 9408 (10964) signal tracks and 99996 (151380) background tracks for phase 0 (phase 1). For electrons the samples contain 2364 (2288) signal tracks and 104065 (159713) background tracks for phase 0 (phase 1). The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples are seen in~\ref{fig:track-bdt-output}.
+
+A pre-selection is applied to all tracks in the collection obtained by the standard track reconstruction sequences. The pre-selection ensures a set of properly-reconstructed, isolated and prompt tracks, whose trajectories pass through the region nearby the primary vertex with the largest sum of charged-tracks, jets and missing energy values (PV): 
+
+\begin{itemize}
+\item $ \pt > 1.9 \GeV$
+\item $ \abs{\eta} < 2.4$
+\item track $\text{iso}_\text{rel}  < 0.1$, using \DR(track, other tracks) $< 0.3$
+\item $d_{xy}(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV
+\item $d_z(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV
+\item no match to an electron or muon within a cone of size 0.01
+\end{itemize}
+
+For the training we use 10 variables listed in decreasing order of their ranking (in the muon case of phase 0) listen in~\ref{tab:track-bdt-variables}.
+
+\begin{table}[!htb]
+	\centering
+	\label{tab:track-bdt-variables}
+		\caption{Track BDT input variables}
+		%\vspace{1mm}
+			\begin{tabular}{cll} \hline
+			Rank & Variable & Description \\ \hline
+			1 & $\DR\left(t, \ell\right)$ & $t$ is the track and $\ell$ the lepton\\
+			2 & $\abs{\Delta \eta \left(t, \ell\right) }$ & \\
+			3 & \pt(\ell) & \\
+			
+			4 & $\abs{\Delta\phi\left(t, \htvecmiss \right)}$ & \\
+			5 & $\abs{\Delta\eta\left(t, j_1 \right)}$ & $j_1$ is the leading jet\\
+			6 & $\abs{\Delta\phi\left(t, \ell \right)}$ & \\
+			7 & $\abs{\eta\left(t\right)}$ & \\
+			8 & $\abs{\eta\left(\ell\right)}$ & \\
+			9 & $\DR\left(\ell\right, j_1)$ & \\
+			10 & $\mlt$ & invariant mass \\ 
+			\hline
+			\end{tabular}
+\end{table}
+
+Distribution for the input variables showing the signal tracks in blue, and background tracks in red, are seen in~\ref{fig:muon-track-bdt-inputs}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_deltaRLL.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_deltaEtaLL.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_lepton.Pt__.pdf} \\
+
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_deltaPhiMht.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_deltaEtaLJ.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_abs_deltaPhiLL_.pdf}  \\
+
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_abs_track.Eta___.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_abs_lepton.Eta___.pdf} \,
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_deltaRLJ.pdf}  \\
+
+
+\includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_invMass.pdf}  \\
+
+
+\caption[Muon track BDT training inputs]{Distibutions of the inputs for training for the track BDT in the Muon exclusive track category.}
+\label{fig:muon-track-bdt-inputs}
+\end{figure}
+
+The output of the training of the 4 \glspl{bdt} can be then seen in~\ref{fig:track-bdt-output}. The ROC curves are then plotted in~\ref{fig:track-bdt-roc}. The red point shows the efficiency of the signal and background tracks of the BDT cut chosen to be 0.0.
+
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Muons_Phase_0.pdf} \,
@@ -217,6 +284,8 @@ We summaries this section with the full selection of the analysis muons:
 \label{fig:track-bdt-roc}
 \end{figure}
 
+After the training process, we select the track with the maximum \gls{bdt} score as our missing lepton in the event. We consider only events with a track with a score of greater then 0.0, which corresponds to the red dot in the ROC curves in~\ref{fig:track-bdt-roc}.
 
+\clearpage
 \subsection{Isolation}
 \label{sec:isolation}
