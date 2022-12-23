@@ -193,6 +193,12 @@ We summaries this section with the full selection of the analysis muons:
 \subsection{Missing transverse energy}
 \label{subsec:met}
 
+\subsection{Jets}
+\label{subsec:jets}
+
+Jets reconstruction and identification is described in~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed based on a clustering of the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with the size parameter 0.4. Tagging of $b$ quark jets is done using the so-called \gls{csv} algorithm based on a multivari­ate technique \DEEPCSV with a medium working point.
+
+Each jet is required to have $\pt>30\GeV$ and $\abs{\eta}<2.4$.
 
 \clearpage
 \subsection{Tracks and multivariate selection }
@@ -225,14 +231,14 @@ For the training we use 10 variables listed in decreasing order of their ranking
 			Rank & Variable & Description \\ \hline
 			1 & $\DR\left(t, \ell\right)$ & $t$ is the track and $\ell$ the lepton\\
 			2 & $\abs{\Delta \eta \left(t, \ell\right) }$ & \\
-			3 & \pt(\ell) & \\
+			3 & $\pt(\ell)$ & \\
 			
 			4 & $\abs{\Delta\phi\left(t, \htvecmiss \right)}$ & \\
 			5 & $\abs{\Delta\eta\left(t, j_1 \right)}$ & $j_1$ is the leading jet\\
 			6 & $\abs{\Delta\phi\left(t, \ell \right)}$ & \\
 			7 & $\abs{\eta\left(t\right)}$ & \\
 			8 & $\abs{\eta\left(\ell\right)}$ & \\
-			9 & $\DR\left(\ell\right, j_1)$ & \\
+			9 & $\DR\left(\ell, j_1\right)$ & \\
 			10 & $\mlt$ & invariant mass \\ 
 			\hline
 			\end{tabular}
@@ -262,7 +268,7 @@ Distribution for the input variables showing the signal tracks in blue, and back
 \label{fig:muon-track-bdt-inputs}
 \end{figure}
 
-The output of the training of the 4 \glspl{bdt} can be then seen in~\ref{fig:track-bdt-output}. The ROC curves are then plotted in~\ref{fig:track-bdt-roc}. The red point shows the efficiency of the signal and background tracks of the BDT cut chosen to be 0.0.
+The output of the training of the 4 \glspl{bdt} can be then seen in~\ref{fig:track-bdt-output}. The testing distributions are laid on top of the training sample of the BDT. No obvious over-training is seen. The ROC curves are then plotted in~\ref{fig:track-bdt-roc}. The red point shows the efficiency of the signal and background tracks of the BDT cut which is chosen to be 0.0. We get quite a good separation of signal tracks from fake tracks, as can be seen by the relatively high signal efficiency of over 90\% (86\%) for muons (electrons) and background rejection of around 86\% (76\%) for muons (electrons).
 
 \begin{figure}[!htb]
 \centering
@@ -289,3 +295,156 @@ After the training process, we select the track with the maximum \gls{bdt} score
 \clearpage
 \subsection{Isolation}
 \label{sec:isolation}
+
+The leptons that are produced from the neutralino decay \neuttdecay are typically clean and isolated with very little hardronic activity around them. That is due to the fact that the only jets in the event come from initial state radiation which provides a boost to the produced electoweakinos in the other direction. Therefore, the leptons originating from those electoweakinos will not exist in proximity to said jets. We can exploit this signature in order to discriminate between our signal and background originating form standard model processes in association with jets. At \gls{cms} various standard isolation criteria were developed and used. The three most widely used isolation criteria are track isolation~\cite{muon-pog-recommendations}, relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version refereed to as relative mini-isolation ($\mathrm{miniRelIso}$) described in~\cite{Rehermann_2011}.
+
+Track isolation is defined as the \pt sum of all tracks around a given track (or lepton) in a fixed cone size of 0.3:
+
+\begin{equation}
+\text{Track Isolation}_\ell = \frac{ \sum_{\substack{\text{tracks from PV}\\ \text{in } \DR<0.3}}\pt}{ \pt(\ell) } 
+\end{equation}
+
+Since we are summing tracks, we take into account only charged particles. Another widely used isolation is the relative isolation which uses a cone size of 0.4 and defined as:
+
+\begin{equation}
+\text{RelIso}_\ell = \frac{ \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PV}}}\pt + \max\left(0, \sum_{\substack{\text{neutral}\\\text{hadrons}}}\et + \sum_{\text{photons}}\et - 0.5\cdot \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PU}}}\pt \right) }{ \pt(\ell) }
+\end{equation}
+
+The last term in the definition is correction due to \gls{pu} effects. A lepton is said to pass isolation if it is required to have a small RelIso value. The third widely used isolation criterion is the mini-realtive isolation miniRelIso, and is a modified version of the relative isolation. The difference is that in the mini-isolation, the cone size depends on the \pt of the lepton in the following way:
+
+\begin{equation}
+R = 
+\begin{dcases}
+0.2 & \pt(\ell)\leq 50\GeV \\
+\frac{10\GeV}{\pt(\ell)} & \pt(\ell) \in (50\GeV , 200\GeV) \\
+0.05 & \pt(\ell)\geq 200\GeV
+\end{dcases}
+\end{equation}
+
+The variable size cone allows to recover efficiency when leptons are produced in the decay chain of a boosted object. In such cases, it is likely that, when the boost is large, the lepton overlaps with a jet produced in the same decay chain, failing a standard isolation cut. 
+
+The drawback of the standard isolation criteria is that if two leptons are in proximity of each other, as is often the case in our signal, they will spoil each other isolation. We have seen in~\ref{sec:lepton-dr} that in order to gain access to low \dm model-points, we need to also gain access to the $\DR<0.3$ phase-space region. That means that requiring any of the standard isolation criterion will result in rejecting valuable signal events. We therefore propose an alternative isolation criterion that will help retain some of the wanted phase-space while rejecting the majority of the standard model background. Another crucial use for an alternative isolation criterion is background estimation, as is described in~\ref{jetty-background-estimation}. Here we describe the steps to construct the alternative \emph{jet isolation}. It is defined for each lepton flavor individually, since the leptons produced are of same flavor. The steps are as follows (introducing parameters $p$ and $r$):
+
+\begin{enumerate}
+\item Create a copy set of the jets collection
+\item Create a \emph{lepton-corrected} set of the jets by subtracting all leptons within the jet cone of 0.4
+\item Clean the set of jets by keeping only jets with positive energy and \pt greater than threshold $p$
+\item Lepton is said to pass \emph{jet-isolation} if it does not lie within a cone of size $r$ from a \emph{lepton-corrected} jet
+\item Lepton is said to fail \emph{jet-isolation} for background estimation if it fails \emph{jet-isolation}, and the original jet closest to it has $15<\pt<30\GeV$ (see~\ref{jetty-background-estimation} for use of such lepton)
+\end{enumerate}
+
+The main idea behind the definition of the jet-isolation is that we want to reject leptons with hadronic activity around them, but not losing a lepton that is close to another same-flavor lepton. The process we described introduced two free parameters, namely, the \pt threshold of the lepton-corrected jets responsible for failing a lepton's isolation $p$, and the cone size $r$ which determines how close a corrected jet is allowed to be to a lepton. In order to choose the thresholds for these parameters, a scan has been performed ranging $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. The scan is used to compare different criteria for the optimal values. Since we are also using the isolation for our background estimation, some of the criteria we are interested in stem from that method. The criteria we are interested in are signal efficiency (which we want to be high), background efficiency (which we want to be low), signal contamination in our control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which ideally we want to maximize). To demonstrate the the effect these parameter space has on these criteria we can look at the scan done for the muons using 2016 \gls{mc} and data.
+
+\begin{table}[!htb]
+	\centering
+	\label{tab:iso-scan-signal-efficiency}
+		\caption{Signal Efficiency}
+		%\vspace{1mm}
+			\begin{tabular}{cc|ccccc}
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
+    \cline{2-7}
+    & 0 & 0.38 & 0.37 & 0.36 & 0.35 & 0.35 \\
+& 1 & 0.39 & 0.38 & 0.37 & 0.37 & 0.36 \\
+& 5 & 0.65 & 0.64 & 0.63 & 0.62 & 0.60 \\
+& 6 & 0.71 & 0.70 & 0.69 & 0.67 & 0.66 \\
+& 7 & 0.77 & 0.76 & 0.74 & 0.73 & 0.72 \\
+& 8 & 0.82 & 0.82 & 0.80 & 0.78 & 0.77 \\
+\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.87 & 0.86 & 0.85 & 0.84 & 0.82 \\
+& 10 & 0.89 & 0.89 & 0.87 & 0.86 & 0.85 \\
+& 10.5 & 0.90 & 0.90 & 0.89 & 0.88 & 0.87 \\
+& 11 & 0.92 & 0.92 & 0.91 & 0.90 & 0.89 \\
+& 11.5 & 0.93 & 0.92 & 0.91 & 0.91 & 0.90 \\
+& 12 & 0.94 & 0.93 & 0.92 & 0.91 & 0.90 \\
+& 12.5 & 0.94 & 0.94 & 0.93 & 0.92 & 0.91 \\
+& 13 & 0.95 & 0.95 & 0.94 & 0.93 & 0.93 \\
+& 15 & 0.98 & 0.98 & 0.97 & 0.97 & 0.97 \\
+& 20 & 1.00 & 1.00 & 1.00 & 0.99 & 0.99
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\label{tab:iso-scan-bg-efficiency}
+		\caption{Background Efficiency}
+		%\vspace{1mm}
+			\begin{tabular}{cc|ccccc}
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
+    \cline{2-7}
+& 0 & 0.08 & 0.07 & 0.06 & 0.06 & 0.06 \\ 
+& 1 & 0.08 & 0.07 & 0.06 & 0.06 & 0.06 \\ 
+& 5 & 0.12 & 0.12 & 0.10 & 0.09 & 0.09 \\ 
+& 6 & 0.15 & 0.14 & 0.12 & 0.11 & 0.11 \\ 
+& 7 & 0.18 & 0.16 & 0.15 & 0.14 & 0.12 \\ 
+& 8 & 0.20 & 0.18 & 0.17 & 0.17 & 0.15 \\ 
+\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.25 & 0.23 & 0.19 & 0.18 & 0.17 \\ 
+& 10 & 0.26 & 0.25 & 0.22 & 0.19 & 0.18 \\ 
+& 10.5 & 0.27 & 0.24 & 0.23 & 0.20 & 0.19 \\ 
+& 11 & 0.29 & 0.26 & 0.24 & 0.22 & 0.20 \\ 
+& 11.5 & 0.28 & 0.27 & 0.24 & 0.23 & 0.21 \\ 
+& 12 & 0.29 & 0.27 & 0.26 & 0.24 & 0.23 \\ 
+& 12.5 & 0.31 & 0.28 & 0.26 & 0.26 & 0.23 \\ 
+& 13 & 0.33 & 0.29 & 0.27 & 0.27 & 0.24 \\ 
+& 15 & 0.36 & 0.33 & 0.30 & 0.29 & 0.26 \\ 
+& 20 & 0.45 & 0.41 & 0.39 & 0.36 & 0.37 \\ 
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\label{tab:iso-scan-transfer-factor}
+		\caption{Transfer Factor}
+		%\vspace{1mm}
+			\begin{tabular}{cc|ccccc}
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
+    \cline{2-7}
+& 0 & 0.19 & 0.16 & 0.13 & 0.13 & 0.13 \\ 
+& 1 & 0.18 & 0.16 & 0.14 & 0.13 & 0.13 \\ 
+& 5 & 0.31 & 0.30 & 0.26 & 0.23 & 0.22 \\ 
+& 6 & 0.43 & 0.36 & 0.32 & 0.30 & 0.29 \\ 
+& 7 & 0.55 & 0.48 & 0.44 & 0.40 & 0.34 \\ 
+& 8 & 0.68 & 0.58 & 0.52 & 0.52 & 0.46 \\ 
+\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.83 & 0.78 & 0.65 & 0.58 & 0.54 \\ 
+& 10 & 0.99 & 0.93 & 0.76 & 0.67 & 0.62 \\ 
+& 10.5 & 1.07 & 0.95 & 0.85 & 0.74 & 0.66 \\ 
+& 11 & 1.19 & 1.10 & 0.93 & 0.85 & 0.73 \\ 
+& 11.5 & 1.24 & 1.19 & 0.96 & 0.91 & 0.79 \\ 
+& 12 & 1.34 & 1.29 & 1.09 & 0.99 & 0.91 \\ 
+& 12.5 & 1.55 & 1.35 & 1.21 & 1.10 & 0.95 \\ 
+& 13 & 1.70 & 1.46 & 1.27 & 1.23 & 1.09 \\ 
+& 15 & 2.39 & 2.17 & 1.80 & 1.63 & 1.42 \\ 
+& 20 & 6.12 & 5.86 & 4.82 & 4.13 & 3.86 \\ 
+  \end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\centering
+	\label{tab:iso-scan-significance}
+		\caption{Significance $s/\sqrt{b+\upvarepsilon^2_b}$}
+		%\vspace{1mm}
+			\begin{tabular}{cc|ccccc}
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
+    \cline{2-7}
+& 0 & 4.29 & 6.08 & 6.13 & 5.89 & 5.46 \\ 
+& 1 & 4.92 & 5.18 & 6.34 & 5.33 & 5.84 \\ 
+& 5 & 6.44 & 5.27 & 6.20 & 8.63 & 5.98 \\ 
+& 6 & 4.72 & 5.06 & 6.22 & 6.99 & 7.92 \\ 
+& 7 & 4.83 & 6.55 & 5.09 & 5.63 & 6.28 \\ 
+& 8 & 3.80 & 5.48 & 4.60 & 5.24 & 4.61 \\ 
+\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 3.60 & 4.43 & 5.66 & 6.25 & 4.60 \\ 
+& 10 & 3.37 & 4.08 & 5.57 & 4.78 & 6.23 \\ 
+& 10.5 & 3.72 & 4.03 & 4.90 & 4.48 & 4.17 \\ 
+& 11 & 3.05 & 3.51 & 4.37 & 4.98 & 5.41 \\ 
+& 11.5 & 3.21 & 3.21 & 3.84 & 3.54 & 4.65 \\ 
+& 12 & 3.48 & 3.51 & 3.80 & 3.30 & 3.54 \\ 
+& 12.5 & 2.79 & 3.19 & 2.82 & 3.36 & 4.60 \\ 
+& 13 & 3.16 & 2.68 & 3.59 & 6.60 & 3.50 \\ 
+& 15 & 4.46 & 3.19 & 3.06 & 3.64 & 3.85 \\ 
+& 20 & 7.21 & 1.46 & 1.60 & 8.10 & 2.09 \\ 
+  \end{tabular}
+\end{table}
+
+We can see from the scan, that the transfer factor of the jetty background estimation method becomes larger with larger \pt and smaller with larger \DR. We opt for a transfer factor that is less then unity, and therefore we exclude those choices. Taking into account all factors, we make the choice of $(p,r)=(10\GeV,0.6)$ for muons and $(p,r)=(10\GeV,0.5)$ for electrons.
