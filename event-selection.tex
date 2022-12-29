@@ -1,0 +1,69 @@
+\clearpage
+\section{Event selection}
+\label{sec:event-selection}
+
+In the following section we detail the event level selection applied in this analysis. We have seen in~\ref{sec:search-strategy} that we refer to three categories in this analysis: dimuon category, and exclusive track category for each lepton flavor. We summarise the preselection in~\ref{sec:preselection}, then the selection that defines each category in~\ref{sec:category-selection}, and finally the multivariate selection for each category in~\ref{sec:event-bdt}.
+
+\subsection{Baseline selection}
+\label{sec:preselection}
+
+We have reviewed some of the base selection that is common to all categories in~\ref{tab:base-selection}. We reiterate reasons for these selections here in additional to other event level selections.
+
+\begin{itemize}
+
+\item $\mht\geq220\GeV$ and $\MET \geq 140\GeV$ cuts intend to boost sensitivity by rejecting \gls{sm} background, as well as to operate in the acceptance regime of the MET trigger, as described in~\ref{sec:trigger}. It is especially efficient in rejecting \gls{qcd} background, since it does not produce real \MET. Any \MET apparent in \gls{qcd} is due to jet energy miss measurements. The reason we are cutting harder on \mht rather than \MET is that \mht sums jets with $\pt>30\GeV$ and is blind to objects with $\pt<30\GeV$. Since we rely in our background estimation on jets with \pt in the range of $[15,30]\GeV$, \mht is more appropriate than \MET since it does not introduce a bias in the data-driven background estimation methods. The two observables are highly correlated though, and describe similar physics.
+
+\item $\njets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) \geq 1$. We are requiring at least one jet in the event, since such an \gls{isr} jet gives a boost to the produced neutralino, thus increasing the missing transverse energy and with it the sensitivity.
+
+\item $\nbjets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) = 0$. We are vetoing any \PQb-tagged jet. Our signal does not contain real \PQb-tagged jets. This veto is efficient in rejecting background from \ttbar, in which the \PQb quarks arise from a \PQt quark decay.
+
+\item $\mindphimhtjets$  $ > 0.4$. Since we are requiring an \gls{isr} jet in the event, we expect the the \gls{mht} to point in the opposite direction of the jet, or at least in an angel close to $\pi$. Events with multiple jets in the \gls{sm} background such as arising from \gls{qcd} will not exhibit such a feature. Therefore this cut reduces \gls{qcd} background.
+
+\item veto events with isolated loose-ID lepton having $\pt\geq 30\GeV$. Lepton can be either muon or electron. Our signal does not have high-\pt leptons, as we have seen in~\ref{sec:signal-signature}.
+
+\item $0.4<\mll<12 \GeV$. Our signal resides in an invariant mass window with an edge at the mass difference between \neutt and \neuto. This is a relatively loose cut that is expected to further be tightened by the boosted decision tree.
+
+\end{itemize}
+
+We have already seen the object level selection in~\ref{sec:object-selection}. For the sake of completeness we reiterate them here. The electrons in the analysis require to pass the following selection (see also~\ref{sec:object-selection-electrons}):
+
+\begin{itemize}
+
+\item $5 \leq \pt \leq 15\GeV$
+\item $\abs{\eta} < 2.5$
+\item pass jet isolation
+\item loose ID
+
+\end{itemize}
+
+The muons in the analysis require to pass the following selection (see also~\ref{sec:muon-selection}):
+
+\begin{itemize}
+
+\item $2 \leq \pt \leq 15\GeV$
+\item $\abs{\eta} < 2.4$
+\item pass jet isolation
+\item medium ID
+
+\end{itemize}
+
+\subsection{Category selection}
+\label{sec:category-selection}
+
+The analysis has two main categories: dilepton and exclusive track category. The dilepton category has two leptons, while the exclusive track category has a single lepton and a track that has not been identified as a lepton. The dilepton category includes only one flavor, namely muons, while the exclusive track category has both electrons and muons flavored leptons. Selection for the dilepton category is listed in~\ref{sec:dilepton-selection} and for the exclusive track category in~\ref{sec:exclusive-track-selection}.
+
+\subsubsection{Dilepton selection}
+\label{sec:dilepton-selection}
+
+In the dilepton category we have two reconstructed and identified muons.
+
+\subsubsection{Exclusive track selection}
+\label{sec:exclusive-track-selection}
+
+In the exclusive track category we have one reconstructed and identified lepton (either an electron or a muon) and an exclusive track, \ie, a track that does not match an identified lepton.
+
+\subsection{Boosted decision trees}
+\label{sec:event-bdt}
+
+\subsection{Event selection summary}
+\label{sec:event-selection-summary}
