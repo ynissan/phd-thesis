@@ -9,7 +9,7 @@ As was the case in~\ref{sec:signal-signature}, the base selection for the follow
 \label{sec:object-selection-electrons}
 %\subsubsection{Signal electron selection}
 
-The electrons have an initial reconstruction \pt threshold of $5\GeV$. The initial working point choice for reconstructed electron is loose (see~\ref{sec:reconstruction-and-identification}). The first distribution we look at in regards to the electrons is their spatial separation from the leading jet in the event, $\DR(\jmath_1,\Pe)$.
+The electrons have an initial reconstruction \pt threshold of $5\GeV$. The initial working point choice for reconstructed electron is loose (see~\ref{sec:reconstruction-and-identification}). The first distribution we look at in regards to the electrons is their spatial separation from the leading jet in the event, $\DR(\jmath_1,\Pe)$. Those can be seen in~\ref{fig:electrons-dr-lj}.
 
 \begin{figure}[h]
 \centering
@@ -19,9 +19,9 @@ The electrons have an initial reconstruction \pt threshold of $5\GeV$. The initi
 \label{fig:electrons-dr-lj}
 \end{figure}
 
-There are two obvious features we can take from these plots. The first we have explored already in~\ref{sec:signal-signature}, namely, that probing lower \gls{dm} requires access to low \gls{pt} leptons, and since we are limited by a lower threshold of $\pt\geq 5\GeV$ on the electrons, that results in lower signal acceptance as can be seen by the difference between the high \gls{dm} and the low one. The second interesting feature that we can see, is that our signal electrons are located mainly outside of the leading jet. That is because the leading jet is usually an \gls{isr} jet which boosts the \tchiz system to away from it (back-to-back). We therefore make a cut $\DR(\jmath_1,\Pe)>0.4$.
+There are two obvious features we can point to in these plots. We have explored the first feature already in~\ref{sec:signal-signature}, namely, that probing lower \gls{dm} requires access to low \gls{pt} leptons, and since we are limited by a lower threshold of $\pt\geq 5\GeV$ on the electrons, that results in lower signal acceptance as can be seen by the difference between the high \gls{dm} and the low one. The second interesting feature that we can see, is that our signal electrons are located mainly outside of the leading jet. That is because the leading jet is usually an \gls{isr} jet which boosts the \tchiz system away from it (back-to-back). We therefore make a cut $\DR(\jmath_1,\Pe)>0.4$.
 
-Next we turn into the \gls{pt} distributions. We apply the previous cut of $\DR(\jmath_1,\Pe)>0.4$. As we've already seen in~\ref{sec:muon-eta-pt}, the \gls{pt} distribution depends strongly on \gls{dm}. Even though the distributions in~\ref{sec:muon-eta-pt} were plotted using generator level muons, the electrons distributions follow the same trend. We therefore need to make a choice about which \gls{dm} to favor, \ie, which \gls{dm} we want to be more sensitive to, and we choose the lower \gls{dm} case. Nonetheless we compare the two choices.
+Next we turn to the \gls{pt} distributions. First we apply the previous cut of $\DR(\jmath_1,\Pe)>0.4$. As we've already seen in~\ref{sec:muon-eta-pt}, the \gls{pt} distribution depends strongly on \gls{dm}. Even though the distributions in~\ref{sec:muon-eta-pt} were plotted using generator level muons, the electrons distributions follow the same trend. We therefore need to make a choice about which \gls{dm} to favor, \ie, which \gls{dm} we want to be more sensitive to, and we choose the lower \gls{dm} case. Nonetheless we compare the two choices in~\ref{fig:electrons-selection-pt}.
 
 \begin{figure}[!htb]
 \centering
@@ -33,7 +33,7 @@ Next we turn into the \gls{pt} distributions. We apply the previous cut of $\DR(
 
 We can see, as expected, that the \pt distribution  of the electrons fall more rapidly for the low \dm case. We observe that there are hardly any electrons surviving above $15\GeV$, and therefore we choose to make a cut of $\pt<15\GeV$.
 
-It interesting to look at the $\eta$ distribution after the previous cuts to get a better sense of where most of the non-signal electrons are stil coming from.
+It interesting to look at the $\eta$ distribution, as seen in~\ref{fig:electrons-selection-eta}, after the previous cuts to get a better sense of where most of the non-signal electrons are still coming from.
 
 \begin{figure}[!htb]
 \centering
@@ -45,7 +45,7 @@ It interesting to look at the $\eta$ distribution after the previous cuts to get
 
 In the case of $\dm=1.92\GeV$,  we can clearly see how worse the endcaps of the \gls{ecal} are performing in comparison with the barrel ($\abs{\eta}<1.48$). The transition is clearly visible through a sharp drop in purity at the transition. It is worse for low-\pt electrons than higher-\pt ones.
 
-We would like to see if requiring a tighter working point for the electron-identification is beneficial. The working point used in the previous distributions is loose. We look turn now to check the effects of requiring either a medium working point, or a tight one. We plot two bins labeled \emph{fail} and \emph{pass}, which correspond to whether the electron passes or failed the identification criteria of a medium or tight working points.
+We would like to see if requiring a tighter working point for the electron-identification is beneficial. The working point used in the previous distributions is loose. We turn now to check the effects of requiring either a medium working point, or a tight one. We plot two bins labeled \emph{fail} and \emph{pass}, which correspond to whether the electron passes or fails the identification criteria of a medium or tight working points. These can be seen in~\ref{fig:electrons-selection-id}.
 
 \begin{figure}[!htb]
 \centering
@@ -57,7 +57,7 @@ We would like to see if requiring a tighter working point for the electron-ident
 \label{fig:electrons-selection-id}
 \end{figure}
 
-Selecting a medium or a tight working point is equivalent to choosing the relevant right \emph{pass} bin (top for medium, bottom for tight), and rejecting the electrons on the left \emph{fail} bin. We see that although we reject considerable amount of non-signal electrons in the low \dm case by picking either a medium or tight working points, we also loose quite a lot of signal electrons as well. In other words, these selections are very not efficient and will result in low signal acceptance. We therefore decide to use a loose working point for the electrons. We will see that we can still purify the electron selection by relying on isolation instead. We fully discuss and describe our jet-isolation in~\ref{sec:isolation}, but here for the sake of completeness we look at its effect on the purity of the electrons. We compare our custom jet-isolation to the standard definition of lepton isolation, which does not take into account the possibility that two electrons can be produced close to each other (small \DR), as is the case in our signal.
+Selecting a medium or a tight working point is equivalent to choosing the relevant right \emph{pass} bin (top for medium, bottom for tight), and rejecting the electrons on the left \emph{fail} bin. We see that although we reject considerable amount of non-signal electrons in the low \dm case by picking either a medium or tight working points, we also loose quite a lot of signal electrons as well. In other words, these selections are very not efficient and will result in low signal acceptance. We therefore decide to use a loose working point for the electrons. We will see that we can still purify the electron selection by relying on isolation instead. We fully discuss and describe our jet-isolation in~\ref{sec:isolation}, but here for the sake of completeness we look at its effect on the purity of the electrons. We compare our custom jet-isolation to the standard definition of lepton isolation, which does not take into account the possibility that two electrons can be produced close to each other (small \DR), as is the case in our signal. Comparison of the isolation distributions are seen in~\ref{fig:electrons-selection-isolation}.
 
 \begin{figure}[!htb]
 \centering
@@ -69,7 +69,7 @@ Selecting a medium or a tight working point is equivalent to choosing the releva
 \label{fig:electrons-selection-isolation}
 \end{figure}
 
-We observe that the standard lepton isolation does not perform well in terms of efficiency for both \dm cases. In contrast, the custom jet-isolation is performing very well in terms of signal electron efficiency while successfully rejecting considerable amount of non-signal electrons, resulting in a purer sample of electrons. We therefore conclude that the choice of the custom jet-isolation is favorable. We can look at how the $\eta$ distribution is affected by this choice and that will conclude our selection of the electrons.
+We observe that the standard lepton isolation does not perform well in terms of efficiency for both \dm cases. In contrast, the custom jet-isolation is performing very well in terms of signal electron efficiency while successfully rejecting considerable amount of non-signal electrons, resulting in a purer sample of electrons. We therefore conclude that the choice of the custom jet-isolation is favorable. We also look at how the $\eta$ distribution is affected by this choice at~\ref{fig:electrons-selection-eta-jet-iso}, and that will conclude our selection of the electrons.
 
 \begin{figure}[!htb]
 \centering
@@ -85,7 +85,7 @@ When we compare distributions~\ref{fig:electrons-selection-eta-jet-iso} with~\re
 
 We summaries this section with the full selection of the analysis electrons:
 
-\begin{itemize}[noitemsep]
+\begin{itemize}
 \item $5<\pt<15\GeV$
 \item $\abs{\eta} < 2.5$
 \item $\DR(\jmath_1,\Pe)>0.4$
@@ -93,10 +93,12 @@ We summaries this section with the full selection of the analysis electrons:
 \item pass jet-isolation
 \end{itemize}
 
+\clearpage
+
 \subsection{Muons}
 \label{sec:muon-selection}
 
-In contrast to the electrons, we do not have an initial reconstruction \pt threshold of $5\GeV$. Therefore, we want to explore the possibility of lowering the \pt threshold as much as posible. This has been motivated in section~\ref{sec:muon-eta-pt}, where we saw that the lower \dm we want to probe, the lower \pt threshold we have to allow. Like in the electron case, the initial working point choice for reconstructed muon is loose (see~\ref{sec:reconstruction-and-identification}). We follow a similar procedure to the electrons case. The first distribution we look at in regards to the muons is their spatial separation from the leading jet in the event, $\DR(\jmath_1,\mu)$. We have seen in~\ref{fig:signal-pt-barrel-endcaps} that the muon endcaps are capable of reconstructing muons with $\pt<3\GeV$ while the barrel cannot. It therefore makes sense to look at a split view of barrel and endcaps for the following distributions.
+In contrast to the electrons, we do not have an initial reconstruction \pt threshold of $5\GeV$. Therefore, we want to explore the possibility of lowering the \pt threshold as much as posible. This has been motivated in section~\ref{sec:muon-eta-pt}, where we saw that the lower \dm we want to probe, the lower \pt threshold we have to allow. Like in the electron case, the initial working point choice for reconstructed muon is loose (see~\ref{sec:reconstruction-and-identification}). We follow a similar procedure to the electrons case. The first distribution we look at in regards to the muons is their spatial separation from the leading jet in the event, $\DR(\jmath_1,\mu)$. We have seen in~\ref{fig:signal-pt-barrel-endcaps} that the muon endcaps are capable of reconstructing muons with $\pt<3\GeV$ while the barrel cannot. It therefore makes sense to look at a split view of barrel and endcaps for the following distributions at~\ref{fig:muons-dr-lj}.
 
 \begin{figure}[!htb]
 \centering
@@ -110,9 +112,9 @@ In contrast to the electrons, we do not have an initial reconstruction \pt thres
 \label{fig:muons-dr-lj}
 \end{figure}
 
-Since the muons in the endcaps has lower \pt than the muons in the barrel, which is able to reconstruct muons with $\pt>3\GeV$ only, the purity in the endcaps is much lower than the purity in the barrel, and the selection we are constructing here attempts to purify the muons further. Just as in the electrons case, we select muons with $\DR(\jmath_1,\mu)>0.4$, and that selection will apply for the rest of the section.
+Since the muons in the endcaps have lower \pt than the muons in the barrel, which is only able to reconstruct muons with $\pt>3\GeV$, the purity in the endcaps is much lower than the purity in the barrel, and the selection we are constructing here attempts to purify the muons further. Just as in the electrons case, we select muons with $\DR(\jmath_1,\mu)>0.4$, and that selection will apply for the rest of the section.
 
-Next we turn into the \gls{pt} distributions. We apply the previous cut of $\DR(\jmath_1,\mu)>0.4$. As we've already seen in~\ref{sec:muon-eta-pt}, the \gls{pt} and in the electron case, the \pt distribution depends strongly on \gls{dm}, and we try to favor the low \gls{dm} acceptance in order to be more sensitive to it. The \pt distributions we see in~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are fed into the training of the \gls{bdt} for further refinement, and therefore the exact value is being determined here quite loosely. The actual maximum value of the \pt of the muons will depend on the \gls{bdt} cut being used to define the signal region.
+Next we turn into the \gls{pt} distributions. We apply the previous cut of $\DR(\jmath_1,\mu)>0.4$. As we've already seen in~\ref{sec:muon-eta-pt}, the \pt distribution depends strongly on \gls{dm}, and we try to favor the low \gls{dm} acceptance in order to be more sensitive to it. The \pt distributions we see in~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are fed into the training of the \gls{bdt} for further refinement, and therefore the exact value is being determined here quite loosely. The actual maximum value of the \pt of the muons will depend on the \gls{bdt} cut being used to define the signal region.
 
 \begin{figure}[!htb]
 \centering
@@ -126,7 +128,7 @@ Next we turn into the \gls{pt} distributions. We apply the previous cut of $\DR(
 \label{fig:muons-selectrion-pt}
 \end{figure}
 
-We can see the point being made earlier about the endcaps being able to reconstruct muons with lower\pt, and therefore has worse purity than the barrel reiterated here. It must be stressed that worse purity is due to a much higher efficiency, and therefore, as long as we can purify it further, is not necessarily a bad thing. We see however, that the bulk of the non-signal muons populate the region of $\pt<2\GeV$, and the ratio of signal muons to non-signal muons is very low in that region. We therefore make an additional cut of $\pt>2\GeV$. Another way of looking at the effect of this cut is by looking at the $\abs{\eta}$ distribution before and after the \pt cut which can be seen in~\ref{fig:muons-selection-eta}.
+We can see the feature discussed earlier, whereby the endcaps being able to reconstruct muons with lower \pt, and therefore has worse purity than the barrel, being reiterated here. It must be stressed that worse purity is due to a much higher efficiency, and therefore, as long as we can purify it further, is not necessarily a bad thing. We see however, that the bulk of the non-signal muons populate the region of $\pt<2\GeV$, and the ratio of signal muons to non-signal muons is very low in that region. We therefore make an additional cut of $\pt>2\GeV$. Another way of looking at the effect of this cut is by looking at the $\abs{\eta}$ distribution before and after the \pt cut, which can be seen in~\ref{fig:muons-selection-eta}.
 
 \begin{figure}[!htb]
 \centering
@@ -138,7 +140,7 @@ We can see the point being made earlier about the endcaps being able to reconstr
 \label{fig:muons-selection-eta}
 \end{figure}
 
-We would like to see if requiring a tighter working point for the muon-identification is beneficial. The working point used in the previous distributions is loose. We look turn now to check the effects of requiring either a medium working point, or a tight one. We plot two bins labeled \emph{fail} and \emph{pass}, which correspond to whether the muon passes or failed the identification criteria of a medium or tight working points.
+We would like to see if requiring a tighter working point for the muon-identification is beneficial. The working point used in the previous distributions is loose. We turn now to check the effects of requiring either a medium working point, or a tight one. We plot two bins labeled \emph{fail} and \emph{pass}, which correspond to whether the muon passes or fails the identification criteria of a medium or tight working points.
 
 \begin{figure}[!htb]
 \centering
@@ -166,7 +168,7 @@ When we compare the medium working point in~\ref{fig:muons-selection-id-medium} 
 \label{fig:muons-selection-id-tight}
 \end{figure}
 
-Our custom jet-isolation, which is described fully in~\ref{sec:isolation}, was devised mainly to reject \gls{sm} background while retaining signal. In the electron case, we have seen in ~ref{fig:electrons-selection-isolation} that it did a great job in also purifying the electron selection and replaced the need of requiring a tighter identification working point. In the case of the muons, we do rely on the a medium working point to perform this task, but we would like to also see the effects of the isolation on our signal muons. We see in~\ref{fig:muons-selection-isolation} that we pay a small price by requiring the isolation, but we increase the sensitivity by rejecting a lot of \gls{sm} background in the process.
+Our custom jet-isolation, which is described fully in~\ref{sec:isolation}, was devised mainly to reject \gls{sm} background while retaining signal. In the electron case, we have seen in~\ref{fig:electrons-selection-isolation} that it did a great job in also purifying the electron selection and replaced the need of requiring a tighter identification working point. In the case of the muons, we do rely on the a medium working point to perform this task, but we would like to also see the effects of the isolation on our signal muons. We see in~\ref{fig:muons-selection-isolation} that we pay a small price by requiring the isolation, but as will be seen in~\ref{sec:isolation}, we increase the sensitivity by rejecting a lot of \gls{sm} background in the process.
 
 \begin{figure}[!htb]
 \centering
@@ -181,7 +183,7 @@ Our custom jet-isolation, which is described fully in~\ref{sec:isolation}, was d
 \end{figure}
 
 We summaries this section with the full selection of the analysis muons:
-\begin{itemize}[noitemsep]
+\begin{itemize}
 \item $2<\pt<15\GeV$
 \item $\abs{\eta} < 2.4$
 \item $\DR(\jmath_1,\mu)>0.4$
@@ -191,19 +193,36 @@ We summaries this section with the full selection of the analysis muons:
 
 \input{scale-factors}
 
+\clearpage
+
 \subsection{Missing transverse energy}
 \label{subsec:met}
+
+The importance of measuring the missing transverse momentum (or energy) in this analysis has been discussed in~\ref{subsec:signal-met-mht}. We concluded that the missing transverse momentum is an essential ingredient in our analysis strategy. It is used in order to trigger events online, as well as in our offline event level selection in order to boost sensitivity. Two standard measured of the momentum imbalance in the events are \VEtmiss (or equivalently by a different symbol \ptvecmiss) and \htvecmiss. Although \VEtmiss and \ptvecmiss have different symbols, and referred to by different names (missing transverse energy and missing transverse momentum respectively), they are defined in the same way and are used interchangeably. Mathematically speaking, \VEtmiss is defined in the following way:
+
+\begin{equation}
+\VEtmiss = \ptvecmiss = -\sum_i \ptvec(i)
+\end{equation}
+
+where the summation is done on all particle flow candidates. Therefore, it is a measure of particles that escape detection, such as weakly interacting particles. The missing transverse energy is highly sensitive to any mismeasurements of the visible
+particles, as well as additional energy deposits from \gls{pu}, detector noise etc. Therefore, this observable is further corrected to mitigate \gls{pu} effects, as well as jet energy response. For those corrections, jets with \pt greater than $10\GeV$ are being considered. Full details of the corrections are given in~\cite{met_performance}.
+
+An alternative measurement to the missing transverse momentum is \htvecmiss, sometimes referred to as \emph{missing hardronic activity}. Rather than looking at all particle flow candidates in the sum, it takes into account only jets with \pt greater than $30\GeV$ with $\abs{\eta}<5$:
+
+\begin{equation}
+\htvecmiss = -\sum_i^{\mathrm{jets}} \ptvec(i)
+\end{equation}
+
+In this analysis we favor using the observable \htvecmiss over \VEtmiss, since, as we see in our definition of the jet isolation in~\ref{sec:isolation}, we use jets with \pt greater than $30\GeV$, and we keep the range of $\pt\in [15,30]\GeV$ of jets to define a side band which we then use for our data-driven background estimation method in~\ref{jetty-background-estimation}. For both observables, \VEtmiss and \htvecmiss, we can define the equivalent scalar quantities, \MET and \mht respectively, by taking the magnitude of their vectorial counterpart.
 
 \subsection{Jets}
 \label{subsec:jets}
 
-Jets reconstruction and identification is described in~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed based on a clustering of the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with the size parameter 0.4. Tagging of $b$ quark jets is done using the so-called \gls{csv} algorithm based on a multivari­ate technique \DEEPCSV with a medium working point.
-
-Each jet is required to have $\pt>30\GeV$ and $\abs{\eta}<2.4$.
+Jets reconstruction and identification is described in~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed based on a clustering of the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with the size parameter 0.4. Tagging of $b$ quark jets is done using the so-called \gls{csv} algorithm based on a multivari­ate technique \DEEPCSV with a medium working point. Each jet is required to have $\pt>30\GeV$ and $\abs{\eta}<2.4$.
 
 \clearpage
 \subsection{Tracks and multivariate selection }
-
+\label{sec:track-bdt}
 The leptons \ellell produced in our decay \neuttdecay tend to have mostly very low transverse momentum \pt. We have seen in~\ref{sec:reconstruction-and-identification} that the identification and reconstruction of the muons get worst with lower \pt. Therefore, the aim of the exclusive track category is to try and regain lost leptons that didn't make the reconstruction or identification process. Since the tracking efficiency at our \pt ranges is well above 99\%, as we've seen in~\ref{sec:track-reconstruction}, we can try and pick up the track that corresponds to our missing lepton by applying our knowledge about the event kinematics specific to our signal. We are therefore, not enhancing the lepton identification in the general case, but identifying missed tracks in our specific signal signature.
 
 Since each event contains many tracks, we need a method to identify in the signal event, which track corresponds to our miss-identified lepton. In order to achieve this goal we train a \glsreset{bdt}\gls{bdt}. We train 4 \glspl{bdt} which correspond to the lepton flavor, Muons or Electrons, and for each, we train separately for phase 0 (2016) and phase 1 (2017-2018) of the tracker. All \glspl{bdt} use the same structure of 200 trees with a maximum depth of 3, with the TMVA package~\cite{tmva}. The \gls{bdt} training is performed with AdaBoost and GiniIndex separation. We are taking all other values as the defaults set by the TMVA package.
@@ -297,7 +316,7 @@ After the training process, we select the track with the maximum \gls{bdt} score
 \subsection{Isolation}
 \label{sec:isolation}
 
-The leptons that are produced from the neutralino decay \neuttdecay are typically clean and isolated with very little hardronic activity around them. That is due to the fact that the only jets in the event come from initial state radiation which provides a boost to the produced electoweakinos in the other direction. Therefore, the leptons originating from those electoweakinos will not exist in proximity to said jets. We can exploit this signature in order to discriminate between our signal and background originating form standard model processes in association with jets. At \gls{cms} various standard isolation criteria were developed and used. The three most widely used isolation criteria are track isolation~\cite{muon-pog-recommendations}, relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version refereed to as relative mini-isolation ($\mathrm{miniRelIso}$) described in~\cite{Rehermann_2011}.
+The leptons that are produced from the neutralino decay \neuttdecay are typically clean and isolated with very little hardronic activity around them. That is due to the fact that the only jets in the event come from initial state radiation which provides a boost to the produced electoweakinos in the other direction. Therefore, the leptons originating from those electoweakinos will not exist in proximity to said jets. We can exploit this signature in order to discriminate between our signal and background originating from standard model processes in association with jets. At \gls{cms} various standard isolation criteria were developed and used. The three most widely used isolation criteria are track isolation~\cite{muon-pog-recommendations}, relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version refereed to as relative mini-isolation ($\mathrm{miniRelIso}$) described in~\cite{Rehermann_2011}.
 
 Track isolation is defined as the \pt sum of all tracks around a given track (or lepton) in a fixed cone size of 0.3:
 
@@ -334,7 +353,7 @@ The drawback of the standard isolation criteria is that if two leptons are in pr
 \item Lepton is said to fail \emph{jet-isolation} for background estimation if it fails \emph{jet-isolation}, and the original jet closest to it has $15<\pt<30\GeV$ (see~\ref{jetty-background-estimation} for use of such lepton)
 \end{enumerate}
 
-The main idea behind the definition of the jet-isolation is that we want to reject leptons with hadronic activity around them, but not losing a lepton that is close to another same-flavor lepton. The process we described introduced two free parameters, namely, the \pt threshold of the lepton-corrected jets responsible for failing a lepton's isolation $p$, and the cone size $r$ which determines how close a corrected jet is allowed to be to a lepton. In order to choose the thresholds for these parameters, a scan has been performed ranging $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. The scan is used to compare different criteria for the optimal values. Since we are also using the isolation for our background estimation, some of the criteria we are interested in stem from that method. The criteria we are interested in are signal efficiency (which we want to be high), background efficiency (which we want to be low), signal contamination in our control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which ideally we want to maximize). To demonstrate the the effect these parameter space has on these criteria we can look at the scan done for the muons using 2016 \gls{mc} and data.
+The main idea behind the definition of the jet-isolation is that we want to reject leptons with hadronic activity around them, but not losing a lepton that is close to another same-flavor lepton. The process we described introduced two free parameters, namely, the \pt threshold of the lepton-corrected jets responsible for failing a lepton's isolation $p$, and the cone size $r$ which determines how close a corrected jet is allowed to be to a lepton. In order to choose the thresholds for these parameters, a scan has been performed ranging $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. The scan is used to compare different criteria for the optimal values. Since we are also using the isolation for our background estimation, some of the criteria we are interested in stem from that method. The criteria we are interested in are signal efficiency (which we want to be high), background efficiency (which we want to be low), signal contamination in our control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which ideally we want to maximize). To demonstrate the effect these parameter space has on these criteria, we can look at a scan done for the muons using 2016 \gls{mc} and data.
 
 \begin{table}[!htb]
 	\centering
