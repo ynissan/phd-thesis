@@ -7,3 +7,14 @@
 *.synctex.gz
 *.toc
 *.lox
+*.swp
+*.acn 
+*.acr 
+*.alg 
+*.bbl 
+*.blg 
+*.glo 
+*.gls 
+*.ps 
+*.xdy
+*.glg
