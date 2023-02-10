@@ -183,7 +183,7 @@ Distributions of the input variables to the \gls{bdt} training can be seen in~\r
 \clearpage
 \subsubsection{Exclusive track category}
 
-The training samples in phase 0 for the exclusive  category contain 8595 (7575) signal events and 58892 (40665) background events for muons (electrons) flavor. For phase 1,  the exclusive  category contain 5371 (2159) signal events and 54685 (37984) background events for muons (electrons) flavor. The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples are seen in~\ref{fig:event-bdt-ex-track-output}. No significant over training is observed. The ROC curves are seen in~\ref{fig:event-bdt-ex-track-roc}.
+The training samples in phase 0 for the exclusive  category contain 7863 (1750) signal events and 55765 (29135) background events for muons (electrons) flavor. For phase 1,  the exclusive  category contain 5266 (1332) signal events and 51308 (31149) background events for muons (electrons) flavor. The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples are seen in~\ref{fig:event-bdt-ex-track-output}. No significant over training is observed. The ROC curves are seen in~\ref{fig:event-bdt-ex-track-roc}.
 
 \begin{figure}[!htb]
 \centering
@@ -219,23 +219,21 @@ The training uses 18 different variables listed in~\ref{tab:extrack-bdt-variable
 			\begin{tabular}{cll} \hline
 			Rank & Variable & Description \\ \hline
 			1 & $\pt(\ell)$ & lepton \pt\\
-			2 & \mht & \\
-			3 & \HT & \\
-			4 & $m_T(\ell)$ & lepton transverse mass\\			
-			5 & $\mindphimhtjets$ & \\
-			6 & $\pt(\text{leading jet})$ & \\		
-			7 & track BDT output & \\
+			2 & \HT & \\
+			3 & \mht & \\
+			4 & $\mindphimhtjets$ & \\
+			5 & $\pt(\text{leading jet})$ & \\
+			6 & $\njets$ & Number of jets \\					7 & track BDT output & \\
 			8 & $\eta(t)$ & \\
-			9 & $\eta(\ell)$ & \\
-			10 & $\phi(\ell)$ & \\
-			11 & $\abs{\Delta\phi\left(\ell,t \right)}$ & \\			
-			12 & $\pt(t)$ & track \pt\\
-			13 & $\DR\left(\ell, t\right)$ & \\
-			14 & $\mll$ & invariant mass \\
-			15 & $\phi(t)$ & \\
-			16 & $\abs{\Delta \eta \left(\ell, t\right) }$ & \\			
-			17 & $\njets$ & Number of jets \\ 
-			18 & $\eta(\text{leading jet})$ & \\
+			9 & $\pt(t)$ & track \pt\\
+			10 & $\eta(\text{leading jet})$ & \\				11 & $\mll$ & invariant mass \\
+			12 & $\eta(\ell)$ & \\
+			13 & $m_T(\ell)$ & lepton transverse mass\\			
+			14 & $\DR\left(\ell, t\right)$ & \\
+			15 & $\phi(\ell)$ & \\
+			16 & $\phi(t)$ & \\
+			17 & $\abs{\Delta\phi\left(\ell,t \right)}$ & \\			
+			18 & $\abs{\Delta \eta \left(\ell, t\right) }$ & \\			
 			\hline
 			\end{tabular}
 \end{table}
