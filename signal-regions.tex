@@ -1,0 +1,66 @@
+\clearpage
+\section{Signal regions definition and optimization}
+\label{sec:signal-regions}
+
+The signal regions in this analysis are bins in the BDT output distributions having BDT output values greater than zero. This type of search is sometimes referred to as a \emph{shape analysis}. The significance is computed in each bin of the BDT output, and then the different values are combined statistically to produce a single significance value. One must, therefore, decide on the binning of the BDT output distribution. Since the most important merit in a beyond the standard model search such as this one is the significance, it is desired to find a binning that maximizes the significance, or at least close to the supremum. 
+
+Because of the nature of how \glspl{bdt} are trained, as the BDT value increases, so does the signal counts, whether the background counts decrease. The means that the most significant bin will be closer to the right end of the distribution. The problem of finding an ideal binning is not so straight forward as one might think, since the distributions are not smooth, but are made of statistical events with potentially very low statistics. The first step in defining the \glspl{sr} is defining the right most devision that becomes the left edge of the most sensitive bin stretching all way up to the maximum BDT output value of 1. The way it is performed is by first defining a step size $\varepsilon$. Then, a series of computations is performed, whereby in each step $i$, a significance is computed for a bin of size $i\cdot \varepsilon$, \ie, in the interval $\left[ 1-i\cdot \varepsilon, 1 \right]$. One can then pick the left bin by taking the maximum of the series of values resulting in the previous step.
+
+There are few points that need to be addressed. The first is what measure to choose for estimating the significance. Since the final significance, combination, and exclusion limit is calculated using via the Higgs combination tool~\cite{higgs-combine-site}, here an estimate for the purposes of optimization is used which is reviewed in~\cite{pvalue,Cousins:2007bmb}, which is referred to as the Z-value. The Z-value is a communication of the $p$-value by means of specifying the corresponding number of standard deviations in a one-tailed test of a Gaussian (normal) variate:
+
+\begin{equation}
+Z = \Phi^{-1}(1-p)=-\Phi^{-1}(p).
+\end{equation}
+
+Given the number of signal events count $\hat{s}$, background events count $\hat{b}$ and its corresponding error $\delta \hat{b}$, an estimator for the significance is given by
+
+\begin{equation}
+Z = \frac{\hat{s}}{\sqrt{\hat{b}+\delta \hat{b}^2}}.
+\end{equation}
+
+The background event count is estimated using the data-driven methods described in~\ref{sec:background-estimation}. They all involve counting events in a sideband and multiplying them be a transfer factor computed in a control region:
+
+\begin{equation}
+\hat{b} = \mathrm{N}^{\mathrm{SR}}_{\text{sideband}}\cdot \mathrm{TF}
+\end{equation}
+
+where the transfer factor TF is given by 
+
+\begin{equation}
+\mathrm{TF}=\frac{\mathrm{N}^{\mathrm{CR}}_{\text{main band}}}{\mathrm{N}^{\mathrm{CR}}_{\text{sideband}}}
+\end{equation}
+
+The error propagation formula yields
+
+\begin{equation}
+\left( \frac{\delta \hat{b}}{\hat{b}}  \right)^2=\left( \frac{\delta \mathrm{N}^{\mathrm{SR}}_{\text{sideband}}}{\mathrm{N}^{\mathrm{SR}}_{\text{sideband}}}  \right)^2 + \left( \frac{\delta \mathrm{TF}}{\mathrm{TF}}  \right)^2,
+\end{equation}
+
+which results in
+
+\begin{equation}
+\delta \hat{b}^2=\hat{b}^2 \left[ \left( \frac{\delta \mathrm{N}^{\mathrm{SR}}_{\text{sideband}}}{\mathrm{N}^{\mathrm{SR}}_{\text{sideband}}}  \right)^2 + \left( \frac{\delta \mathrm{TF}}{\mathrm{TF}}  \right)^2 \right] .
+\end{equation}.
+
+The second point that needs to be addressed is which signal point or points are chosen to be optimised. Since each model point has yields a different signal event count $\hat{s}$, they will also produce different significance values. The final values chosen maximize a range of signal points on the edge of the exclusion limit. 
+
+The third and last point to address is what step size $\varepsilon$ to choose. If a step size too small is picked, as the BDT values are being scaned downwards from 1, there will be steps where no events are encountered either in the signal or the background due to the low statistics nature of the problem. Therefore, each signal event added will create a step upwards in the significance, while each background event will reduce it. This procedure will produce a very fine-tuned value which is not believed to be maximizing the significance, but rather it will produce wildly different results given a different set of events (from a different simulation set for example). To avoid overtraining, a step size of $\varepsilon=0.5$ was chosen since its behavior is regular in the sense that every step adds both signal and background events, while also maintaining granularity. 
+
+Lastly, after the most significant bin has been fixed, the remaining BDT range from 0 to the left edge of the significant bin is divided equally in order to pick up any sensitivity that might remain in those bins. For the dimuon category, the bin width is chosen as 0.1, while for the exclusive track categories, it is 0.05. The final signal regions are as follows:
+
+\begin{table}[hp]
+	\centering
+	\label{tab:signal-regions}
+		\caption{Signal Regions}
+		%\vspace{1mm}
+			\begin{tabular}{lcccc} \hline
+			Category & Flavor & Phase & SR & Signal Regions \\ \hline
+			Dilepton & Muons & all &  6 & $[0,0.1,0.2,0.3,0.4,0.5,1]$ \\
+			
+			Exclusive Track & Muons & 0 & 13 & $[0,0.05,0.1,0.15,0.2,\cdots,0.5,0.55,0.6,1]$ \\ 
+			Exclusive Track & Muons & 1 & 12 & $[0,0.05,0.1,0.15,0.2,\cdots,0.5,0.55,1]$ \\	
+			Exclusive Track & Electrons & all & 11 & $[0,0.05,0.1,0.15,0.2,\cdots,0.5,1]$ \\			
+			
+			\hline
+			\end{tabular}
+\end{table}

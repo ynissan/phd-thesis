@@ -81,7 +81,48 @@ The dimuon 2017 simulation BDT output, weighted to 2017 luminosity, both in log 
 
 \fxnote{Add jetty/tautau simulation plot}
 
-\subsubsection{Muon exclusive track category}
+\clearpage
+\subsubsection{Exclusive track category}
+
+As described before, there are four \glspl{bdt} in the exclusive track category, for each of the two lepton flavors there are two track phases. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6_log.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6.pdf} \\
+
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6_log.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6.pdf} \\
+
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6_log.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6.pdf} \\
+
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6_log.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_exTrack_dilepBDTCorrJetNoMultIso10Dr0.6.pdf} \\
+
+\caption[Exclusive track simulation BDT output]{Dimuon 2017 simulation BDT output in log scale (left) and linear scale (right).}
+\label{fig:exclusive-track-bdt-sim-output}
+\end{figure}
+
+The muon flavor in phase 1 is chosen to represent background composition in the exclusive track category in order to avoid repetition. Figure~\ref{fig:exclusive-track-muon-bdt-sim-inputs} shows the top eight input observables to the \gls{bdt}, ranked by importance for the training. It is weighted to 2017 luminosity and uses 2017 simulation. A few signal points are also plotted in order to point to the signal-like regions of phase space.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_leptonCorrJetNoMultIso10Dr0.6.Pt().pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_HT.pdf} \\
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_MHT.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_MinDeltaPhiMhtJets.pdf} \\
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_LeadingJetPt.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_NJets.pdf} \\
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_trackBDTCorrJetNoMultIso10Dr0.6_log.pdf} \,
+\includegraphics[width=0.48\linewidth]{plots/track_muon_bg_signal/none_abs(trackCorrJetNoMultIso10Dr0.6.Eta()).pdf} \\
+
+
+
+\caption[Exclusive track plus muon simulation BDT inputs]{Exclusive track plus muon 2017 simulation BDT inputs for the top 8 ranked observables.}
+\label{fig:exclusive-track-muon-bdt-sim-inputs}
+\end{figure}
+
 
 \clearpage
 \subsection{Estimation of the Standard Model backgrounds}
@@ -203,7 +244,9 @@ The exclusive track category required one fully identified lepton according to t
 
 To devise a successful data-driven background estimation for the exclusive track category we take advantage of the fact that the tracks in the background are independent of the identified lepton in the event. The selection process considered only tracks with opposite charge to the identified lepton, but if the track is independent of the lepton, events with a track of the same charge will be picked at the same rate as opposite charge ones. Not only is it expected to be selected at the same rate, but the shape of the \gls{bdt} output will also be blind to this choice, making it an excellent proxy to the opposite charge background.
 
-A \gls{cr} is defined by selecting same-charge lepton-track pair rather then opposite-charge as in the \gls{sr}. It is expected that the same charge \gls{cr} is consistent also by the normalization to the \gls{sr} since it is expected that these events are selected at the same rate of each other. Despite of this, the normalization is fixed by calculating a normalization factor as the ratio between the opposite-charge to same-charge event count in a dedicated normalization sideband \gls{cr} satisfying $\text{BDT} < 0$, and applying it to the same-charge event count in the \glspl{sr} satisfying $\text{BDT} > 0$. In order to test the independence assumption and to demonstrate the correct shape and normalization prediction, a closure test is performed in simulation. Figure~\ref{fig:ex-track-closure-tests} demonstrates closure tests for muons and electrons for both tracker phases. The stack represents standard model background for opposite-charge analysis selection lepton-track pair (oc), while the orange line represents same-charge lepton-track pair (sc). Both are weighted to represent each phase's luminosity. In the ratio panel, which shows the ratio between opposite-charge to same-charge backgrounds for each bin, an excellent shape agreement is demonstrated which supports the assumptions made above.
+A \gls{cr} is defined by selecting same-charge lepton-track pair rather then opposite-charge as in the \gls{sr}. It is expected that the same charge \gls{cr} is consistent also by the normalization to the \gls{sr} since it is expected that these events are selected at the same rate of each other. Despite of this, the normalization is fixed by calculating a normalization factor as the ratio between the opposite-charge to same-charge event count in a dedicated normalization sideband \gls{cr} satisfying $\text{BDT} < 0$, and applying it to the same-charge event count in the \glspl{sr} satisfying $\text{BDT} > 0$. In order to test the independence assumption and to demonstrate the correct shape and normalization prediction, a closure test is performed in simulation. Figure~\ref{fig:ex-track-closure-tests} demonstrates closure tests for muons and electrons for both tracker phases. The stack represents standard model background for opposite-charge analysis selection lepton-track pair (oc), while the orange line represents same-charge lepton-track pair (sc). Both are weighted to represent each phase's luminosity. In the ratio panel, which shows the ratio between opposite-charge to same-charge backgrounds for each bin, a shape agreement is demonstrated which supports the assumptions made above.
+
+After establishing that the method can be used to correctly predict the background, a data-driven normalization factor, which is computed as the ratio between opposite-charge to same-charge data event count in the \gls{cr} of $\text{BDT} < 0$. The final prediction in the \glspl{sr} then becomes the same-charge data event count in the \gls{sr} multiplied by the normalization factor. The computed normalization factor for phase 0 (2016) is $1.12\pm 0.044$ ($1.037\pm 0.05$) for muons (electrons), and for phase 1 (2017-2018) is $1.066\pm 0.024$ ($1.049\pm 0.03$) for muons (electrons). The relative errors on the normalization factors are between 2\% to 5\%.
 
 
 \begin{figure}[!htb]
