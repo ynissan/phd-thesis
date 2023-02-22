@@ -2,30 +2,30 @@
 \section{Event selection}
 \label{sec:event-selection}
 
-In the following section we detail the event level selection applied in this analysis. We have seen in~\ref{sec:search-strategy} that we refer to three categories in this analysis: dimuon category, and exclusive track category for each lepton flavor. We summarise the preselection in~\ref{sec:preselection}, then the selection that defines each category in~\ref{sec:category-selection}, and finally the multivariate selection for each category in~\ref{sec:event-bdt}.
+In the upcoming section, the event-level selection applied in this analysis will be described. As discussed in Section~\ref{sec:search-strategy}, three categories are used in this analysis: the dimuon category and exclusive track categories for each lepton flavor. The preselection is summarized in Section~\ref{sec:preselection}, followed by the selection that defines each category in section~\ref{sec:category-selection}. Finally, the multivariate selection for each category is discussed in Section~\ref{sec:event-bdt}.
 
 \subsection{Baseline selection}
 \label{sec:preselection}
 
-We have reviewed some of the base selection that is common to all categories in~\ref{tab:base-selection}. We reiterate reasons for these selections here in additional to other event level selections.
+In Section~\ref{tab:base-selection}, the base selection criteria that apply to all categories were reviewed. This section reiterates the reasons for these selections as well as describes other event-level selections.
 
 \begin{itemize}
 
-\item $\mht\geq220\GeV$ and $\MET \geq 140\GeV$ cuts intend to boost sensitivity by rejecting \gls{sm} background, as well as to operate in the acceptance regime of the MET trigger, as described in~\ref{sec:trigger}. It is especially efficient in rejecting \gls{qcd} background, since it does not produce real \MET. Any \MET apparent in \gls{qcd} is due to jet energy miss measurements. The reason we are cutting harder on \mht rather than \MET is that \mht sums jets with $\pt>30\GeV$ and is blind to objects with $\pt<30\GeV$. Since we rely in our background estimation on jets with \pt in the range of $[15,30]\GeV$, \mht is more appropriate than \MET since it does not introduce a bias in the data-driven background estimation methods. The two observables are highly correlated though, and describe similar physics.
+\item $\mht\geq220\GeV$ and $\MET \geq 140\GeV$ cuts are intended to boost sensitivity by rejecting \gls{sm} background and to operate in the acceptance regime of the MET trigger, as described in Section~\ref{sec:trigger}. These cuts are especially efficient in rejecting \gls{qcd} background, which does not produce real \MET. Any \MET apparent in \gls{qcd} is due to jet energy miss-measurements. The harder cut on \mht is made instead of \MET because \mht sums jets with $\pt>30\GeV$ and is blind to objects with $\pt<30\GeV$. Since background estimation relies on jets with \pt in the range of $[15,30]\GeV$, \mht is more appropriate than \MET and does not introduce bias in the data-driven background estimation methods. The two observables describe are highly correlated and describe similar physics.
 
-\item $\njets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) \geq 1$. We are requiring at least one jet in the event, since such an \gls{isr} jet gives a boost to the produced neutralino, thus increasing the missing transverse energy and with it the sensitivity.
+\item $\njets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) \geq 1$. At least one jet is required in the event because such an \gls{isr} jet gives a boost to the produced neutralino, thus increasing the missing transverse energy and the sensitivity of the analysis.
 
-\item $\nbjets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) = 0$. We are vetoing any \PQb-tagged jet. Our signal does not contain real \PQb-tagged jets. This veto is efficient in rejecting background from \ttbar, in which the \PQb quarks arise from a \PQt quark decay.
+\item $\nbjets \left( \pt \geq 30\GeV\, \mathrm{and}\, \abs{\eta} < 2.4 \right) = 0$. Any event with \PQb-tagged jet is vetoed since our signal does not contain real \PQb-tagged jets. This veto is efficient in rejecting background from \ttbar, in which the \PQb quarks arise from a \PQt quark decay.
 
-\item $\mindphimhtjets$  $ > 0.4$. Since we are requiring an \gls{isr} jet in the event, we expect the the \gls{mht} to point in the opposite direction of the jet, or at least in an angel close to $\pi$. Events with multiple jets in the \gls{sm} background such as arising from \gls{qcd} will not exhibit such a feature. Therefore this cut reduces \gls{qcd} background.
+\item $\mindphimhtjets$  $ > 0.4$. Requiring an \gls{isr} jet in the event leads to the expectation that the \gls{mht} should point in the opposite direction of the jet or at an angle close to $\pi$. Events with multiple jets in the \gls{sm} background, such as those arising from \gls{qcd}, will not exhibit such a feature. Therefore, this cut reduces the \gls{qcd} background.
 
-\item veto events with isolated loose-ID lepton having $\pt\geq 30\GeV$. Lepton can be either muon or electron. Our signal does not have high-\pt leptons, as we have seen in~\ref{sec:signal-signature}.
+\item veto events with isolated loose-ID lepton having $\pt\geq 30\GeV$. Lepton can be either muon or electron. The signal does not have high-\pt leptons, as has been seen in Section~\ref{sec:signal-signature}.
 
-\item $0.4<\mll<12 \GeV$. Our signal resides in an invariant mass window with an edge at the mass difference between \neutt and \neuto. This is a relatively loose cut that is expected to further be tightened by the boosted decision tree.
+\item $0.4<\mll<12 \GeV$. The signal resides in an invariant mass window with an edge at the mass difference between \neutt and \neuto. This is a relatively loose cut that is expected to be further tightened by the boosted decision tree.
 
 \end{itemize}
 
-We have already seen the object level selection in~\ref{sec:object-selection}. For the sake of completeness we reiterate them here. The electrons in the analysis require to pass the following selection (see also~\ref{sec:object-selection-electrons}):
+The object level selection has already been described in Section~\ref{sec:object-selection}. For the sake of completeness it is reiterated. The electrons in the analysis require are required to pass the following selection (also described in Section~\ref{sec:object-selection-electrons}):
 
 \begin{itemize}
 
@@ -36,7 +36,7 @@ We have already seen the object level selection in~\ref{sec:object-selection}. F
 
 \end{itemize}
 
-The muons in the analysis require to pass the following selection (see also~\ref{sec:muon-selection}):
+The muons in the analysis are required to pass the following selection (see also Section~\ref{sec:muon-selection}):
 
 \begin{itemize}
 
@@ -50,18 +50,18 @@ The muons in the analysis require to pass the following selection (see also~\ref
 \subsection{Category selection}
 \label{sec:category-selection}
 
-The analysis has two main categories: dilepton and exclusive track category. The dilepton category has two leptons, while the exclusive track category has a single lepton and a track that has not been identified as a lepton. The dilepton category includes only one flavor, namely muons, while the exclusive track category has both electrons and muons flavored leptons. Selection for the dilepton category is listed in~\ref{sec:dilepton-selection} and for the exclusive track category in~\ref{sec:exclusive-track-selection}.
+The analysis includes two main categories: the dilepton category and the exclusive track category. The dilepton category requires two fully-identified leptons, both of which are muons. In contrast, the exclusive track category includes a single lepton and a track that has not been identified as a lepton. Both electrons and muons are accepted as the single lepton in the exclusive track category. The selection criteria for the dilepton category are described in Section~\ref{sec:dilepton-selection}, while those for the exclusive track category are detailed in Section~\ref{sec:exclusive-track-selection}.
 
 \subsubsection{Dilepton selection}
 \label{sec:dilepton-selection}
 
-In the dilepton category we have two reconstructed and identified muons. The following lists the selections:
+In the dilepton category, the analysis requires two reconstructed and identified muons, and the following selections are applied (see also Section~\ref{sec:dilepton-selection}):
 
 \begin{itemize}
 
 \item $N_\mu = 2$ opposite charge passing the muons selection.
 \item $\pt(\mu_2)\leq 3.5\GeV$ or $\DR(\mu_1,\mu_2) < 0.3$. This requirement makes this analysis orthogonal to the \gls{sos} analysis~\cite{sos}.
-\item event level BDT cut of $\mathrm{BDT} > 0$. This is the main method of selecting signal events while rejecting the \gls{sm} background. See~\ref{sec:event-bdt} for details.
+\item event level BDT cut of $\mathrm{BDT} > 0$. This is the main method of selecting signal events while rejecting the \gls{sm} background. See Section~\ref{sec:event-bdt} for details.
 \item $\DR(\mu_{1,2},\text{leading jet}) > 0.4$. The leptons should not be inside the \gls{isr} jet.
 \item \PGo, $\PGr^0$ and \JPsi invariant mass vetoes. $\mll \notin [0.75,0.81]\GeV,\,\mll \notin [3,3.2]\GeV$.
 \end{itemize}
@@ -69,26 +69,26 @@ In the dilepton category we have two reconstructed and identified muons. The fol
 \subsubsection{Exclusive track selection}
 \label{sec:exclusive-track-selection}
 
-In the exclusive track category we have one reconstructed and identified lepton (either an electron or a muon) and an exclusive track, \ie, a track that does not match an identified lepton. The track in the event that is picked to act as the misidentified lepton is the one with the maximum score of the track \gls{bdt}~\ref{sec:track-bdt}. The following lists the selections:
+The exclusive track category requires one reconstructed and identified lepton, which can be either an electron or a muon, and an exclusive track, meaning a track that is not identified as a lepton. The track with the highest track \gls{bdt} score, as described in Section~\ref{sec:track-bdt}, is chosen to act as the misidentified lepton. The following lists the selections for this category:
 
 \begin{itemize}
 
 \item $N_\ell = 1$ lepton passing the muons selection.
 \item track picking BDT cut of $\mathrm{BDT} > 0$. See~\ref{sec:track-bdt}.
-\item event level BDT cut of $\mathrm{BDT} > 0$. This is the main method of selecting signal events while rejecting the \gls{sm} background. See~\ref{sec:event-bdt} for details.
+\item event level BDT cut of $\mathrm{BDT} > 0$. This is the main method of selecting signal events while rejecting the \gls{sm} background. See Section~\ref{sec:event-bdt} for details.
 \item $\DR(\ell,\text{leading jet}) > 0.4$. The lepton should not be inside the \gls{isr} jet.
 \end{itemize}
 
 \subsection{Boosted decision trees}
 \label{sec:event-bdt}
 
-In order to reject \glsreset{sm}\gls{sm} background, pick signal events and define \glsreset{sr} \glspl{sr}, in this analysis we employ multivariate method of type \glsreset{bdt}\gls{bdt}. For the dimuon category we train one  \gls{bdt}. For the exclusive track category we train a \gls{bdt} for each lepton flavor and also for the two phases of the tracker detector, \ie, phase 0 and phase 1. That makes five \glspl{bdt} overall.
+To reject \glsreset{sm}\gls{sm} background, select signal events, and define \glsreset{sr} \glspl{sr}, this analysis employs multivariate \glsreset{bdt}\glspl{bdt}. For the dimuon category, one \gls{bdt} is trained, while for the exclusive track category, a \gls{bdt} is trained for each lepton flavor and for the two phases of the tracker detector (phase 0 and phase 1), making a total of five \glspl{bdt}.
 
 All \glspl{bdt} use the same structure of 120 trees with a maximum depth of 3, with the TMVA package~\cite{tmva}. The \gls{bdt} training is performed with AdaBoost and GiniIndex separation. We are taking all other values as the defaults set by the TMVA package. 
 
-For the training we take tracks from a pool of our privately produced \FASTSIM signal simulations which were listed in~\ref{sec:signal-simulation} for the signal, and the standard model background simulation listen in~\ref{sec:sm-mc} for the background. For the exclusive track category, since we train for the different phases of the tracker detector, we use 2016 simulations of the signal and standard model background to represent phase 0, and the 2017 ones to represent phase 1. For the dimuon category we use only 2017 simulations to represent both phases with an added systematic uncertainty that results from this choice. 
+For training, tracks are taken from a pool of privately produced \FASTSIM signal simulations listed in Section~\ref{sec:signal-simulation} for the signal, and standard model background simulation listed in Section~\ref{sec:sm-mc} for the background. For the exclusive track category, simulations from 2016 and 2017 are used to represent phase 0 and phase 1 of the tracker, respectively. For the dimuon category, only 2017 simulations are used to represent both phases, with an added systematic uncertainty resulting from this choice.
 
-For the pool of our privately produced \FASTSIM signal simulations, we are selecting the full range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo in case of phase 1), but only the range of \dm we want to be most sensitive to. In phase 0, we select $\dmo\in [0.3,4.3]\GeV$ and $\mu\in [100-130]\GeV$. In phase 1 we select $\dmpm \in [0.3-4.6]\GeV$ and $\mu\in [100-500]\GeV$. The baseline selection listen in~\ref{sec:preselection} has been applied. A subset of the selections listed in~\ref{sec:dilepton-selection} and ~\ref{sec:exclusive-track-selection} is used for the training:
+For the pool of the privately produced \FASTSIM signal simulations, the full range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo in case of phase 1) is being selected, but only the range of \dm targeted by the analysis. For phase 0, $\dmo$ is selected in the range of [0.3, 4.3]\GeV and $\mu$ is selected in the range of [100-130]\GeV. For phase 1, $\dmpm$ is selected in the range of [0.3-4.6]\GeV and $\mu$ is selected in the range of [100-500]\GeV. The baseline selection described in Section~\ref{sec:preselection} has been applied, and a subset of the selections listed in Section~\ref{sec:dilepton-selection} and Section~\ref{sec:exclusive-track-selection} is used for training:
 
 \begin{itemize}
 
@@ -100,11 +100,11 @@ For the pool of our privately produced \FASTSIM signal simulations, we are selec
 
 \end{itemize}
 
-The training has been done without using \gls{mc} weights, since we found that it gives the result with the least amount of over training that arise due to high weighted \gls{mc} events. The training results in satisfactory performance since the kinematics of the low-\pt leptons is expected to look similar in all \gls{sm} background processes. In the following sections, this fact needs to be taken into account when we look at the training input variables distributions. These distributions are plotted as they are seen by the training algorithm, \ie, without \gls{mc} weights and with signal events taken from a pool of different parameter values as described above. Therefore, the ROC curves cannot be understood as a simple signal efficiency versus background rejection. Every \gls{bdt} output working point results in different signal efficiency depending on the signal parameters values. As we will see later on, we do not use one \gls{bdt} value with a simple cut and count, but rather we are binning the \glspl{sr} in \gls{bdt} output values. We therefore choose to plot the ROC curve with a default cut of 0.0 for the sake completeness. To fully estimate the power of the training, we need to look at the significance when each signal point has been properly weighted together with the \gls{sm} background processes. 
+The training was conducted without using \gls{mc} weights to avoid overtraining that can arise from high weighted \gls{mc} events. The training produced satisfactory results because the kinematics of low-\pt leptons are expected to be similar across all \gls{sm} background processes. When examining the training input variable distributions in the following sections, this fact must be taken into account. The distributions are plotted without \gls{mc} weights and with signal events taken from a pool of different parameter values as described above. Therefore, the ROC curves cannot be understood as a simple signal efficiency versus background rejection. Each \gls{bdt} output working point results in a different signal efficiency depending on the signal parameter values. As will be seen later, one does not use a single value of \gls{bdt} with a simple cut and count. Instead, the \glspl{sr} are binned according to \gls{bdt} output values. Therefore, the ROC curve is plotted with a default cut of 0.0 for the sake of completeness. To fully estimate the power of the training, one needs to consider the significance when each signal point has been properly weighted together with the background processes from the \gls{sm}.
 
 \subsubsection{Dimuon category}
 
-The training samples for the dimuons category contain 4350 signal events and 21842 background events. The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples, as well as the ROC curve, are seen in~\ref{fig:event-bdt-dimuon-output}. No significant over training is observed. 
+The training samples for the dimuons category contain 4350 signal events and 21842 background events. The training samples are then tested against test samples of the same size. The distributions of the testing samples overlay on the training samples, as well as the ROC curve, as shown in Figure~\ref{fig:event-bdt-dimuon-output}. No significant overtraining is observed.
 
 \begin{figure}[!htb]
 \centering
@@ -116,7 +116,7 @@ The training samples for the dimuons category contain 4350 signal events and 218
 \label{fig:event-bdt-dimuon-output}
 \end{figure}
 
-The training uses 18 different variable listed in~\ref{tab:dimuon-bdt-variables} in decreasing order of importance ranking.
+The training uses 18 different variable listed in Table~\ref{tab:dimuon-bdt-variables} in decreasing order of importance ranking.
 
 \begin{table}[!htb]
 	\centering
@@ -149,7 +149,7 @@ The training uses 18 different variable listed in~\ref{tab:dimuon-bdt-variables}
 			\end{tabular}
 \end{table}
 
-Distributions of the input variables to the \gls{bdt} training can be seen in~\ref{fig:dimuon-input-distributions}. As mentioned before, the signal is taken from a pool of a range of model points, and events are not weighted to any luminosity or cross section in order to avoid over training. 
+Distributions of the input variables to the \gls{bdt} training can be seen in Figure~\ref{fig:dimuon-input-distributions}. As mentioned before, the signal is taken from a pool of a range of model points, and events are not weighted to any luminosity or cross section in order to avoid over training. 
 
 \begin{figure}[!htb]
 \centering
@@ -183,7 +183,7 @@ Distributions of the input variables to the \gls{bdt} training can be seen in~\r
 \clearpage
 \subsubsection{Exclusive track category}
 
-The training samples in phase 0 for the exclusive  category contain 7863 (1750) signal events and 55765 (29135) background events for muons (electrons) flavor. For phase 1,  the exclusive  category contain 5266 (1332) signal events and 51308 (31149) background events for muons (electrons) flavor. The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples are seen in~\ref{fig:event-bdt-ex-track-output}. No significant over training is observed. The ROC curves are seen in~\ref{fig:event-bdt-ex-track-roc}.
+The training samples in phase 0 for the exclusive  category contain 7863 (1750) signal events and 55765 (29135) background events for muons (electrons) flavor. For phase 1,  the exclusive  category contain 5266 (1332) signal events and 51308 (31149) background events for muons (electrons) flavor. The training samples are then tested against the test samples of equal size. The distributions of the testing samples overlay on the training samples are seen in Figure~\ref{fig:event-bdt-ex-track-output}. No significant over training is observed. The ROC curves are seen in Figure~\ref{fig:event-bdt-ex-track-roc}.
 
 \begin{figure}[!htb]
 \centering
@@ -209,7 +209,7 @@ The training samples in phase 0 for the exclusive  category contain 7863 (1750) 
 \label{fig:event-bdt-ex-track-roc}
 \end{figure}
 
-The training uses 18 different variables listed in Table~\ref{tab:extrack-bdt-variables} in decreasing order of importance ranking. Since the ranking is slightly different in the four trainings, we choose here to list the order in the case of the muons of phase 1. We denote the fully identified lepton as $\ell$ and the non-identified lepton track as $t$.
+The training uses 18 different variables listed in Table~\ref{tab:extrack-bdt-variables} in decreasing order of importance ranking. Since the ranking is slightly different in the four trainings, the order in the case of the muons of phase 1 is chosen to be listed here. The fully identified lepton is denoted as $\ell$ and the non-identified lepton track as $t$.
 
 \begin{table}[!htb]
 	\centering
@@ -238,7 +238,7 @@ The training uses 18 different variables listed in Table~\ref{tab:extrack-bdt-va
 			\end{tabular}
 \end{table}
 
-Distributions of the input variables to the \gls{bdt} training can be seen in~\ref{fig:extrack-input-distributions}. As mentioned before, the signal is taken from a pool of a range of model points, and events are not weighted to any luminosity or cross section in order to avoid over training. In the following sections we will look at fully weighted distributions in order to asses the performance of the training for different model points and to understand the different components of the standard model background and how to estimate it properly.
+Distributions of the input variables to the \gls{bdt} training can be seen in Figure~\ref{fig:extrack-input-distributions}. As mentioned before, the signal is taken from a pool of a range of model points, and events are not weighted to any luminosity or cross section in order to avoid over training. In the following sections we fully weighted distributions will be shown in order to asses the performance of the training for different model points and to understand the different components of the standard model background and how to estimate it properly.
 
 \begin{figure}[!htb]
 \centering
