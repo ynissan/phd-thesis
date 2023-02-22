@@ -3,35 +3,35 @@
 \subsection{Scale factors}
 \label{sec:scale-factors}
 
-In~\ref{sec:object-selection-electrons} and~\ref{sec:muon-selection} we have studied the selection we apply to electrons and muons respectively. We have therewith made a choice about identification working point. We have used simulation exclusively to draw conclusions about the identification efficiency of the leptons. If we rely on \gls{mc} simulation,  that will produce large systematic errors due to imperfections in modeling both the data and the detector response. We therefore wish to measure the identification efficiency in data, in order to correct the simulation's potentially false efficiency rate. \emph{Efficiency} is defined as how probable it is to reconstruct or identify a lepton. For a lepton $\ell$ the identification efficiency is defined as:
+In Section~\ref{sec:object-selection-electrons} and Section~\ref{sec:muon-selection}, the selection applied to electrons and muons respectively was studied, and a choice was made regarding the identification working point. Simulation was exclusively used to draw conclusions about the identification efficiency of the leptons. However, relying solely on \gls{mc} simulation can produce significant systematic errors due to imperfections in modeling both the data and the detector response. Therefore, measuring the identification efficiency in data is necessary to correct any potentially false efficiency rates in the simulation. The term \emph{efficiency} refers to the probability of reconstructing or identifying a lepton. For a lepton $\ell$, the identification efficiency is defined as:
 
 \begin{equation}
 \varepsilon_{\ell}^{\mathrm{ID}} = \frac{N_{\ell}(\mathrm{ID})}{N_{\ell}(\mathrm{produced})}
 \end{equation}
 
-In \gls{mc} simulation, the number of leptons produced is the same as the number of leptons generated. In data, one must measure it using a data-driven method. Once the efficiencies have been measured both in simulation and in data, a correction factor named \gls{sf} can be applied to the simulation in order to correct for any discrepancies that might arise. The scale factors are defined as the ratio between the efficiency in data to the efficiency in simulation:
+In \gls{mc} simulation, the number of produced leptons is the same as the number of generated leptons. However, in data, the efficiency must be measured using a data-driven method. Once the efficiencies have been measured both in simulation and data, a correction factor called the \gls{sf} can be applied to the simulation to correct any discrepancies that may arise. Scale factors are defined as the ratio between the efficiency in data and the efficiency in simulation:
 
 \begin{equation}
 \mathrm{SF}_{\ell}^{\mathrm{ID}}=\frac{\varepsilon_{\ell}^{\mathrm{ID,Data}}}{\varepsilon_{\ell}^{\mathrm{ID,MC}}},
 \end{equation}
 
-dropping the superscript ID we get:
+dropping the superscript ID, this becomes:
 
 \begin{equation}
 \mathrm{SF}_{\ell}=\frac{\varepsilon_{\ell}^{\mathrm{Data}}}{\varepsilon_{\ell}^{\mathrm{MC}}}.
 \end{equation}
 
-Once the relevant \gls{sf} have been determined, they are applied for every lepton passing the object selection in the event. The scale factors for loose-ID electrons in our \pt range have been measured centrally by the relevant working group and are applied to the selected electrons. As was determined in~\ref{sec:muon-selection}, our analysis signal muon's lower \pt threshold is $2\GeV$ which is low. Scale factors for medium ID leptons with $\pt\geq 2\GeV$ were computed centrally by the Muon \gls{pog}. The scale factors, however, while matching our muons' \pt range and identification working point, were computed by requiring $\DR > 0.5$  between the muons~\cite{muon-id-sf-2016,muon-id-sf-2016-pres}. As we have seen in~\ref{sec:lepton-dr}, one of are drivers of the sensitivity is the region of $\DR < 0.5$. We would therefore like to validate the scale factors in that region. We would like to show that the efficiencies have no $\DR$ dependence, and in order to do so, we calculate the efficiencies in different $\DR$ regions.
+Once the relevant \gls{sf} have been determined, they are applied to every lepton that passes the object selection in the event. The scale factors for loose-ID electrons in the relevant \pt range have been centrally measured by the corresponding working group and are applied to the selected electrons. As determined in Section~\ref{sec:muon-selection}, the analysis signal muon's lower \pt threshold is $2\GeV$, which is low. Scale factors for medium ID leptons with $\pt\geq 2\GeV$ were computed centrally by the Muon \gls{pog}. However, the scale factors were computed by requiring $\DR > 0.5$ between the muons, as mentioned in~\cite{muon-id-sf-2016,muon-id-sf-2016-pres}, and while they match the muons' \pt range and identification working point, $\DR < 0.5$ is one of the drivers of sensitivity, as seen in Section~\ref{sec:lepton-dr}. Therefore, it is necessary to validate the scale factors in that region and show that the efficiencies have no $\DR$ dependence. To do so, the efficiencies in different $\DR$ regions are calculated.
 
-In order to measure such efficiencies in data, one must identify desired leptons with low and easily reducible fakes. A widely used method to perform such a data-driven task is the Tag \& Probe method. In the Tag \& Probe method we examine a mass resonance such as \PZ, \JPsi or \PGU to select particles of the desired type, and probe the efficiency of a particular selection criterion on those particles. The mass resonance will then decay into two same-flavor opposite charged pair of leptons and will form a peak on top of a background. Since we are interested in measuring the efficiency of low \pt muons, we choose to look at dimuon events around the \JPsi mass window. In a dimuon event, we describe one muon as a `tag' and the other as a `probe'. The tag muon is selected with a very tight selection which results in very high certainty that the object corresponds to a real muon produced. The probe is given a loose selection, but since it is constrained to be consistent with a product of a \JPsi, it is almost certain that it originates from a real muon too. Since the shape of the \JPsi is a peak over a background, the background is easily removed by a fit. The probe is then subjected to cuts or constraints which are used to measure a particular efficiency. As stated, in this study we want to show that the efficiency to identify a muon with medium ID working point from a track has no $\DR$ depandance. Therefore, the efficiency we are looking for is defined as:
+In order to measure such efficiencies in data, one must identify desired leptons with low and easily reducible fakes. A widely used method to perform such a data-driven task is the Tag \& Probe method. This involves examining a mass resonance such as \PZ, \JPsi or \PGU to select particles of the desired type, and probing the efficiency of a particular selection criterion on those particles. The mass resonance then decays into two same-flavor opposite charged pairs of leptons, forming a peak on top of a background. To measure the efficiency of low \pt muons, dimuon events around the \JPsi mass window are chosen. One muon is labeled as a `tag' and the other as a `probe'. The tag muon is selected with a very tight selection resulting in high certainty that the object corresponds to a real produced muon. The probe is given a loose selection but constrained to be consistent with a product of a \JPsi, almost certainly originating from a real muon as well. The background is easily removed by fitting the shape of the \JPsi. The probe is then subjected to cuts or constraints, used to measure a particular efficiency. This study aims to show that the efficiency to identify a muon with a medium ID working point from a track has no $\DR$ dependence. Therefore, the efficiency in question is defined as:
 
 \begin{equation}
 \varepsilon_{\mu}^{\mathrm{ID}} = \frac{N_{\mu}^\mathrm{ID}}{N_{t}}.
 \end{equation}
 
-The probe we are using in the denominator is a track passing a loose selection, while the probe track in the numerator is required to match a medium ID working point muon. The number of objects passing a selection is determined by a fit to data and \gls{mc}, to measure the corresponding efficiencies in data and \gls{mc}.
+The denominator probe used in the study refers to a track that has passed a loose selection, while the numerator probe track is required to match a medium ID working point muon. To determine the number of objects passing a selection, a fit is performed on data and \gls{mc} samples to measure the corresponding efficiencies.
 
-This study is done for year 2016. For the \gls{mc}, we are using the 2016 samples listed in~\ref{sec:sm-mc}. For data, we are  using a single electron trigger, in order for the tagged muon to be independent from the triggered object. The data set is measured to correspond to 36.02\fbinv using the BRIL Work Suite~\cite{bril}. The following trigger paths are used:
+This study was conducted for the year 2016. The 2016 samples listed in Section~\ref{sec:sm-mc} are used for \gls{mc}. To ensure the independence of the tagged muon from the triggered object, a single electron trigger is used for data. The corresponding data set is measured to be 36.02\fbinv using the BRIL Work Suite~\cite{bril}. The following trigger paths are utilized:
 
 \begin{itemize}
 \item \texttt{HLT\_Ele27\_WPTight\_Gsf\_v*},
@@ -40,7 +40,7 @@ This study is done for year 2016. For the \gls{mc}, we are using the 2016 sample
 \item \texttt{HLT\_Ele35\_WPTight\_Gsf\_v*}.
 \end{itemize}
 
-We then select an offline loose ID electron with $\pt>27\GeV$. The requirements to select a tag \& probe pair are defined in table~\ref{tab:tag-probe-def}.
+An offline loose ID electron with $\pt>27\GeV$ is then selected. The requirements to select a tag \& probe pair are defined in Table~\ref{tab:tag-probe-def}.
 
 \begin{table}[!htb]
 	\centering
@@ -55,7 +55,7 @@ We then select an offline loose ID electron with $\pt>27\GeV$. The requirements 
 			\end{tabular}
 \end{table}
 
-A fit is then performed in an invariant mass window around the \JPsi window of $[2.5,3.5]\GeV$. The signal fit is using a crystal ball function and the continuum is fit with a 6th order polynomial. The fit is repeated twice, where the denominator is done with probe tracks, and the numerator is using medium ID muons that have been matched to said tracks. The \DR~range has been split into 3, and $\abs{\eta}$ of the muons has been split into barrel ($\abs{\eta}<1.2$) and endcaps ($1.2<\abs{\eta}<2.4$). Simulation fits are shown in~\ref{fig:tb-barrel-simulation} for barrel, and~\ref{fig:tb-endcaps-simulation} for endcaps. Data fits are shown in~\ref{fig:tb-barrel-data} for barrel, and~\ref{fig:tb-endcaps-data} for endcaps.
+A fit is then performed in an invariant mass window around the \JPsi peak of $[2.5,3.5]\GeV$. The signal fit uses a crystal ball function, and the continuum is fit with a 6th order polynomial. The fit is repeated twice, where the denominator is based on probe tracks, and the numerator uses medium ID muons that have been matched to those tracks. The \DR range has been split into three, and the $\abs{\eta}$ of the muons has been divided into barrel ($\abs{\eta}<1.2$) and endcaps ($1.2<\abs{\eta}<2.4$). Simulation fits are shown in Figure~\ref{fig:tb-barrel-simulation} for the barrel, and Figure~\ref{fig:tb-endcaps-simulation} for the endcaps. Data fits are shown in Figure~\ref{fig:tb-barrel-data} for the barrel, and in Figure~\ref{fig:tb-endcaps-data} for the endcaps.
 
 \begin{figure}[!htbp]
 \centering
@@ -105,7 +105,7 @@ A fit is then performed in an invariant mass window around the \JPsi window of $
 \label{fig:tb-endcaps-data}
 \end{figure}
 
-The efficiencies and corresponing scale factors can be seen in ~\ref{fig:tb-eff-sf}. The scale factors are statistically consistent with unity, and show no discernible $\DR$ dependence. A similar study has been carried out with simulation and data for 2017 and 2018 in~\cite{muon-id-sf-2017-8} and did not observe a $\DR$ dependence either. The recommendation from the \gls{pog} as a results of these studies are to use the calculated scale factors provided by them with an additional systematic of 1\% for muons with $\pt<20\GeV$.
+The efficiencies and corresponding scale factors can be seen in Figure~\ref{fig:tb-eff-sf}. The scale factors are statistically consistent with unity and show no discernible $\DR$ dependence. A similar study was carried out with simulation and data for 2017 and 2018 in~\cite{muon-id-sf-2017-8}, and no $\DR$ dependence was observed either. As a result of these studies, the recommendation from the \gls{pog} is to use the calculated scale factors provided by them with an additional systematic uncertainty of 1\% for muons with $\pt<20\GeV$.
 
 \begin{figure}[!htbp]
 \centering
