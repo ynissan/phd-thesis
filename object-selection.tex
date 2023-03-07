@@ -2,51 +2,47 @@
 \section{Object definition and selection}
 \label{sec:object-selection}
 
-In Section~\ref{sec:reconstruction-and-identification}, the reconstruction and identification of objects in the detector were presented. Additionally, the signal signature was studied in Section~\ref{sec:signal-signature}. In this section, an object selection is devised to obtain a sample of objects that is as pure as possible with respect to the target leptons, while still retaining as much signal as possible. As discussed in Section~\ref{sec:search-strategy}, the focus is on selecting opposite-charged, same-flavor leptons \ellell resulting from the \neutt that decays into a \neuto via a \PZstar, \ie, \neuttdecay. Two choices of \gls{dmo} are presented in the following section: a relatively high \gls{dmo} of $\dmo=5.63\GeV$ and a low \gls{dmo} of $\dmo=1.92\GeV$, but not so low as to prevent enough electrons from surviving the initial reconstruction \pt threshold of $5\GeV$. The higgsino parameter is fixed at $\mu=100\GeV$.
+In Section~\ref{sec:reconstruction-and-identification}, the reconstruction and identification of objects in the detector were presented. Additionally, the signal signature was studied in Section~\ref{sec:signal-signature}. In this section, a set of object selection criteria is devised to obtain a sample that is as pure as possible with respect to the signal leptons, while still retaining as much signal as possible. As discussed in Section~\ref{sec:search-strategy}, the focus is on selecting opposite-charge, same-flavor leptons \ellell resulting from the \neutt that decays into a \neuto and a \PZstar, \ie, \neuttdecay. Two choices of \gls{dmo} are presented in the following section: a relatively high \gls{dmo} of $\dmo=5.63\GeV$ and a low \gls{dmo} of $\dmo=1.92\GeV$, but not so low as to prevent enough electrons from surviving the initial reconstruction \pt threshold of $5\GeV$. The higgsino parameter is fixed at $\mu=100\GeV$.
 
-In Section~\ref{sec:signal-signature}, the base selection required at least one jet in the event with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$, without any other selections. However, unlike in that section, objects are not weighted to any luminosity in this section, as the focus is on the proportion between object types. Two types of leptons are differentiated: those originating from the targeted decay \neuttdecay, shown in blue, and those that do not, referred to as \emph{other}, shown in yellow. Signal leptons are marked as such by matching a reconstructed lepton to a generator level lepton, which has been confirmed to have the \neutt as its parent. Leptons marked as \emph{other} may have been misreconstructed, misidentified, or may be a result of the hadronisation process in a jet (such as the \gls{isr} jet). The goal is to select as many blue leptons as possible while rejecting as many yellow ones as possible. In the following sections, the term \emph{efficiency} refers to the proportion of signal leptons passing a selection, divided by the initial number of signal leptons, and the term \emph{purity} refers to the proportion of signal leptons (blue) to the sum of the signal leptons and \emph{other} leptons (yellow). In other words, the goal is to find a selection with high efficiency and high purity. However, these two quantities can sometimes compete with each other, requiring compromises.
+In Section~\ref{sec:signal-signature}, the base selection required at least one jet in the event with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$, without any other selection. However, unlike in that section, objects are not weighted to any luminosity in this section, as the focus is on the proportion between object types. Two types of reconstructed leptons are differentiated: those originating from the targeted decay \neuttdecay, shown in blue, and those that do not, referred to as \emph{other}, shown in yellow. Signal leptons are marked as such by matching a reconstructed lepton to a generator level lepton, which has been confirmed to have the \neutt as its parent. Leptons marked as \emph{other} may have been misreconstructed, misidentified, or may be a result of the hadronisation process in a jet (such as the \gls{isr} jet). The goal is to select as many blue leptons as possible while rejecting as many yellow ones as possible.
+
+In the following sections, the term \emph{efficiency} refers to the proportion of signal leptons passing a selection, divided by the initial number of signal leptons, and the term \emph{purity} refers to the proportion of signal leptons (blue) to the sum of the signal leptons and \emph{other} leptons (yellow). The goal is to find selection criteria with high efficiency and high purity. However, these two quantities can sometimes compete with each other, requiring compromises.
 
 \subsection{Electrons}
 \label{sec:object-selection-electrons}
 %\subsubsection{Signal electron selection}
 
-The electrons are subject to an initial reconstruction \pt threshold of $5\GeV$, and are reconstructed using a loose working point, as described in Section~\ref{sec:reconstruction-and-identification}. The first distribution of interest regarding the electrons is their spatial separation from the leading jet in the event, denoted as $\DR(\jmath_1,\Pe)$. The distributions can be seen in Figure~\ref{fig:electrons-dr-lj}.
+The electrons are subject to an initial lower threshold on the reconstructed \pt $5\GeV$, and are reconstructed using a loose \gls{wp}, as described in Section~\ref{sec:reconstruction-and-identification}. The first distribution of interest regarding the electrons is their angular separation from the leading jet in the event, denoted as $\DR(\jmath_1,\Pe)$. The distributions are shown in Figure~\ref{fig:electrons-dr-lj}. Two key features are apparent. The first has already been discussed in Section~\ref{sec:signal-signature}, which is that probing lower \gls{dm} necessitates access to low \gls{pt} leptons. The threshold of $\pt\geq 5\GeV$ on the electrons leads to reduced signal acceptance. This is evident from the difference between the high and low \gls{dm} cases. The second interesting feature is that the signal electrons are predominantly located outside the leading jet. This is because the leading jet is typically an \gls{isr} jet, which boosts the \tchiz system away from it, causing them to be back-to-back. Thus, a cut of $\DR(\jmath_1,\Pe)>0.4$ is made to account for this.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_rlj.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_rlj.pdf}  \\
-\caption[Spatial seperation between reconstructed electrons and the leading jet $\DR(\jmath_1,\Pe)$]{Spatial seperation between reconstructed electrons with loose ID and the leading jet $\DR(\jmath_1,\Pe)$ for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right).}
+\caption[Angular seperation between reconstructed electrons and the leading jet $\DR(\jmath_1,\Pe)$]{Angular separation between reconstructed electrons with loose ID and the leading jet $\DR(\jmath_1,\Pe)$ for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right).}
 \label{fig:electrons-dr-lj}
 \end{figure}
 
-The plots in Figure~\ref{fig:electrons-dr-lj} reveal two key features. The first one has already been discussed in Section~\ref{sec:signal-signature}, which is that probing lower \gls{dm} necessitates access to low \gls{pt} leptons. Therefore, the threshold of $\pt\geq 5\GeV$ on the electrons leads to reduced signal acceptance. This is evident from the difference between the high and low \gls{dm} cases. The second interesting feature is that the signal electrons are predominantly located outside the leading jet. This is because the leading jet is typically an \gls{isr} jet, which boosts the \tchiz system away from it, causing them to be back-to-back. Thus, a cut of $\DR(\jmath_1,\Pe)>0.4$ is made to account for this.
-
-In this step, the \gls{pt} distributions of electrons are examined by applying the $\DR(\jmath_1,\Pe)>0.4$ cut. It is observed that the \gls{pt} distribution depends heavily on the \gls{dm}, which has been previously demonstrated for muons in Section~\ref{sec:muon-eta-pt}. While the distributions in that section were plotted using generator level muons, the \gls{pt} distributions for electrons follow the same trend. Thus, a choice must be made regarding which \gls{dm} to prioritize, and the lower \gls{dm} case is chosen for increased sensitivity. However, the two choices are compared in Figure~\ref{fig:electrons-selection-pt}.
+Distributions of electron \gls{pt} are examined by applying the $\DR(\jmath_1,\Pe)>0.4$ cut. It is observed that the \gls{pt} distribution depends strongly on the \gls{dm}, as previously seen for muons in Section~\ref{sec:muon-eta-pt}. Thus, a choice must be made regarding which \gls{dm} to prioritize, and the lower \gls{dm} case is chosen for increased sensitivity. However, the two choices are compared in Figure~\ref{fig:electrons-selection-pt}. As expected, the \pt distribution of the electrons falls more rapidly for the low \dm case. It is observed that there are very few electrons surviving above $15\GeV$. Therefore, a cut of $\pt<15\GeV$ is chosen. The $\eta$ distribution is seen in Figure~\ref{fig:electrons-selection-eta}, after the previous cuts to gain a better understanding of where most of the non-signal electrons originate from. For the $\dm=1.92\GeV$ case, it can be clearly seen that the endcaps of the \gls{ecal} are performing worse compared to the barrel ($\abs{\eta}<1.48$). The transition is easily noticeable through a sharp drop in purity at the transition. This effect is most pronounced for low-\pt electrons.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_pt.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_pt.pdf}  \\
-\caption[\pt distribution of reconstructed electrons with loose ID]{ \pt distribution of reconstructed electrons with loose ID for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). Cut of $\DR(\jmath_1,\Pe)>0.4$ applied.}
+\caption[Distribution of reconstructed electron \pt with loose ID]{Distribution of reconstructed electron \pt with loose ID for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). A cut of $\DR(\jmath_1,\Pe)>0.4$ is applied.}
 \label{fig:electrons-selection-pt}
 \end{figure}
-
-As expected, the \pt distribution of the electrons falls more rapidly for the low \dm case. It is observed that there are hardly any electrons surviving above $15\GeV$. Therefore, a cut of $\pt<15\GeV$ is chosen.
-
-The $\eta$ distribution is interesting to look at, as seen in Figure~\ref{fig:electrons-selection-eta}, after the previous cuts to gain a better understanding of where most of the non-signal electrons originate from.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_eta.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_eta.pdf}  \\
-\caption[\abs{\eta} distribution of reconstructed electrons with loose ID]{ \abs{\eta} distribution of reconstructed electrons with loose ID for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). Cuts of $\DR(\jmath_1,\Pe)>0.4$ and $\pt<15\GeV$ are applied.}
+\caption[Distributions of \abs{\eta} of reconstructed electrons with loose ID]{ Distributions of \abs{\eta} of reconstructed electrons with loose ID for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). Cuts of $\DR(\jmath_1,\Pe)>0.4$ and $\pt<15\GeV$ are applied.}
 \label{fig:electrons-selection-eta}
 \end{figure}
 
-For the $\dm=1.92\GeV$ case, it can be clearly seen that the endcaps of the \gls{ecal} are performing worse compared to the barrel ($\abs{\eta}<1.48$). The transition is easily noticeable through a sharp drop in purity at the transition. It is even worse for low-\pt electrons than for higher-\pt ones.
+To determine whether a tighter \gls{wp} for the electron-identification is beneficial, the effects of requiring either a Medium or a Tight \gls{wp} are investigated. The \gls{wp} previously used in the distributions is the loose \gls{wp}. Two bins labeled \emph{fail} and \emph{pass} indicate the frequency with which the electron fails or passes the identification criteria of Medium or Tight \glspl{wp}. These bins are shown in Figure~\ref{fig:electrons-selection-id}. A considerable fraction of non-signal electrons are rejected in the low \dm case by picking either a Medium or Tight \gls{wp}, but a significant number of signal electrons are also lost. Therefore, using these selections is not very efficient and results in low signal acceptance. The decision is made to use a loose \gls{wp} for the electrons, and instead rely on isolation to achieve higher purity.
 
-To determine whether a tighter working point for the electron-identification is beneficial, the effects of requiring either a medium or a tight working point are investigated. The working point previously used in the distributions is the loose working point. Two bins labeled \emph{fail} and \emph{pass} are plotted to correspond to whether the electron fails or passes the identification criteria of medium or tight working points. These bins are shown in Figure~\ref{fig:electrons-selection-id}.
+The effect of isolation on the purity of the electrons is also examined. The jet-based isolation is discussed in detail in Section~\ref{sec:isolation}, but for the sake of completeness, its effect on the purity of the electrons is also shown here. The custom jet-based isolation is compared with the standard definition of lepton isolation, which does not take into account the possibility that two electrons can be produced with a small angle of separation (small \DR), as is the case for signal models with small \dm. The isolation distributions are shown in Figure~\ref{fig:electrons-selection-isolation}.
 
 \begin{figure}[!htb]
 \centering
@@ -54,11 +50,9 @@ To determine whether a tighter working point for the electron-identification is 
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_medium.pdf}  \\
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_tight.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_tight.pdf}  \\
-\caption[medium and tight ID working points distribution of reconstructed electrons]{Medium (top) and tight (bottom) ID working points distributions of reconstructed electrons for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). Cuts of $\DR(\jmath_1,\Pe)>0.4$ and $\pt<15\GeV$ are applied.}
+\caption[Medium and Tight ID \glspl{wp} distribution of reconstructed electrons]{Medium (top) and Tight (bottom) ID \glspl{wp} distributions of reconstructed electrons for $\dm=5.63\GeV$ (left) and $\dm=1.92\GeV$ (right). Cuts of $\DR(\jmath_1,\Pe)>0.4$ and $\pt<15\GeV$ are applied to the electrons.}
 \label{fig:electrons-selection-id}
 \end{figure}
-
-Selecting a medium or a tight working point is equivalent to choosing the relevant right \emph{pass} bin (top for medium, bottom for tight), and rejecting the electrons on the left \emph{fail} bin. It can be seen that considerable amount of non-signal electrons are rejected in the low \dm case by picking either a medium or tight working points, but a significant number of signal electrons are also lost. Therefore, using these selections is not very efficient and results in low signal acceptance. A decision is made to use a loose working point for the electrons, and instead rely on isolation to achieve higher purity. The effect of isolation on the purity of the electrons is therefore also examined. The jet-isolation is discussed in detail in Section~\ref{sec:isolation}, but for the sake of completeness, its effect on the purity of the electrons is also shown here. The custom jet-isolation is compared with the standard definition of lepton isolation, which does not take into account the possibility that two electrons can be produced close to each other (small \DR), as is the case in the signal. The isolation distributions are shown in Figure~\ref{fig:electrons-selection-isolation}.
 
 \begin{figure}[!htb]
 \centering
@@ -70,7 +64,7 @@ Selecting a medium or a tight working point is equivalent to choosing the releva
 \label{fig:electrons-selection-isolation}
 \end{figure}
 
-It is observed that the standard lepton isolation is not efficient for both \dm cases, while the custom jet-isolation performs well in terms of signal electron efficiency and successfully rejects a considerable amount of non-signal electrons. This results in a purer sample of electrons, and thus the choice of custom jet-isolation is concluded to be favorable. The effect of this choice on the $\eta$ distribution is also examined in Figure~\ref{fig:electrons-selection-eta-jet-iso}, concluding the selection of electrons.
+The standard lepton isolation is not efficient for both \dm cases, while the custom jet-isolation performs well in terms of signal electron efficiency and successfully rejects a considerable amount of non-signal electrons. This results in a purer sample of electrons, and thus the choice of custom jet-isolation is concluded to be favorable. The effect of this choice on the $\eta$ distribution is also examined in Figure~\ref{fig:electrons-selection-eta-jet-iso}, concluding the selection of electrons. The custom jet-isolation optimally purifies the electron sample while retaining a high signal efficiency, compared to distributions in Figure~\ref{fig:electrons-selection-eta}.
 
 \begin{figure}[!htb]
 \centering
@@ -80,16 +74,14 @@ It is observed that the standard lepton isolation is not efficient for both \dm 
 \label{fig:electrons-selection-eta-jet-iso}
 \end{figure}
 
-Distributions in Figure~\ref{fig:electrons-selection-eta-jet-iso} show that the custom jet-isolation has further purified the electron selection while retaining signal electrons, compared to distributions in Figure~\ref{fig:electrons-selection-eta}.
-
-To summarize this section, the following is the full selection of the analysis electrons:
+In summary, the following is the full set of selection criteria the analysis electrons:
 
 \begin{itemize}
-\item $5<\pt<15\GeV$
-\item $\abs{\eta} < 2.5$
-\item $\DR(\jmath_1,\Pe)>0.4$
-\item loose ID working point
-\item pass jet-isolation
+\item $5<\pt<15\GeV$;
+\item $\abs{\eta} < 2.5$;
+\item $\DR(\jmath_1,\Pe)>0.4$;
+\item loose ID \gls{wp};
+\item pass jet-isolation.
 \end{itemize}
 
 \clearpage
@@ -97,7 +89,7 @@ To summarize this section, the following is the full selection of the analysis e
 \subsection{Muons}
 \label{sec:muon-selection}
 
-In contrast to electrons, the initial reconstruction \pt threshold for muons is not set to $5\GeV$. Hence, the possibility of lowering the \pt threshold as much as possible is explored. This was motivated in section~\ref{sec:muon-eta-pt} where it was observed that the lower the \dm to be probed, the lower the \pt threshold has to be. Similarly to the electrons case, the initial working point choice for reconstructed muons is loose (see~\ref{sec:reconstruction-and-identification}). A similar procedure to the electron case is followed. The spatial separation of muons from the leading jet in the event, $\DR(\jmath_1,\mu)$, is the first distribution examined. As shown in Figure~\ref{fig:signal-pt-barrel-endcaps}, the muon endcaps are capable of reconstructing muons with $\pt<3\GeV$ while the barrel cannot. Therefore, it makes sense to look at a split view of barrel and endcaps for the following distributions at~\ref{fig:muons-dr-lj}.
+The \pt threshold for reconstructed muons is significantly lower than that of electrons, making this channel particularly promising in terms of signal acceptance for low \dm models. As was the case for electrons, the initial \gls{wp} choice for reconstructed muons is loose (more information in~\ref{sec:reconstruction-and-identification}), and an analogous procedure is now followed for muons. The angular separation of muons from the leading jet in the event, $\DR(\jmath_1,\mu)$, is the first distribution examined. As shown in Figure~\ref{fig:signal-pt-barrel-endcaps}, the muon endcaps are capable of reconstructing muons with $\pt<3\GeV$ while the barrel is not. Therefore, a split view of barrel and endcaps is shown in Figure~\ref{fig:muons-dr-lj}. Because the endcaps accept muons with lower \pt than the barrel, and because of the generally higher occupancy of tracks in the forward region, the purity in the endcaps is much lower than that in the barrel. The selection developed here attempts to further purify the somewhat contaminated barrel muon sample. Muons with $\DR(\jmath_1,\mu)>0.4$ are selected as in the electrons case, and this selection will apply for the rest of the section.
 
 \begin{figure}[!htb]
 \centering
@@ -107,13 +99,11 @@ In contrast to electrons, the initial reconstruction \pt threshold for muons is 
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_rlj.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_rlj_barrel.pdf}
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_rlj_endcape.pdf}  \\
-\caption[Spatial seperation between reconstructed muons and the leading jet $\DR(\jmath_1,\mu)$]{Spatial seperation between reconstructed muons with loose ID and the leading jet $\DR(\jmath_1,\mu)$ for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive case (left), barrel (middle) and endcaps (right).}
+\caption[Angular separation between reconstructed muons and the leading jet $\DR(\jmath_1,\mu)$]{Angular separation between reconstructed muons with loose ID and the leading jet $\DR(\jmath_1,\mu)$ for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive case (left), barrel (middle) and endcaps (right).}
 \label{fig:muons-dr-lj}
 \end{figure}
 
-Since the muons in the endcaps have lower \pt than the muons in the barrel, which is only able to reconstruct muons with $\pt>3\GeV$, the purity in the endcaps is much lower than the purity in the barrel. The selection being constructed here attempts to further purify the muons. Muons with $\DR(\jmath_1,\mu)>0.4$ are selected like in the electrons case, and this selection will apply for the rest of the section.
-
-Next, the \gls{pt} distributions are examined. The previous cut of $\DR(\jmath_1,\mu)>0.4$ is applied. As seen in Section~\ref{sec:muon-eta-pt}, the \pt distribution depends strongly on \gls{dm}, and the low \gls{dm} acceptance is favored to be more sensitive to it. The \pt distributions seen in Figure~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are fed into the training of the \gls{bdt} for further refinement, and therefore the exact value is being determined here quite loosely. The actual maximum value of the \pt of the muons will depend on the \gls{bdt} cut being used to define the signal region.
+Distributions of muon \pt are examined having applied the previous cut of $\DR(\jmath_1,\mu)>0.4$. As seen in Section~\ref{sec:muon-eta-pt}, the \pt distribution depends strongly on \gls{dm}. The \pt distributions seen in Figure~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are included as input to the multivariate classifier employed at a later stage, which can effectively cut tighter on the \pt dynamically and in concert with cutting on other variables. The actual maximum value of the pT of the muons will depend on the \gls{bdt} cut being used to define the signal region. \pt of the muons will depend on the BDT cut being used to define the signal region. The feature discussed earlier, whereby the endcaps are capable of reconstructing muons with lower \pt and therefore have worse purity than the barrel, is reiterated here. It is important to stress that the worse purity is due to a much higher efficiency, and as long as the muons can be purified further, it is not necessarily a bad thing. The rate of  the non-signal muons in the region of $\pt<2\GeV$, is seen to diverge rapidly, and the ratio of signal muons to non-signal muons is very low in that region. Therefore, an additional cut of $\pt>2\GeV$ is adopted. To evaluate the effect of this cut, the $\abs{\eta}$ distribution before and after the \pt cut, is shown in Figure~\ref{fig:muons-selection-eta}.
 
 \begin{figure}[!htb]
 \centering
@@ -123,11 +113,9 @@ Next, the \gls{pt} distributions are examined. The previous cut of $\DR(\jmath_1
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_barrel.pdf}
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_endcape.pdf}  \\
-\caption[Reconstructed muons \pt]{Reconstructed muons \pt distibution with loose ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$ and $\pt<15\GeV$ are applied.}
+\caption[Distibution in signal events of the \pt of reconstructed muons]{Distibution in signal events of the \pt of reconstructed muons with loose ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$ and $\pt<15\GeV$ are applied.}
 \label{fig:muons-selectrion-pt}
 \end{figure}
-
-The feature discussed earlier, whereby the endcaps are capable of reconstructing muons with lower \pt and therefore have worse purity than the barrel, is reiterated here. It is important to stress that the worse purity is due to a much higher efficiency, and as long as the muons can be purified further, it is not necessarily a bad thing. The bulk of the non-signal muons populate the region of $\pt<2\GeV$, and the ratio of signal muons to non-signal muons is very low in that region. An additional cut of $\pt>2\GeV$ is therefore made. Another way of looking at the effect of this cut is by examining the $\abs{\eta}$ distribution before and after the \pt cut, which can be seen in Figure~\ref{fig:muons-selection-eta}.
 
 \begin{figure}[!htb]
 \centering
@@ -135,11 +123,11 @@ The feature discussed earlier, whereby the endcaps are capable of reconstructing
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Muons_Eta_after_pt.pdf} \\
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_Eta.pdf}  \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_Eta_after_pt.pdf} \\
-\caption[\abs{\eta} distribution of reconstructed muons with loose ID before and after $\pt>2\GeV$ cut]{ \abs{\eta} distribution of reconstructed muons with loose ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) without (left) and with (right) $\pt>2\GeV$ cut. Cut of $\DR(\jmath_1,\mu)>0.4$ is also applied.}
+\caption[Distibution in signal events of the \abs{\eta} of reconstructed muons with loose ID before and after $\pt>2\GeV$ cut]{Distibution in signal events of the \abs{\eta} of reconstructed muons with loose ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) without (left) and with (right) $\pt>2\GeV$ cut. A cut of $\DR(\jmath_1,\mu)>0.4$ is also applied.}
 \label{fig:muons-selection-eta}
 \end{figure}
 
-To see if requiring a tighter working point for the muon-identification is beneficial, it is necessary to test the effects of requiring either a medium working point, or a tight one. Two bins labeled \emph{fail} and \emph{pass} are plotted, which correspond to whether the muon passes or fails the identification criteria of a medium or tight working points.
+The impact of choosing an alternate \gls{wp}, namely Medium or Tight, is examined in Figures~\ref{fig:muons-selection-id-medium} and~\ref{fig:muons-selection-id-tight}, respectively. Two bins labeled \emph{fail} and \emph{pass} are plotted, which correspond to whether the muon passes or fails the identification criteria of a Medium or Tight \glspl{wp}. The Medium \gls{wp} is seen to be highly performant in purifying the muon sample. The Tight \gls{wp} on the other hand leads to a significant number of wanted signal-muons being lost without a significant gain in purity. Therefore, the Medium ID \gls{wp} is chosen.
 
 \begin{figure}[!htb]
 \centering
@@ -149,11 +137,9 @@ To see if requiring a tighter working point for the muon-identification is benef
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_medium.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_barrel_medium.pdf}  \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_endcape_medium.pdf} \\
-\caption[medium ID working point distribution of reconstructed muons]{Medium ID working point distributions of reconstructed muons for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
+\caption[Medium ID \gls{wp} distribution of reconstructed muons]{Medium ID \gls{wp} distributions of reconstructed muons for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
 \label{fig:muons-selection-id-medium}
 \end{figure}
-
-Comparing the medium working point in Figure~\ref{fig:muons-selection-id-medium} to the tight working point in Figure~\ref{fig:muons-selection-id-tight}, it is apparent that the medium working point is very beneficial in purifying the muons. However, when the tight working point is used, a significant number of wanted signal-muons are lost without a significant gain in purity. Therefore, the medium ID working point is chosen.
 
 \begin{figure}[!htb]
 \centering
@@ -163,11 +149,11 @@ Comparing the medium working point in Figure~\ref{fig:muons-selection-id-medium}
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_tight.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_barrel_tight.pdf}  \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_endcape_tight.pdf} \\
-\caption[tight ID working point distribution of reconstructed muons]{Tight ID working point distributions of reconstructed muons for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
+\caption[Tight ID \gls{wp} distribution of reconstructed muons]{Tight ID \gls{wp} distributions of reconstructed muons for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
 \label{fig:muons-selection-id-tight}
 \end{figure}
 
-The custom jet-isolation was designed to reject \gls{sm} background while retaining signal, as described in Section~\ref{sec:isolation}. For electrons, as shown in Figure~\ref{fig:electrons-selection-isolation}, it effectively purified the selection and eliminated the need for a tighter identification working point. As for muons, although a medium working point is relied upon to perform this task, the effects of the isolation on signal muons are still of interest. Figure~\ref{fig:muons-selection-isolation} shows that a small price is paid by requiring the isolation. However, as will be seen in Section~\ref{sec:isolation}, the sensitivity is increased by rejecting a lot of \gls{sm} background in the process.
+The custom jet-isolation was designed to reject \gls{sm} background while retaining signal, as the effects of the custom jet-baed isolation, as described in Section~\ref{sec:isolation}, on signal muons is examined in this purity study. Figure~\ref{fig:muons-selection-isolation} shows that a small price is paid by requiring the isolation. However, as will be seen in Section~\ref{sec:isolation}, the sensitivity is increased by rejecting a significant portion of \gls{sm} background via the isolation criterion.
 
 \begin{figure}[!htb]
 \centering
@@ -177,18 +163,18 @@ The custom jet-isolation was designed to reject \gls{sm} background while retain
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_jet_iso.pdf} \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_barrel_jet_iso.pdf}  \,
 \includegraphics[width=0.32\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Muons_pt_endcape_jet_iso.pdf} \\
-\caption[jet-isolation distribution of reconstructed muons]{Jet-isolation distributions of reconstructed muons with medium ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
+\caption[Distributions of the jet-based lepton isolation of reconstructed muons]{Distributions of the jet-based lepton isolation of reconstructed muons with Medium ID for $\dm=5.63\GeV$ (top) and $\dm=1.92\GeV$ (bottom) in the inclusive \pt case (left), barrel (middle) and endcaps (right). Cuts of $\DR(\jmath_1,\mu)>0.4$, $\pt>2\GeV$ and $\pt<15\GeV$ are applied.}
 \label{fig:muons-selection-isolation}
 \end{figure}
 
-To summarize this section, the following is the full selection of the analysis muons:
+In summary, the following is the full set of selection criteria of the analysis muons:
 
 \begin{itemize}
-\item $2<\pt<15\GeV$
-\item $\abs{\eta} < 2.4$
-\item $\DR(\jmath_1,\mu)>0.4$
-\item medium ID working point
-\item pass jet-isolation
+\item $2<\pt<15\GeV$;
+\item $\abs{\eta} < 2.4$;
+\item $\DR(\jmath_1,\mu)>0.4$;
+\item Medium ID \gls{wp};
+\item pass jet-isolation.
 \end{itemize}
 
 \input{scale-factors}
@@ -217,7 +203,7 @@ The observable \htvecmiss is favored over \VEtmiss in this analysis, since the j
 \subsection{Jets}
 \label{subsec:jets}
 
-The reconstruction and identification of jets are described in Section~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ and the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$ quark jets is performed using the multivariate technique \DEEPCSV with a medium working point, also known as the \gls{csv} algorithm. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
+The reconstruction and identification of jets are described in Section~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ and the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$ quark jets is performed using the multivariate technique \DEEPCSV with a Medium \gls{wp}, also known as the \gls{csv} algorithm. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
 
 \clearpage
 \subsection{Tracks and multivariate selection }
@@ -306,7 +292,7 @@ The output of the training for the 4 \glspl{bdt} is displayed in Figure~\ref{fig
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Muons_Phase_1.pdf}  \\
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_0.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_1.pdf} \\
-\caption[Track BDT ROC curves]{Track BDT ROC curves for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Minimum working point showed as a red dot.}
+\caption[Track BDT ROC curves]{Track BDT ROC curves for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Minimum \gls{wp} showed as a red dot.}
 \label{fig:track-bdt-roc}
 \end{figure}
 
