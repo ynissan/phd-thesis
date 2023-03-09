@@ -184,26 +184,23 @@ In summary, the following is the full set of selection criteria of the analysis 
 \subsection{Missing transverse energy}
 \label{subsec:met}
 
-The importance of measuring the missing transverse momentum (or energy) in this analysis has been discussed in Section~\ref{subsec:signal-met-mht}. It has been concluded that the missing transverse momentum is an essential ingredient in the analysis strategy. It is used to trigger events online and in the offline event level selection to boost sensitivity. Two standard measures of the momentum imbalance in the events are \VEtmiss (or \ptvecmiss by a different symbol) and \htvecmiss. Although \VEtmiss and \ptvecmiss have different symbols and are referred to by different names (missing transverse energy and missing transverse momentum respectively), they are defined in the same way and used interchangeably. Mathematically, \VEtmiss is defined as follows:
-
+The importance of the missing transverse momentum (or energy) in this analysis has been discussed in Section~\ref{subsec:signal-met-mht}. Two standard measures of the momentum imbalance in the events are \VEtmiss (or \ptvecmiss by a different symbol) and \htvecmiss. \VEtmiss is defined as:
 \begin{equation}
-\VEtmiss = \ptvecmiss = -\sum_i \ptvec(i)
+\VEtmiss = \ptvecmiss = -\sum_i \ptvec(i),
+\end{equation}
+where the summation is done on all particle flow candidates. Therefore, the missing transverse energy serves as a measure of particles that evade detection, such as weakly interacting neutral particles. Mismeasurements of visible particles and additional energy deposits from sources such as \gls{pu}, jet energy response and detector noise can affect this observable, so it undergoes further correction to mitigate these effects. The correction process considers jets with \pt greater than $10\GeV$. Full details of the corrections can be found in~\cite{met_performance}.
+
+An alternative measurement to the missing transverse momentum is \htvecmiss, which is sometimes referred to as \emph{missing hardronic activity}. Instead of considering all particle flow candidates in the sum, this measurement only takes into account jets with \pt greater than $30\GeV$ and $\abs{\eta}$ less than 5, and is defined as:
+\begin{equation}
+\htvecmiss = -\sum_i^{\mathrm{jets}} \ptvec(i).
 \end{equation}
 
-where the summation is done on all particle flow candidates. Therefore, the missing transverse energy serves as a measure of particles that evade detection, such as weakly interacting particles. Mismeasurements of visible particles and additional energy deposits from sources such as \gls{pu}, jet energy response and detector noise can affect this observable, so it undergoes further correction to mitigate these effects. The correction process considers jets with \pt greater than $10\GeV$. Full details of the corrections can be found in~\cite{met_performance}.
-
-An alternative measurement to the missing transverse momentum is \htvecmiss, which is sometimes referred to as \emph{missing hardronic activity}. Instead of considering all particle flow candidates in the sum, this measurement only takes into account jets with \pt greater than $30\GeV$ and $\abs{\eta}<5$:
-
-\begin{equation}
-\htvecmiss = -\sum_i^{\mathrm{jets}} \ptvec(i)
-\end{equation}
-
-The observable \htvecmiss is favored over \VEtmiss in this analysis, since the jet isolation, defined in Section~\ref{sec:isolation}, uses jets with \pt greater than $30\GeV$, while a sideband is defined using the range of $\pt\in [15,30]\GeV$ of jets, which is then used for the data-driven background estimation method in Section~\ref{sec:jetty-background-estimation}. Both observables, \VEtmiss and \htvecmiss, have equivalent scalar quantities, \MET and \mht respectively, which can be obtained by taking the magnitude of their vectorial counterpart.
+The observable \htvecmiss is favored over \VEtmiss in this analysis because the jet-based isolation, defined in Section~\ref{sec:isolation}, uses jets with \pt greater than $30\GeV$, while a sideband is defined using the range of $\pt\in [15,30]\GeV$ of jets, which is then used for the estimation of the jetty background in Section~\ref{sec:jetty-background-estimation}. Both observables, \VEtmiss and \htvecmiss, have equivalent scalar quantities, \MET and \mht respectively, which can be obtained by taking the magnitude of their vectorial counterpart.
 
 \subsection{Jets}
 \label{subsec:jets}
 
-The reconstruction and identification of jets are described in Section~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ and the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$ quark jets is performed using the multivariate technique \DEEPCSV with a Medium \gls{wp}, also known as the \gls{csv} algorithm. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
+The reconstruction and identification of jets are described in Section~\ref{sec:reco-jets}. Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$-jets is performed using the multivariate technique \DEEPCSV with a Medium \gls{wp}, also known as the \gls{csv} algorithm~\cite{BTV-16-002}. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
 
 \clearpage
 \subsection{Tracks and multivariate selection }
