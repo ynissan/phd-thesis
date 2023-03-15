@@ -14,7 +14,7 @@ In the following sections, the term \emph{efficiency} refers to the proportion o
 
 The electrons are subject to an initial lower threshold on the reconstructed \pt $5\GeV$, and are reconstructed using a loose \gls{wp}, as described in Section~\ref{sec:reconstruction-and-identification}. The first distribution of interest regarding the electrons is their angular separation from the leading jet in the event, denoted as $\DR(\jmath_1,\Pe)$. The distributions are shown in Figure~\ref{fig:electrons-dr-lj}. Two key features are apparent. The first has already been discussed in Section~\ref{sec:signal-signature}, which is that probing lower \gls{dm} necessitates access to low \gls{pt} leptons. The threshold of $\pt\geq 5\GeV$ on the electrons leads to reduced signal acceptance. This is evident from the difference between the high and low \gls{dm} cases. The second interesting feature is that the signal electrons are predominantly located outside the leading jet. This is because the leading jet is typically an \gls{isr} jet, which boosts the \tchiz system away from it, causing them to be back-to-back. Thus, a cut of $\DR(\jmath_1,\Pe)>0.4$ is made to account for this.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_rlj.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_rlj.pdf}  \\
@@ -206,29 +206,25 @@ The reconstruction and identification of jets are described in Section~\ref{sec:
 \subsection{Tracks and multivariate selection }
 \label{sec:track-bdt}
 
-The leptons \ellell produced in the decay \neuttdecay tend to have mostly very low transverse momentum \pt. It has been shown in Section~\ref{sec:reconstruction-and-identification} that the identification and reconstruction of the muons worsen with lower \pt. Therefore, the aim of the exclusive track category is to attempt and recover lost leptons that were not reconstructed or identified. As seen in Section~\ref{sec:track-reconstruction}, the tracking efficiency at the \pt ranges used in this analysis is well above 99\%, allowing the recovery of some of the  tracks that correspond to the missing leptons by applying knowledge about the event kinematics specific to the signal. Thus, the exclusive track category does not enhance the lepton identification in the general case, but recovers missed tracks in this specific signal signature.
+The leptons \ellell produced in the decay \neuttdecay tend to have very low transverse momentum \pt. It was shown in Section~\ref{sec:reconstruction-and-identification} that the identification and reconstruction efficiency of the muons worsens with lower \pt. Therefore, the aim of the exclusive track category is to recover lost leptons that were not reconstructed or identified. As seen in Section~\ref{sec:track-reconstruction}, the tracking efficiency for the \pt ranges used in this analysis is well above 99\%, allowing the recovery of some of the  tracks that correspond to the missing leptons.
 
-To identify which track corresponds to the miss-identified lepton in a given signal event, a \glsreset{bdt}\gls{bdt} is trained. Four separate \glspl{bdt} are trained, corresponding to the lepton flavor (muon or electron) and the phase of the tracker (phase 0 for 2016, and phase 1 for 2017-2018). All \glspl{bdt} use a common structure of 200 trees with a maximum depth of 3, and are trained with AdaBoost and GiniIndex separation using the TMVA package~\cite{tmva}. Default values are used for all other parameters.
+To identify which track corresponds to the target lepton in a given signal event, a \gls{bdt} classifier is trained. Four separate \glspl{bdt} are trained, corresponding to each lepton flavor (muon or electron) and each phase of the tracker (Phase 0 for 2016, and Phase 1 for 2017-2018). All \glspl{bdt} use a common structure of 200 trees with a maximum depth of 3, and are trained with AdaBoost and GiniIndex separation using the TMVA package~\cite{tmva}. The package's default values are used for all other parameters. Tracks from a dedicated \FASTSIM signal simulations described in Section~\ref{sec:signal-simulation} are used for training. A broad range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo) is considered, but only the range of \dm that this analysis targets. For Phase 0, $\dmo$ is chosen from the range $[0.3,4.3]\GeV$ and $\mu$ from $[100-130]\GeV$, while for Phase 1, $\dmpm$ is chosen from $[0.3-4.6]\GeV$ and $\mu$ from $[100-500]\GeV$. Signal events are split into signal tracks and background tracks, with signal tracks originating from leptons from the decay \neuttdecay while background tracks do not match to the leptons. The samples for muons contain 9408 (10964) signal tracks and 99996 (151380) background tracks for Phase 0 (Phase 1). For electrons the samples contain 2364 (2288) signal tracks and 104065 (159713) background tracks for Phase 0 (Phase 1). The training samples are then tested against independent samples of equal size. Distributions of the classifier score for signal and background categories with the test samples overlayed onto the training samples can be seen in Figure~\ref{fig:track-bdt-output}.
 
-Tracks from the privately produced \FASTSIM signal simulations listed in Section~\ref{sec:signal-simulation} are used for training. The full range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo in the case of phase 1) is considered, but only the range of \dm that this analysis targets. For phase 0, $\dmo$ is chosen from the range $[0.3,4.3]\GeV$ and $\mu$ from $[100-130]\GeV$, while for phase 1, $\dmpm$ is chosen from $[0.3-4.6]\GeV$ and $\mu$ from $[100-500]\GeV$. Signal events are split into signal tracks and background tracks, with signal tracks originating from the decay \neuttdecay and matching the missing generated lepton in the generator level particles collection, while background tracks do not match the wanted leptons. Therefore, the \glspl{bdt} are useful for rejecting in-signal background of unwanted tracks. The samples for muons contain 9408 (10964) signal tracks and 99996 (151380) background tracks for phase 0 (phase 1). For electrons the samples contain 2364 (2288) signal tracks and 104065 (159713) background tracks for phase 0 (phase 1). The training samples are then tested against test samples of equal size. The distributions of the testing samples that overlay on the training samples can be seen in Figure~\ref{fig:track-bdt-output}.
-
-A pre-selection is applied to all tracks in the collection obtained by the standard track reconstruction sequences. This pre-selection ensures that only properly-reconstructed, isolated, and prompt tracks are considered. The selected tracks must also have trajectories passing through the region near the primary vertex with the largest sum of charged-tracks, jets, and missing energy values (PV): 
-
+Pre-selection is applied to all tracks in the collection obtained by the standard track reconstruction sequences. This pre-selection ensures that only properly-reconstructed, isolated, and prompt tracks are considered. The selected tracks must also have trajectories passing through the region near the primary vertex (PV) with the largest sum of charged-tracks, jets, and missing energy values. The full set of track pre-selection criteria are
 \begin{itemize}
-\item $ \pt > 1.9 \GeV$
-\item $ \abs{\eta} < 2.4$
-\item track $\text{iso}_\text{rel}  < 0.1$, using \DR(track, other tracks) $< 0.3$
-\item $d_{xy}(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV
+\item $ \pt > 1.9 \GeV$;
+\item $ \abs{\eta} < 2.4$;
+\item track $\text{iso}_\text{rel}  < 0.1$, using \DR(track, other tracks) $< 0.3$;
+\item $d_{xy}(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV;
 \item $d_z(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV
-\item no match to an electron or muon within a cone of size 0.01
+\item no match to an electron or muon within a cone of size 0.01.
 \end{itemize}
-
-For the training, a set of 10 variables listed in decreasing order of their ranking (in the muon case of phase 0) is used, as shown in Table~\ref{tab:track-bdt-variables}.
+For the training, a set of 10 variables, listed in decreasing order of their importance ranking in Table~\ref{tab:track-bdt-variables} (in the muon case of Phase 0) is used.
 
 \begin{table}[!htb]
 	\centering
 	\label{tab:track-bdt-variables}
-		\caption{Track BDT input variables}
+		\caption{Input variables to the in-signal track selecting classifier.}
 		%\vspace{1mm}
 			\begin{tabular}{cll} \hline
 			Rank & Variable & Description \\ \hline
@@ -267,11 +263,11 @@ Figure~\ref{fig:muon-track-bdt-inputs} shows the distribution of input variables
 \includegraphics[width=0.32\linewidth]{plots/track_bdt_inputs_muons/none_invMass.pdf}  \\
 
 
-\caption[Muon track BDT training inputs]{Distibutions of the inputs for training for the track BDT in the Muon exclusive track category.}
+\caption[Muon track BDT training inputs]{Distibutions of the inputs to the track BDT in the muon exclusive track category. Fake category refers to tracks not originating from target leptons.}
 \label{fig:muon-track-bdt-inputs}
 \end{figure}
 
-The output of the training for the 4 \glspl{bdt} is displayed in Figure~\ref{fig:track-bdt-output}, where the testing distributions are superimposed on the training sample of the BDT. No obvious over-training is observed. The ROC curves are then plotted in Figure~\ref{fig:track-bdt-roc}, and the red point shows the efficiency of the signal and background tracks of the BDT cut, which is selected to be 0.0. A good separation between signal tracks and fake tracks is obtained, as evidenced by the relatively high signal efficiency of over 90\% (86\%) for muons (electrons) and background rejection of around 86\% (76\%) for muons (electrons).
+The classifier output score for the 4 \glspl{bdt} is displayed in Figure~\ref{fig:track-bdt-output}, where the test distributions are superimposed on the training sample. No obvious over-training is observed. The ROC curves are plotted in Figure~\ref{fig:track-bdt-roc}, where the red point indicates the efficiency of the signal and background tracks of the minimum BDT cut, which is taken to be 0.0. Good separation between signal tracks and fake tracks is obtained, as evidenced by the relatively high signal efficiency of over 90\% (86\%) for muons (electrons) and background rejection of around 86\% (76\%) for muons (electrons).
 
 \begin{figure}[!htb]
 \centering
@@ -279,7 +275,7 @@ The output of the training for the 4 \glspl{bdt} is displayed in Figure~\ref{fig
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Muons_Phase_1.pdf}  \\
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_0.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_1.pdf} \\
-\caption[Track BDT output plots]{Track BDT output plots for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Blue shows signal tracks, while Red are fake tracks. Test sample overlay on top of training sample.}
+\caption[Track BDT output plots]{Track BDT output plots for Muons (top) and Electrons (bottom) in Phase 0 (left) and Phase 1 (right). Blue shows signal tracks, while Red are fake tracks. Test sample overlay on top of training sample.}
 \label{fig:track-bdt-output}
 \end{figure}
 
@@ -289,62 +285,54 @@ The output of the training for the 4 \glspl{bdt} is displayed in Figure~\ref{fig
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Muons_Phase_1.pdf}  \\
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_0.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/roc_Tracks_Electrons_Phase_1.pdf} \\
-\caption[Track BDT ROC curves]{Track BDT ROC curves for Muons (top) and Electrons (bottom) in phase 0 (left) and phase 1 (right). Minimum \gls{wp} showed as a red dot.}
+\caption[Track BDT ROC curves]{Track BDT ROC curves for muons (top) and electrons (bottom) in Phase 0 (left) and Phase 1 (right). The minimum threshold on the classifier score is indicated by the red dot.}
 \label{fig:track-bdt-roc}
 \end{figure}
 
-After the training process, the track with the maximum \gls{bdt} score is selected as the missing lepton in the event. Only events with a track with a score greater than 0.0, corresponding to the red dot in the ROC curves shown in Figure~\ref{fig:track-bdt-roc}, are considered.
+The track with the maximum \gls{bdt} score is selected as the signal candidate track. Only events with a track with a score greater than 0.0, corresponding to the red dot in the ROC curves shown in Figure~\ref{fig:track-bdt-roc}, are considered.
 
 \clearpage
 \subsection{Isolation}
 \label{sec:isolation}
 
-The leptons produced from the neutralino decay \neuttdecay are typically clean and isolated, with very little hadronic activity around them. This is because the only jets in the event come from initial state radiation, which provides a boost to the produced electroweakinos in the opposite direction. Therefore, the leptons originating from those electroweakinos will not exist in proximity to these jets. This signature can be exploited to discriminate between signal and background originating from standard model processes in association with jets. At \gls{cms}, various standard isolation criteria were developed and used. The three most widely used isolation criteria are track isolation~\cite{muon-pog-recommendations}, relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version referred to as relative mini-isolation ($\mathrm{miniRelIso}$), described in~\cite{Rehermann_2011}.
+The leptons produced from the neutralino decay \neuttdecay are typically clean and isolated, with very little hadronic activity n their vicinity. This is because the only jets in the event come from initial state radiation, which boosts the produced electroweakinos in the opposite direction. Therefore, the leptons originating from those electroweakinos will not propagate collinear to these jets. The characteristic signal event topology can be exploited to distinguish signal events from background originating from \gls{sm} processes. At \gls{cms}, various standard isolation criteria are used. The three most widely used isolation criteria are track relative isolation~\cite{muon-pog-recommendations}, \gls{pf} relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version referred to as relative mini-isolation ($\mathrm{miniRelIso}$), described in~\cite{Rehermann_2011}.
 
-Track isolation is defined as the \pt sum of all tracks around a given track (or lepton) in a fixed cone size of 0.3:
+Track relative isolation is defined as the \pt sum of all tracks around a given track (or lepton) within an angular separation $\DR$ of 0.3:
 
 \begin{equation}
-\text{Track Isolation}_\ell = \frac{ \sum_{\substack{\text{tracks from PV}\\ \text{in } \DR<0.3}}\pt}{ \pt(\ell) } 
+\text{Track relative isolation}_\ell = \frac{ \sum_{\substack{\text{tracks from PV}\\ \text{in } \DR<0.3}}\pt}{ \pt(\ell) }.
 \end{equation}
 
 Since only tracks are summed, only charged particles are taken into account. Another widely used isolation is the relative isolation which uses a cone size of 0.4 and defined as:
-
 \begin{equation}
-\text{RelIso}_\ell = \frac{ \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PV}}}\pt + \max\left(0, \sum_{\substack{\text{neutral}\\\text{hadrons}}}\et + \sum_{\text{photons}}\et - 0.5\cdot \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PU}}}\pt \right) }{ \pt(\ell) }
+\text{RelIso}_\ell = \frac{ \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PV}}}\pt + \max\left(0, \sum_{\substack{\text{neutral}\\\text{hadrons}}}\et + \sum_{\text{photons}}\et - 0.5\cdot \sum_{\substack{\text{charged}\\\text{hadrons}\\\text{from PU}}}\pt \right) }{ \pt(\ell) }.
 \end{equation}
-
-The last term in the definition is a correction for \gls{pu} effects. A lepton is considered to have passed isolation if its RelIso value is small. The third commonly used isolation criterion is the mini-relative isolation (miniRelIso), which is a modified version of relative isolation. In mini-isolation, the cone size is dependent on the \pt of the lepton, as follows:
-
+The last term in the definition is a correction for \gls{pu} effects. A lepton is considered to be isolated if its RelIso value is small. A variant of the relative isolation is the so-called mini relative isolation (miniRelIso), which differs from the standard relative isolation in that its cone size is dependent on the \pt of the lepton, as follows:
 \begin{equation}
-R = 
+\DR = 
 \begin{dcases}
 0.2 & \pt(\ell)\leq 50\GeV \\
 \frac{10\GeV}{\pt(\ell)} & \pt(\ell) \in (50\GeV , 200\GeV) \\
 0.05 & \pt(\ell)\geq 200\GeV
-\end{dcases}
+\end{dcases}.
 \end{equation}
+The variable size cone allows for the recovery of efficiency when leptons are produced in the decay chain of a boosted object. In such cases, when the boost is large, the lepton is likely to overlap with another lepton produced at a common decay vertex, failing a standard isolation cut. The parameters are tuned to, and thus well-suited to, leptons from the decay of on-shell \PW and \PZ bosons, but are not suitable for low-mass resonances. 
 
-The variable size cone allows for the recovery of efficiency when leptons are produced in the decay chain of a boosted object. In such cases, when the boost is large, the lepton is likely to overlap with a jet produced in the same decay chain, failing a standard isolation cut.
-
-The drawback of standard isolation criteria is that if two leptons are in proximity to each other, as is often the case in the signal, they compromise each other's isolation. As shown in Section~\ref{sec:lepton-dr}, access to low \dm model-points requires including the $\DR<0.3$ phase-space region. Requiring any of the standard isolation criteria will thus result in rejecting valuable signal events. An alternative isolation criterion is proposed to help retain some of the desired phase-space while rejecting the majority of the standard model background. Another crucial use for an alternative isolation criterion is background estimation, as described in Section~\ref{sec:jetty-background-estimation}. The steps to construct the alternative \emph{jet isolation} are described below. It is defined for each lepton flavor individually, since the produced leptons are of the same flavor. The steps are as follows (introducing parameters $p$ and $r$):
-
+The drawback of standard isolation criteria in the case of this analysis’s  signal, the leptons can compromise each other's isolation. As shown in Section~\ref{sec:lepton-dr}, access to low \dm model-points requires including the $\DR<0.3$ phasespace region. Requiring any of the standard isolation criteria will thus result in rejecting valuable signal events. An alternative isolation criterion is proposed to help retain some of the desired phasespace while rejecting the majority of the standard model background. This alternative isolation proves to be useful not only for optimally selecting leptons, but also for defining a sideband control region needed for the jetty background estimation, as described in Section~\ref{sec:jetty-background-estimation}. The steps to construct the alternative \emph{jet-based isolation} are described algorithmically below.
 \begin{enumerate}
-\item Create a copy set of the jets collection
-\item Create a \emph{lepton-corrected} set of the jets by subtracting all leptons within the jet cone of 0.4
-\item Clean the set of jets by keeping only jets with positive energy and \pt greater than threshold $p$
-\item Lepton is said to pass \emph{jet-isolation} if it does not lie within a cone of size $r$ from a \emph{lepton-corrected} jet
-\item Lepton is said to fail \emph{jet-isolation} for background estimation if it fails \emph{jet-isolation}, and the original jet closest to it has $15<\pt<30\GeV$ (see~\ref{sec:jetty-background-estimation} for use of such lepton)
+\item Subtract the vector 4-momenta of candidate leptons of a given flavor from any reconstructed jet $\DR$ smaller than 0.4
+\item The lepton is said to pass isolation if it does not lie within $\DR<r$ of any \emph{lepton-corrected} jet with $\pt > p$. 
+\item Lepton is said to fail isolation for background estimation if it fails \emph{jet-based isolation}, and the nearest uncorrected jet has $15<\pt<30\GeV$ (see~\ref{sec:jetty-background-estimation} for use of such lepton)
 \end{enumerate}
-
-The main idea behind defining jet-isolation is to reject leptons with hadronic activity around them while not losing a lepton that is close to another lepton of the same flavor. The process described introduces two free parameters: the \pt threshold of the lepton-corrected jets that cause a lepton's isolation to fail ($p$), and the cone size ($r$), which determines how close a corrected jet is allowed to be to a lepton. To choose the thresholds for these parameters, a scan has been performed ranging $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. The scan is used to compare different criteria for the optimal values. Since the isolation is also used for background estimation, some of the criteria of interest stem from that method. The criteria of interest include signal efficiency (which should be high), background efficiency (which should be low), signal contamination in control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which should be maximized). To demonstrate the effect that this parameter space has on these criteria, a scan was done for the muons using 2016 \gls{mc} and data.
+The main idea behind defining jet-isolation is to reject leptons with hadronic activity around them while not losing a lepton that is close to another lepton of the same flavor. The process described introduces two free parameters: the \pt threshold of the lepton-corrected jets that cause a lepton's isolation to fail ($p$), and the cone size ($r$), which determines how close a corrected jet is allowed to be to a lepton. To choose the thresholds for these parameters, a scan is performed ranging over $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. For each step in the scan, the full analysis is performed, including the background estimation procedure which makes use of the jet-based isolation, and various performance criteria are extracted to inform the choice of optimum $r$ and $p$.  The criteria of interest include signal efficiency (which should be high), background efficiency (which should be low), signal contamination in control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which should be maximized). The scan is carried out for muons using 2016 \gls{mc} and data, and the results are shown in Tables~\ref{tab:iso-scan-signal-efficiency}-~\ref{tab:iso-scan-significance}.
 
 \begin{table}[!htb]
 	\centering
 	\label{tab:iso-scan-signal-efficiency}
-		\caption{Signal Efficiency}
+		\caption{Signal efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
-    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
     && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
     \cline{2-7}
     & 0 & 0.38 & 0.37 & 0.36 & 0.35 & 0.35 \\
@@ -353,8 +341,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 & 6 & 0.71 & 0.70 & 0.69 & 0.67 & 0.66 \\
 & 7 & 0.77 & 0.76 & 0.74 & 0.73 & 0.72 \\
 & 8 & 0.82 & 0.82 & 0.80 & 0.78 & 0.77 \\
-\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.87 & 0.86 & 0.85 & 0.84 & 0.82 \\
-& 10 & 0.89 & 0.89 & 0.87 & 0.86 & 0.85 \\
+\smash{\rotatebox[origin=c]{90}{$p$}} & 9 & 0.87 & 0.86 & 0.85 & 0.84 & 0.82 \\
+& 10 & 0.89 & 0.89 & 0.87 & 0.86 & \textbf{0.85} \\
 & 10.5 & 0.90 & 0.90 & 0.89 & 0.88 & 0.87 \\
 & 11 & 0.92 & 0.92 & 0.91 & 0.90 & 0.89 \\
 & 11.5 & 0.93 & 0.92 & 0.91 & 0.91 & 0.90 \\
@@ -369,10 +357,10 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 \begin{table}[!htb]
 	\centering
 	\label{tab:iso-scan-bg-efficiency}
-		\caption{Background Efficiency}
+		\caption{Background efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
-    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
     && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
     \cline{2-7}
 & 0 & 0.08 & 0.07 & 0.06 & 0.06 & 0.06 \\ 
@@ -381,8 +369,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 & 6 & 0.15 & 0.14 & 0.12 & 0.11 & 0.11 \\ 
 & 7 & 0.18 & 0.16 & 0.15 & 0.14 & 0.12 \\ 
 & 8 & 0.20 & 0.18 & 0.17 & 0.17 & 0.15 \\ 
-\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.25 & 0.23 & 0.19 & 0.18 & 0.17 \\ 
-& 10 & 0.26 & 0.25 & 0.22 & 0.19 & 0.18 \\ 
+\smash{\rotatebox[origin=c]{90}{$p$}} & 9 & 0.25 & 0.23 & 0.19 & 0.18 & 0.17 \\ 
+& 10 & 0.26 & 0.25 & 0.22 & 0.19 & \textbf{0.18} \\ 
 & 10.5 & 0.27 & 0.24 & 0.23 & 0.20 & 0.19 \\ 
 & 11 & 0.29 & 0.26 & 0.24 & 0.22 & 0.20 \\ 
 & 11.5 & 0.28 & 0.27 & 0.24 & 0.23 & 0.21 \\ 
@@ -397,10 +385,10 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 \begin{table}[!htb]
 	\centering
 	\label{tab:iso-scan-transfer-factor}
-		\caption{Transfer Factor}
+		\caption{Transfer factor for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
-    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
     && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
     \cline{2-7}
 & 0 & 0.19 & 0.16 & 0.13 & 0.13 & 0.13 \\ 
@@ -409,8 +397,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 & 6 & 0.43 & 0.36 & 0.32 & 0.30 & 0.29 \\ 
 & 7 & 0.55 & 0.48 & 0.44 & 0.40 & 0.34 \\ 
 & 8 & 0.68 & 0.58 & 0.52 & 0.52 & 0.46 \\ 
-\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 0.83 & 0.78 & 0.65 & 0.58 & 0.54 \\ 
-& 10 & 0.99 & 0.93 & 0.76 & 0.67 & 0.62 \\ 
+\smash{\rotatebox[origin=c]{90}{$p$}} & 9 & 0.83 & 0.78 & 0.65 & 0.58 & 0.54 \\ 
+& 10 & 0.99 & 0.93 & 0.76 & 0.67 & \textbf{0.62} \\ 
 & 10.5 & 1.07 & 0.95 & 0.85 & 0.74 & 0.66 \\ 
 & 11 & 1.19 & 1.10 & 0.93 & 0.85 & 0.73 \\ 
 & 11.5 & 1.24 & 1.19 & 0.96 & 0.91 & 0.79 \\ 
@@ -425,10 +413,10 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 \begin{table}[!htb]
 	\centering
 	\label{tab:iso-scan-significance}
-		\caption{Significance $s/\sqrt{b+\upvarepsilon^2_b}$}
+		\caption{Significance $s/\sqrt{b+\upvarepsilon^2_b}$ for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
-    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$\Delta R$} \\
+    			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
     && 0.4 & 0.45 & 0.5 & 0.55 & 0.6 \\
     \cline{2-7}
 & 0 & 4.29 & 6.08 & 6.13 & 5.89 & 5.46 \\ 
@@ -437,8 +425,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 & 6 & 4.72 & 5.06 & 6.22 & 6.99 & 7.92 \\ 
 & 7 & 4.83 & 6.55 & 5.09 & 5.63 & 6.28 \\ 
 & 8 & 3.80 & 5.48 & 4.60 & 5.24 & 4.61 \\ 
-\smash{\rotatebox[origin=c]{90}{\pt}} & 9 & 3.60 & 4.43 & 5.66 & 6.25 & 4.60 \\ 
-& 10 & 3.37 & 4.08 & 5.57 & 4.78 & 6.23 \\ 
+\smash{\rotatebox[origin=c]{90}{$p$}} & 9 & 3.60 & 4.43 & 5.66 & 6.25 & 4.60 \\ 
+& 10 & 3.37 & 4.08 & 5.57 & 4.78 & \textbf{0.23} \\ 
 & 10.5 & 3.72 & 4.03 & 4.90 & 4.48 & 4.17 \\ 
 & 11 & 3.05 & 3.51 & 4.37 & 4.98 & 5.41 \\ 
 & 11.5 & 3.21 & 3.21 & 3.84 & 3.54 & 4.65 \\ 
@@ -450,4 +438,4 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
   \end{tabular}
 \end{table}
 
-From the scan, it is evident that the transfer factor of the jetty background estimation method increases with larger \pt but decreases with larger \DR. A transfer factor that is less than unity is preferred, and therefore, choices that do not meet this criteria are excluded. After taking into account all factors, the vaules $(p,r)=(10\GeV,0.6)$ are selected for muons and $(p,r)=(10\GeV,0.5)$ for electrons.
+From Table~\ref{tab:iso-scan-transfer-factor}, it is evident that the transfer factor of the jetty background estimation method increases with larger $p$ and with smaller $r$. A transfer factor that is less than unity is preferred in order to ensure a high likelihood of well-populated control regions, and choices that do not meet this criterion are excluded. After taking into account all factors, the vaules $(p,r)=(10\GeV,0.6)$ are selected for muons and $(p,r)=(10\GeV,0.5)$ for electrons.
