@@ -2,10 +2,6 @@
 
 The search presented in this thesis is for a simplified model of a supersymmetric theory. The amount of theoretical background required to fully understand  this theory can fill many books, and therefore, this document does not attempt to give an exhaustive description of it. Instead, I attempt to give a brief tour of topics that contribute to the understanding the subject, which are also of personal interest. Especially I wanted to also explore the theoretical motivation for supersymmetry, alongside a contribution to the philosophical discussion that normally accompanies such arguments. Whenever possible, I pick a description of a concept that I find intriguing and inspiring in a way that reminds me of my initial spark and inspiration for perusing a PhD in physics. Good sources for these topics are~\cite{Peskin2019-bt,Srednicki2007-mn}.
 
-\section{Collider Experiments}
-
-describe cross sections and processes...
-
 \section{Principle of Least Action}
 \label{sec:least-action}
 The earliest formulation of classical mechanics is normally attributed to the works of Sir Isaac Newton from the 17th century, which is also referred to as Newtonian mechanics. It is based on the then-newly developed mathematics of calculus. A central theorem in calculus is Fermat's theorem, which states that if a function has a local extremum at some point and is differentiable there, then the function's derivative at that point must be zero. The equation of motion is given by Newton's second law, which is an ordinary differential equation given by:
@@ -264,19 +260,43 @@ where $\lambda$ is a dimensionless \emph{coupling constant}. The goal is to be a
 
 \subsection{Feynman Diagrams}
 
-\feynmandiagram [horizontal=a to b] {
-  i1 -- [fermion] a -- [fermion] i2,
-  a -- [photon] b,
-  f1 -- [fermion] b -- [fermion] f2,
-};
+In order to compute cross sections and decay rates, one must compute matrix elements of the S-matrix. The S-matrix gives the probability amplitude for a scattering event between \emph{in} and \emph{out} states. The probability amplitude for producing the final state is simply related to the cross section. Computing the S-matrix elements, or scattering amplitudes, is done differently depending on the quantization scheme, canonical or path integrals. As previously mentioned, the computation is done in a perturbation series. A Feynman diagram is a graphical representation of a perturbative contribution to the transition amplitude or correlation function. In the canonical quantization, a Feynman diagram represents a term in the Wick's expansion of the perturbative S-matrix. 
+
+The quantization scheme also provide \emph{Feynman rules} in order to compute the value of each Feynman diagram. It involves providing a mathematical expression for a \emph{propagator} for each internal line, or a virtual particle. Each diagram then has an amplitude which is a term in the perturbative expension. In Figure~\ref{fig:e-to-mu-feynman}, an example of a tree-level diagram representing a process of $e^+ e^- \rightarrow \mu^+ \mu^-$ through a photon $\gamma$ is shown.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\linewidth]{plots/feynman_diagrams/feynman_e_to_mu.png}  \\
+\caption[Electrons to Muons Feynman diagram]{Feynman diagram representing the tree-level process of $e^+ e^- \rightarrow \mu^+ \mu^-$. Electron and positron annihilate each other and produce muon-antimuon pair through a virtual photon.}
+\label{fig:e-to-mu-feynman}
+\end{figure}
 
 \subsection{Renormalization}
 
+\clearpage
 \section{Symmetries}
 
-\subsection{Groups}
+In 1964, Richard Feynman gave a series of seven lectures called \emph{The Character of Physical Law} at Cornell University, as part of the Messenger Lectures series. The lectures were videotaped by the BBC, and are available online alongside their transcripts~\cite{Feynman1997-vo}.
+
+\begin{quote}
+Suppose that we were in telephone conversation with a Martian or an Arcturian, or something. We don’t know where he is and we would like to describe things to him. We want to tell him about things. You say, so how’s he going to understand the words, well, that’s been studied very much by Professor Morrison here. He has pointed out that one way would be to start out and say tick tick two, tick tick tick three, and so on, and pretty soon the guy’d catch onto the numbers. Then—as he understands your number system, then—you can write lots of numbers and you could, for example, write a whole sequence of numbers that represents the weights, the proportional weights, of the different atoms, in succession.
+
+Then say, hydrogen: 1.008, deuterium, and so on and so on. And he would-after he sat down with all those numbers and piddled around a while, would-discover that the mathematical ratios were the same as the ratios of the weights of the elements and, therefore, those names must be for the elements—and so gradually, you could, in talking to him, have a common language, in many ways, common. There are many-now comes the problem.
+
+Suppose that he says, you fellas—after we get familiar with him, he says, "You’re very nice; now I’d like to know what you look like." And you start out, "Well, we’re about six feet tall." He says, "Six feet, how big is a foot?" "It’s very easy," you say; "six feet tall is 170 thousand million hydrogen atoms high." Well, it’s not a joke; it’s a possible way of describing six feet to someone that has no measure, assuming that we cannot send him any samples, nor can we both look at the same object.
+
+If we have to tell him how big we are; we can do it. That’s because the laws of physics are not unchanged under a scale change. We can use that factor, use the properties of the scale to determine—I mean, you can use that fact to determine the scale.
+
+Well, here we’ve described ourselves after telling six feet tall, and we’re so-and-so bilateral on the outside, and we look like this, and there are these prongs sticking out, and all this. And he says, "That’s very interesting; what do you look like on the inside?" So we describe the heart and so on, and we say, "Now, put the heart in on the left side."
+
+Now the question is, how can we tell him which side is the left side?
+\end{quote}
+
+\subsection{Conservation Laws}
 
 \subsection{Noether's Theorem}
+
+\subsection{Groups}
 
 \subsection{Symmetries of the Standard Model}
 
