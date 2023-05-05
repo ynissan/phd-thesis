@@ -276,7 +276,13 @@ The quantization scheme also provide \emph{Feynman rules} in order to compute th
 \clearpage
 \section{Symmetries}
 
-In 1964, Richard Feynman gave a series of seven lectures called \emph{The Character of Physical Law} at Cornell University, as part of the Messenger Lectures series. The lectures were videotaped by the BBC, and are available online alongside their transcripts~\cite{Feynman1997-vo}.
+In 1964, Richard Feynman gave a series of seven lectures called \emph{The Character of Physical Law} at Cornell University, as part of the Messenger Lectures series. The lectures were videotaped by the BBC, and are available online alongside their transcripts~\cite{Feynman1997-vo}. It is such a precious piece of history, and I would recommend everyone to watch it, as it is meant for the public audience. It showcases not only Feynman's ability to explain complex ideas and theories, but also his funny and enchanting personality. The fourth lecture in that series is called \emph{Symmetry in Physical Law}, in which he starts by describing how Weyl defines a symmetry:
+
+\begin{quote}
+So, Weyl said, a thing is symmetrical if there’s something that you can do to it, so that after you’re finished doing it, it looks the same as it did before. That is the sense in which we say that the laws of physics are symmetrical: that there are things that we can do to the physical laws, or to our way of representing the physical laws, which make no difference and leave everything unchanged in its effects.
+\end{quote}
+
+Most physicists will probably agree that that's what they mean when they say that a physical law is symmetrical. In this chapter we are concerned with symmetries of laws, rather then symmetries of objects, such as a human face, for example. In modern physics, hugely thanks to Noether's theorem, symmetries became fundamental, and they set the foundations of the Standard Model of particle physics. In this chapter I summarize the reasons why symmetries are so important, and what roles they play in the Standard Model. But first, I would like to introduce my favorite physics riddle, which Feynman described, starting at minute 40:04 in the same lecture:
 
 \begin{quote}
 Suppose that we were in telephone conversation with a Martian or an Arcturian, or something. We don’t know where he is and we would like to describe things to him. We want to tell him about things. You say, so how’s he going to understand the words, well, that’s been studied very much by Professor Morrison here. He has pointed out that one way would be to start out and say tick tick two, tick tick tick three, and so on, and pretty soon the guy’d catch onto the numbers. Then—as he understands your number system, then—you can write lots of numbers and you could, for example, write a whole sequence of numbers that represents the weights, the proportional weights, of the different atoms, in succession.
@@ -292,13 +298,60 @@ Well, here we’ve described ourselves after telling six feet tall, and we’re 
 Now the question is, how can we tell him which side is the left side?
 \end{quote}
 
+Putting it short, the riddle is how to communicate the concept of left and right via radio signals to an alien civilization without reference to common sightings? Most physicists attempt this problem by thinking of the right-hand rule in electromagnetism. Unfortunately, that would not work. The correct solution is very unexpected, and one of the most surprising results of modern physics. The solution is explain in the section about parity symmetry~\ref{sec:parity}.
+
 \subsection{Conservation Laws}
 
-\subsection{Noether's Theorem}
+A conservation law states that a particular measurable property of an isolated physical system does not change as the system evolves over time. Conservation laws are useful because they describe which processes can or cannot occur in nature. They also allow properties of the motion to be derived without solving the equations of motion. Conservation laws have changed throughout history, and some are a part of one theory but not another. Mass, for example, is conserved in classical mechanics, but not in relativity due to the principle of mass–energy equivalence. However, it a good approximation when the assumptions of classical mechanics hold, such as low velocities and energies, and large enough objects. Most conservation laws are exact, or absolute, in the sense that they apply to all possible processes. Some conservation laws are partial, in that they hold for some processes but not for others.
 
+In continuum mechanics, the most general form of an exact conservation law is given by a continuity equation. For example, conservation of electric charge $q$ is
+\begin{equation}
+\pdv{\rho}{t}=-\nabla\cdot\vb{j},
+\end{equation}
+where $\rho$ is the density of $q$ (amount per unit volume), $\vb{j}$ is the flux of $q$ (amount crossing a unit area in unit time), and $t$ is time. There are several methods for identifying conservation laws. It can be hypothesize and proved mathematically. In classical mechanics, Hamilton–Jacobi equations provide a method for identifying constants of motion, and so does Poisson's theorem. In quantum mechanics, an observable quantity $Q$ will be a constant of motion if it commutes with the hamiltonian, and it does not itself depend explicitly on time. In the context of particle physics, the most powerful theorem invoked in order to study conservation laws is Noether's theorem~\ref{sec:noethers-theorem}. It also this  theorem that connects conservation laws to symmetries, which is the topic of this section. 
+
+Currently, exact conservation laws that have never been proven to be violated include conservation of mass-energy $E$, conservation of linear momentum $\vb{p}$, conservation of angular momentum $\vb{L}$, conservation of electric charge, conservation of weak isospin, conservation of color charge, conservation of boost 3-vector, and conservation of CPT parity. Approximate conservation laws, \ie, conservation laws which are approximately true in particular situations, such as low speeds, short time scales, or certain interactions include conservation of mechanical energy, mass, baryon number, lepton number, flavor, strangeness, space-parity, charge-parity, time-parity, and CP parity.
+
+\subsection{Noether's Theorem}
+\label{sec:noethers-theorem}
+
+In 1915, German-Jewish female mathematician Amalie Emmy Noether proved one of the most fundamental theorems of 20th century's modern physics. In spring of that year, she was invited by David Hilbert and Felix Klein to join the Göttingen mathematics department, challenging the views of some of his colleagues that a woman should not be allowed to teach at a university. Soon after arriving at Göttingen, she demonstrated her capabilities by proving the theorem now known as Noether's theorem, which shows that a conservation law is associated with any differentiable symmetry of a physical system~\cite{Lederman2004-fl}. That made modern theoretical physicists much more focused on symmetries.
+
+Informally, Noether's theorem can be stated as:
+\begin{quote}
+If a system has a continuous symmetry property, then there are corresponding quantities whose values are conserved in time.
+\end{quote}
+In the context of classical field theory, it can be stated as:
+\begin{quote}
+To each differentiable symmetry of a local Lagrangian, there corresponds a conserved current.
+\end{quote}
+Previously, we described a symmetry by something that you can do, so that it looks the same as it did before. More formally in this context, a symmetry is the covariance of the form that a physical law takes, where by covariance, we mean invariance of the form of physical laws under differentiable transformations. That means, continuous transformation that leave the equations of motion invariant invariant. Formally, in the context of classical field theories, the theorem can be stated in the language of fields~\cite{Peskin2019-bt}. Consider a continuous transformations on the fields $\phi$, which in infinitesimal form can be written
+\begin{equation}
+\phi(x)\rightarrow\phi^\prime(x)=\phi(x)+\alpha\Delta\phi(x),
+\label{eq:infi-trans}
+\end{equation}  
+where $\alpha$ is an infinitesimal parameter and $\Delta\phi(x)$ is some deformation of the field configuration. It is considered a symmetry if it leaves the equations of motion invariant. This is insured either if the action is invariant under the transformation, or it is changed by a surface term. The Lagrangian, therefore, must be invariant under~\ref{eq:infi-trans} up to a 4-divergence:
+\begin{equation}
+\mathcal{L}(x)\rightarrow\mathcal{L}(x)+\alpha\partial_{\mu}\mathcal{J}^{\mu}(x),
+\end{equation}
+for some $\mathcal{J}^{\mu}$. After varying the fields, one finds:
+\begin{equation}
+\partial_{\mu}j^{\mu},\qquad \textrm{for} \quad j^{\mu}(x)=\pdv{\mathcal{L}}{\qty(\partial_{\mu}\phi)}\Delta\phi-\mathcal{J}^{\mu}.
+\end{equation}
+This result states that the current $j^{\mu}(x)$ is conserved. This can also be expressed by saying that the charge
+\begin{equation}
+Q\equiv\int_{\textrm{all space}}j^0\dd[3]{x}
+\end{equation}
+is a constant in time.
+
+\clearpage
 \subsection{Groups}
 
+
+
 \subsection{Symmetries of the Standard Model}
+\subsubsection{Parity}
+\label{sec:parity}
 
 \section{The Standard Model}
 
