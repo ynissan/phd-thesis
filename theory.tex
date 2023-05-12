@@ -271,8 +271,6 @@ The quantization scheme also provide \emph{Feynman rules} in order to compute th
 \label{fig:e-to-mu-feynman}
 \end{figure}
 
-\subsection{Renormalization}
-
 \clearpage
 \section{Symmetries}
 
@@ -298,7 +296,7 @@ Well, here we’ve described ourselves after telling six feet tall, and we’re 
 Now the question is, how can we tell him which side is the left side?
 \end{quote}
 
-Putting it short, the riddle is how to communicate the concept of left and right via radio signals to an alien civilization without reference to common sightings? Most physicists attempt this problem by thinking of the right-hand rule in electromagnetism. Unfortunately, that would not work. The correct solution is very unexpected, and one of the most surprising results of modern physics. The solution is explain in the section about parity symmetry~\ref{sec:parity}.
+Putting it short, the riddle is how to communicate the concept of left and right via radio signals to an alien civilization without reference to common sightings? Most physicists attempt this problem by thinking of the right-hand rule in electromagnetism. Unfortunately, that would not work. The correct solution is very unexpected, and one of the most surprising results of modern physics. The solution is explain in the section about discrete symmetries~\ref{sec:discrete-symmetries}.
 
 \subsection{Conservation Laws}
 
@@ -347,22 +345,298 @@ is a constant in time.
 \clearpage
 \subsection{Groups}
 
+We have seen that symmetries lead to conservation laws via Noether's theorem. Intuitively, we stated that symmetries are things that don't change while other things do change. The mathematical description of symmetries is Group Theory~\cite{Robinson2011-dv}. Groups are fundamental in particle physics, since they they describe the symmetries which the laws of physics seem to obey. The first example encountered in particle physics is Lorentz covariance, or Lorentz symmetry. It is an equivalence of observation or observational symmetry due to special relativity implying that the laws of physics stay the same for all observers that are moving with respect to one another within an inertial frame. Mathematically speaking, a physical quantity is said to be Lorentz covariant if it transforms under a given representation of the Lorentz group. In particular, a Lorentz covariant scalar (\ie, the space-time interval) remains the same under Lorentz transformations and is said to be a Lorentz invariant. Another important example is gauge theories. A gauge theory is a type of field theory in which the Lagrangian does not change (is invariant) under local transformations according to certain smooth families of operations (Lie groups).
 
+A \emph{Group}, denoted $\qty(G, \star)$, is a set of object, denoted $G$, and some operation on those objects, denoted $\star$, subject to the following:
+\begin{enumerate}
+\item For any two elements $g_1$ and $g_2$ in $G$, the elemet $g_1\star g_2$ is also in $G$. This property is called \emph{closure}.
+\item For any three elements $g_1, g_2$ and $g_3$ in $G$, the relation $\qty(g_1\star g_2)\star g_3=g_1\star\qty(g_2\star g_3)$ must hold. This property is called \emph{associativity}.
+\item There exists an element of $G$ which we will denote $e$, that satisfies $e\star g = g\star e = g$ for every element $g$ of $G$. This property is called \emph{identity}.
+\item For every element $g$ of $G$, there is another element of $G$ which we will denote $g^{-1}$ that satisfies $g^{-1}\star g = g\star g^{-1}=e$. This property is called \emph{inverse}.
+\end{enumerate}
+A group in which $g_i\star g_j=g_j\star g_i$ is called \emph{abelian}. Otherwise, it is non-abelian. Groups can be \emph{discrete} or \emph{continuous}. We will mainly concern ourselves with continuous groups. It is easy to see that Lorenz transformations and gauge transformation form continuous groups.
+
+A \emph{representation} of a group $G$ on a vector space $V$ over a field $K$ is a group homomorphism from $G$ to $GL(V)$, the general linear group on $V$. That is, a representation is a map
+\begin{equation}
+\rho:G\rightarrow GL(V)
+\end{equation}
+such that
+\begin{equation}
+\rho\qty(g_1 g_2)=\rho\qty(g_1)\rho\qty(g_2),\qquad \textrm{for all}\,\, g_1,g_2\in G.
+\end{equation}
+In other words, a representation assigns a matrix to each element of the group, while the operation is represented by regular matrix multiplication and preserves the group multiplication table. A subspace $W$ of $V$ that is invariant under the group action is called a \emph{subrepresentation}. If $V$ has exactly two subrepresentations, namely the zero-dimensional subspace and $V$ itself, then the representation is said to be \emph{irreducible}; if it has a proper subrepresentation of nonzero dimension, the representation is said to be \emph{reducible}. 
+
+\subsubsection{Lie Groups}
+
+Symmetries in the Standard Model are usually parameterized by continuous variables. This means that we are no longer talking about $g_i$'s, but about $g(\theta)$. Groups that are parameterized by one or more continuous variables are called \emph{Lie Groups}. In continuously generated groups, there are elements close to the identity, such that a general element can be reached by repeated action of these infinitesimal elements. Any infinitesimal group element $g$ can be written
+\begin{equation}
+g\qty(\alpha)=1+i\alpha^aT^a+\order{\alpha^2}.
+\end{equation}
+The set $T^a$ are Hermitian operators called the \emph{generators} of the symmetry group. They obey commutation relations
+\begin{equation}
+\comm{T^a}{T^b}=i f^{abc}T^c;
+\end{equation}
+the numbers $f^{abc}$ are called \emph{structure constants}. The vector space spanned by the generators, with the additional operation of commutation, is called a \emph{Lie Algebra}. The structure constants obey the Jacobi identity
+\begin{equation}
+f^{ade}f^{bcd}+f^{bde}f^{cad}+f^{cde}f^{abd}=0.
+\end{equation}
+If the structure constants are known, the entire group can be determined in any representation desired. A particular set of generators defines a particular representation of a group. Any element of a group in a particular representation can be written as
+\begin{equation}
+D(\alpha)=e^{i\alpha^{a}T^{a}}.
+\end{equation}
+
+\subsection{Gauge Theory}
+\label{sec:gauge-theory}
+
+As described before, a gauge theory is a type of field theory in which the Lagrangian is invariant under local transformations according to certain smooth families of operations, which form a Lie groups. The groups formed by the gauge transformations are referred to as the symmetry groups or the gauge groups of the theory. For each group generator there necessarily arises a corresponding field (usually a vector field) called the gauge field. When such a theory is quantized, the quanta of the gauge fields are called gauge bosons. If the symmetry group is non-commutative, then the gauge theory is referred to as non-abelian gauge theory, the usual example being the Yang–Mills theory. The Standard Model is a non-abelian gauge theory with the symmetry group $U(1)\cross SU(2)\cross SU(3)$, which demonstrate the successful central role that gauge theory plays in theories explaining the dynamics of elementary particles.
+
+\subsubsection{Demonstration: Electrodynamics}
+
+The Lagrangian that generates the electron field's Dirac equation is
+\begin{equation}
+\mathcal{L}=\bar{\psi}\qty(i\gamma^{\mu}\partial_{\mu}-m)\psi.
+\end{equation}
+This Lagrangian has a \emph{global symmetry} of
+\begin{equation}
+\psi\mapsto e^{i\theta}\psi.
+\end{equation}
+It is global in that it acts on the field the exact same way at every point in spacetime. The gauge group here is $U(1)$, also known as \emph{the circle group}, the multiplicative group of all complex numbers with absolute value 1, that is, the unit circle in the complex plane or simply the unit complex numbers.
+
+Next we are \emph{gauging the symmetry}. This means that we are making the global symmetry local by making $\theta$ depand on spacetime
+\begin{equation}
+\theta=\theta(x),
+\end{equation}
+and then try to force the Lagrangian to maintain its invariance under the \emph{local} $U(1)$ transformation. Define a new field $A_{\mu}$, which transforms under the $U(1)$ transformation $e^{i\theta(x)}$ according to
+\begin{equation}
+A\mu\mapsto A\mu-\frac{1}{q}\partial_{\mu}\alpha(x).
+\end{equation}
+$A_{\mu}$ is called the \emph{Gauge Field}. It is introduced by replacing the standard derivative $\partial_{\mu}$ with the \emph{Covariant Derivative}
+\begin{equation}
+D_{\mu}=\partial_{\mu}+iqA_{\mu}.
+\end{equation}
+This results in the Lagrangian
+\begin{equation}
+\mathcal{L}=\bar{\psi}\qty(i\gamma^{\mu}D_{\mu}-m)\psi=\bar{\psi}\qty(i\gamma^{\mu}\partial_{\mu}-m-q\gamma^{\mu}A_{\mu})\psi=\bar{\psi}\qty(i\gamma^{\mu}\partial_{\mu}-m)\psi-qj^{\mu}A_{\mu},
+\end{equation}
+where $j^{\mu}=\bar{\psi}\gamma^{\mu}\psi$ is the $U(1)$ conserved current. This Lagrangian is invariant under the local $U(1)$ symmetry. Adding an appropriate gauge-invariant kinetic term 
+\begin{equation}
+\mathcal{L}_{\textrm{Kinetic}}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+where
+\begin{equation}
+F^{\mu\nu}=\frac{i}{q}\comm{D^\mu}{D^\nu}
+\end{equation}
+and $q=e$ is the constant of proportionality , and $D^\mu$ is the covariant derivative. This results in the Lagrangian used as the starting point in quantum electrodynamics
+\begin{equation}
+\mathcal{L}=\bar{\psi}\qty(i\gamma^{\mu}D_{\mu}-m)\psi-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+The gauge symmetry $U(1)$ created therefore a theory with electromagnetism. The field $A_{\mu}$ field, will become the photon upon quantization.
 
 \subsection{Symmetries of the Standard Model}
-\subsubsection{Parity}
-\label{sec:parity}
+\label{symmetries-of-the-standard-model}
 
+The symmetries of the Standard Model arise from  global spacetime symmetries involving transformations of space and time, and from local gauge symmetries, explained in~\ref{sec:gauge-theory}. The fields in the theory then fall into representations of these groups.
+
+\subsubsection{Poincaré Group}
+
+The Poincaré group represents the full spacetime symmetry of special relativity. It is this group that makes the Standard Model a relativistic quantum theory. As a result, all elementary particles fall in representations of this group. The Poincaré group is a ten-dimensional noncompact Lie group, and a semi-direct product of the translations group and the Lorentz group. It includes:
+\begin{itemize}
+\item \emph{translations} (displacements) in time and space ($\vb{P}$), forming the abelian Lie group of translations on space-time;
+\item \emph{rotations} in space, forming the non-abelian Lie group of three-dimensional rotations ($\vb{J}$);
+\item \emph{boosts}, transformations connecting two uniformly moving bodies ($\vb{K}$).
+\end{itemize}
+The last two symmetries, $\vb{J}$ and $\vb{K}$, together make the Lorentz group. The group has 10 generators, which imply by Noether's theorem 10 conservation laws: 1 for the energy, 3 for the momentum, 3 for the angular momentum and 3 for the velocity of the center of mass.
+
+The Lorentz group is the set of all Lorentz transformations. A \emph{Lorentz transformations} is a linear, homogeneous change of coordinates from $x^{\mu}$ to $\bar{x}^{\mu}$,
+\begin{equation}
+\bar{x}^{\mu}=\tensor{\Lambda}{^{\mu}_{\nu}}x^{\nu}
+\end{equation}
+that preserve the interval $x^2$ between $x^{\mu}$ and the origin, where
+\begin{equation}
+x^2\equiv x^{\mu} x_{\mu}=g_{\mu\nu}x^{\mu}x^{\nu}=\vb{x}^2-c^2t^2.
+\end{equation}
+This means that the matrix $\tensor{\Lambda}{^{\mu}_{\nu}}$ must obey
+\begin{equation}
+g_{\mu\nu}\tensor{\Lambda}{^{\mu}_{\rho}}\tensor{\Lambda}{^{\nu}_{\sigma}}=g_{\rho\sigma},
+\end{equation}
+where $g_{\mu\nu}$ is the Minkowski metric. The group algebra is defined by the commutation relations of its generators
+\begin{equation}
+\begin{split}
+\comm{J_i}{J_j}&=i\epsilon_{ijk}J_k, \\
+\comm{J_i}{K_j}&=i\epsilon_{ijk}K_k, \\
+\comm{K_i}{K_j}&=-i\epsilon_{ijk}J_k, \\
+\end{split}
+\end{equation}
+corresponding to the two types of transformation: rotations and boosts. Consider the following linear combinations of the generators:
+\begin{equation}
+N^{\pm}_{i}=\frac{1}{2}\qty(J_i\pm iK_i).
+\end{equation}
+The resulting commutation relations of these operators are
+\begin{equation}
+\begin{split}
+\comm{N_i^+}{N_j^+}&=i\epsilon_{ijk}N_k^+, \\
+\comm{N_i^-}{N_j^-}&=i\epsilon_{ijk}N_k^-, \\
+\comm{N_i^-}{N_j^+}&=0. \\
+\end{split}
+\end{equation}
+Therefore, we see that have two copies of $SU(2)$. This is a very useful fact, since it shows that any representation of the Lorenz group $SO(1,3)$ can be specified by the doublet $(j,j')$, where $j$ corresponds to the $SU(2)$ generated by the $N_i^+$'s and $j'$ corresponds to the $SU(2)$ generated by the $N_i^-$'s. The corresponding representation of the Lorenz group will be made up of $(2j+1)(2j'+1)\cross (2j+1)(2j'+1)$ matrices. The four simplest and most often encountered representations are:
+\begin{equation}
+\begin{split}
+&(0,0)=\text{\emph{Scalar} or \emph{Singlet}}\\
+&(\frac{1}{2},0)=\text{\emph{Left-handed spinor}}\\
+&(0,\frac{1}{2})=\text{\emph{Right-handed spinor}}\\
+&(\frac{1}{2},\frac{1}{2})=\text{\emph{Vector}}
+\end{split}
+\end{equation}
+
+\subsubsection{Discrete Symmetries: P, T, C}
+\label{sec:discrete-symmetries}
+
+A theory can posses or be tested against discrete symmetries. In addition to continuous Lorenz transformations, there are two other spacetime operations that are potential symmetries of the Lagrangian: \emph{parity} and \emph{time reversal}. Parity, denoted by $P$, sends $(t,\vb{x})\rightarrow(t,-\vb{x})$, reversing the handedness of space. Time reversal, denoted $T$, sends $(t,\vb{x})\rightarrow(-t,\vb{x})$, interchanging the forward and backward light-cones. A third (non-spacetime) discrete operation is \emph{charge conjugation}, denoted by $C$. Under this operation, particles and antiparticles are interchanged.
+
+Experimentally, it is known that the gravitational, electromagnetic, and strong interactions are symmetric with respect to $P$, $C$ and $T$. The weak interactions violate $C$ and $P$ separately, but preserve $CP$ and $T$. But certain rare processes involving neutral $K$ mesons also show $CP$ and $T$ violation. All observations indicate that $CPT$ is a perfect symmetry of Nature.
+
+That brings us to the riddle from the beginning of the chapter. How do we communicate the concept of left and right? The answer lies in parity symmetry. If a force is symmetric under parity, nature does not differentiate between our world and the mirror world. That means, that we cannot use gravity, electromagnetism or the strong nuclear force to solve that riddle. The only force that break this symmetry is parity. In 1956, the Chinese American female physicist Chien-Shiung Wu conducted the Wu experiment, which demonstrated that parity was violated by the weak interaction, providing a way to operationally define left and right without reference to the human body. The experiment monitored the decay of cobalt-60 atoms that were aligned by a uniform magnetic field. This beta decay can be written as:
+\begin{equation}
+\tensor*[^{60}_{27}]{\mathrm{Co}}{}\rightarrow\tensor*[^{60}_{28}]{\mathrm{Ni}}{}+\Pem+\PAGne+2\PGg.
+\end{equation}
+It has been observed that most of the electrons favored a very specific direction of decay, specifically opposite to that of the nuclear spin. It was later established that parity violation was in fact maximal. Since the direction of the spin of the cobalt atoms are known, the favored direction of the electrons will define the direction left. The only catch here, is that we've assumed the aliens are made from matter, rather than antimatter. If they build a human being, and that human being came to visit us, we should be careful. Or by the words of Feynman:
+\begin{quote}
+Then when we go finally to meet this man (after he tells us how to build a sufficiently good spaceship), we go to meet this man, and you walk up to him and you put out your right hand to shake hands—if he puts out his right hand, okay, but if he puts out his left hand, watch out, because the two of you will annihilate with each other!
+\end{quote}
+
+\subsubsection{Gauge Symmetries}
+
+The local $SU(3)\cross SU(2) \cross U(1)$ gauge symmetry is an internal symmetry that essentially defines the Standard Model. Roughly, the three factors of the gauge symmetry give rise to the three fundamental interactions. The fields fall into different representations of the various symmetry groups of the Standard Model. It has been explained in~\ref{sec:gauge-theory} how gauging a symmetry gives rise to interactions. The electroweak sector is a Yang–Mills gauge theory with the symmetry group $SU(2)_L \cross U(1)_Y$, while quantum chromodynamics is a Yang–Mills gauge theory with $SU(3)$ symmetry. The massless gauge bosons of the electroweak $SU(2)_L \cross U(1)_Y$ mix after spontaneous symmetry breaking to produce the 3 massive weak bosons ($\PWp$, $\PWm$ and $\PZ$) as well as the still-massless photon field. The dynamics of the photon field and its interactions with matter are, in turn, governed by the $U(1)$ gauge theory of quantum electrodynamics.
+
+\subsubsection{Spontaneous Symmetry Breaking}
+\label{spontaneous-symmetry-breaking}
+
+Spontaneous symmetry breaking is a spontaneous process of symmetry breaking, by which a physical system in a symmetric state spontaneously ends up in an asymmetric state. It can describe systems where the equations of motion or the Lagrangian obey symmetries, but the lowest-energy vacuum solutions do not exhibit that same symmetry. In the Standard Model, without spontaneous symmetry breaking, all particles would be massless due to the gauge symmetries. The Higgs mechanism provides a spontaneous symmetry breaking mechanism, which is essential to explain the generation mechanism of mass for gauge bosons, as well as the fermions. It was developed by Higgs, Brout and Englert in the 1960s~\cite{Higgs:1964ia,Higgs:1964pj,Englert:1964et,Guralnik:1964eu,Higgs:1966ev}. Based on work from Sheldon~\cite{PhysRev.155.1554} it was later applied to $SU(2)_L \cross U(1)_Y$ gauge theory by Weinberg and Salam~\cite{GLASHOW1961579,Weinberg:1967tq,Salam:1968rm}.
+
+In order to achieve the breaking mechanism, the Higgs field is added to the Standard Model. The Higgs field is a scalar field, with two neutral and two electrically charged components that form a complex doublet of the weak isospin $SU(2)$ symmetry. It has a "Mexican hat-shaped" potential. This shape means that at low energies, the Higgs field in its ground state takes less energy to have a nonzero vacuum expectation value (VEV) than a zero value. This VEV breaks the weak isospin $SU(2)$ symmetry of the electroweak interaction. Then, three components of the Higgs field are "absorbed" by the $SU(2)_L \cross U(1)_Y$ gauge bosons, to give $\PWp$, $\PWm$ and $\PZ$ bosons their mass, while the remaining electrically neutral component either manifests as a Higgs boson, or couple to the fermions via Yukawa couplings, causing them to acquire mass as well.
+
+\clearpage
 \section{The Standard Model}
+
+The Standard Model (SM) of particle physics is the most successful theory we have for explaining the fundamental particles and their interactions (electromagnetic, weak and strong interactions – excluding gravity). Thus far, no fundamental particle beyond the SM has been observed. Its formulation has been finalized in the mid-1970s, and was driven by theoretical and experimental particle physicists alike. Important milestones in the development and experimental observations are spread over many decades. In 1954, Yang Chen-Ning and Robert Mills extended the concept of gauge theory for abelian groups to nonabelian groups to provide an explanation for strong interactions~\cite{PhysRev.96.191}. In 1957, Wu experiment demonstrated parity was not conserved in the weak interaction~\cite{PhysRev.105.1413}. In 1961, Glashow combined the electromagnetic and weak interactions~\cite{GLASHOW1961579}. In 1967 Weinberg~\cite{Weinberg:1967tq} and Salam~\cite{Salam:1968rm} incorporated the Higgs mechanism~\cite{Englert:1964et,Higgs:1964pj,Guralnik:1964eu} into Glashow's electroweak interaction, giving it its modern form. In 1973, the neutral weak currents caused by Z boson exchange were discovered at CERN~\cite{HASERT1973121,HASERT1973138,HASERT19741}. In 1983, the $\PWpm$ and $\PZz$ bosons were discovered experimentally~\cite{RevModPhys.71.S96}. The top quark was discovered in 1995 by the CDF~\cite{PhysRevLett.74.2626} and DØ~\cite{PhysRevLett.74.2632} experiments at Fermilab. The discovery of the tau neutrino was announced in July 2000 by the DONUT collaboration~\cite{Kodama_2001}. In 2012 both CMS~\cite{201230} and ATLAS~\cite{20121} at CERN have announced that they observed the Higgs boson, the final fundamental particle predicted by the SM to be experimentally confirmed.
+
+Formally, the mathematical framework of the SM is a relativistic quantum field theory, in which a Lagrangian controls the dynamics and kinematics. The construction of the SM is done by postulating a set of symmetries of the system, and then by writing down the most general renormalizable Lagrangian from its particle (field) content that observes these symmetries. As a relativistic quantum field theory, the global Poincaré symmetry is postulated. The local $SU(3)\cross SU(2) \cross U(1)$ is an internal symmetry that essentially defines the SM. The symmetries and how the gauge invariance gives rise the gauge bosons were described in~\ref{sec:gauge-theory} and~\ref{symmetries-of-the-standard-model}. The strong force is described by the group $SU(3)$ that acts on the color charge $C$. The electroweak force s described by the group $SU(2) \cross U(1)$ and acts on the weak hypercharge $Y$, and on left-handed fermions which have a weak isospin $T_3\neq 0$.
+
+The SM predicts fundamental particles, which are shown in Figure~\ref{fig:sm-particles}. They can be categorized by in different ways according to their quantum numbers. The matter particles are \emph{fermions}, which have half-integer spin, specifically spin $1/2$. They interact with each other by the exchange of gauge bosons, which have spin 1. Only particles that carry the charge associated with an interaction can interact with its gauge bosons. In addition, the SM predicts the Higgs boson, which has spin 0, and is an result of the Higgs field which is responsible for the spontaneous symmetry breaking described in~\ref{spontaneous-symmetry-breaking}, and generates the masses of the massive particles in the SM.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\linewidth]{plots/sm/Standard_Model_of_Elementary_Particles.svg.png}  \\
+\caption[Elementary particles of the Standard Model]{Elementary particles of the Standard Model, including the most important quantum numbers.}
+\label{fig:sm-particles}
+\end{figure}
+
+\subsection{Fermions}
+
+According to the spin–statistics theorem, fermions respect the Pauli exclusion principle. Each fermion has a corresponding antiparticle. They can classified further according to how they interact, or equivalently, by what charges they carry. There are six flavored quarks: up ($\PQu$), down ($\PQd$), charm ($\PQc$), strange ($\PQs$), top ($\PQt$), bottom ($\PQb$), and each has a corresponding anti-quark. They are divided into three generations, where each generation is heavier than the previous. They are further grouped in up ($\PQu$, $\PQc$, $\PQt$) and down ($\PQd$, $\PQs$, $\PQb$) types. The quarks carry color charge, and hence interact via the strong interaction. The quarks are strongly bound to one another due to the phenomenon of color confinement. Therefore, they form color-neutral composite particles called hadrons that contain either a quark and an antiquark (mesons) or three quarks (baryons). Quarks also carry electric charge and weak isospin, so they participate in the electromagnetic and weak interactions.
+
+In contrast to the quarks, leptons do not carry a color charge, and therefore do not participate in the strong interactions. There are six flavored leptons: electron (\Pe), electron neutrino (\PGne), muon (\PGm), muon neutrino (\PGnGm), tau (\PGt), tau neutrino (\PGnGt). Each lepton has a corresponding anti-lepton. They are also divided into three generations according to their masses. Since each member of a generation has greater mass than the corresponding particle of any generation before it, the first-generation charged particles do not decay. That's why all ordinary (baryonic) matter is made of first generation particles.
+
+The SM is a chiral theory, meaning that left-handed and right-handed fermions are treated differently. Under weak isospin $SU(2)$ transformations, the left-handed particles are weak-isospin doublets, whereas the right-handed are singlets. That means that all left-handed fermions have a weak isospin of $\pm 1/2$,  while the right-handed ones have a weak isospin of 0. The charged left-handed lepton and the left-handed neutrino of each generation are arranged as a weak isospin doublet. The right-handed charged lepton are singlets. Right-handed neutrinos are not part of the SM. The weak hypercharge of the left-handed leptons is -1, and -2 of the right-handed leptons.
+
+\subsection{Gauge bosons}
+
+In the SM, gauge bosons are the force carriers that mediate the strong, weak, and electromagnetic fundamental interactions. The gauge bosons all have spin-1. The photons mediate the electromagnetic force between electrically charged particles. The photon is massless and is well-described by the theory of quantum electrodynamics. The $\PWp$, \PWm, and \PZz gauge bosons mediate the weak interactions, and are massive. The weak interactions involving the \PWpm act only on left-handed particles and right-handed antiparticles. The electrically neutral \PZz boson interacts with both left-handed particles and right-handed antiparticles. Since the \PWpm carries an electric charge of $+1$ and $-1$, they couple to the photon as well. The eight gluons mediate the strong interactions between color charged particles (the quarks). Gluons are massless, and since they carry color charge themselves, they can interact among themselves. The strong interaction is governed by the theory of quantum chromodynamics (QCD). The interactions of the SM are summarized in Figure~\ref{fig:sm-interactions}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.5\linewidth]{plots/sm/Standard_Model_–_All_Feynman_diagram_vertices.svg.png}  \\
+\caption[Interactions of the Standard Model.]{Interactions of the Standard Model~\cite{Lindon:2746537}. Feynman diagrams in the SM are built from combinations of these vertices. $q$ is any quark, $g$ is a gluon, $X$ is any charged particle, $\gamma$ is a photon, $f$ is any fermion, $m$ is any particle with mass, $m_B$ is any boson with mass.}
+\label{fig:sm-interactions}
+\end{figure}
+
+The three combined symmetry group $SU(2)_L \cross U(1)_Y$ gives rise to four gauge bosons. The symmetry group $U(1)_Y$ gives rise to $B$, and $SU(2)_L$ gives rise to $W^1$, $W^2$ and $W^3$. The physical bosons $\gamma$, $\PWp$, \PWm, and \PZz are obtained by mixing these states due to the Higgs mechanism and are given by
+\begin{equation}
+\PWpm=\frac{1}{\sqrt(2)}\qty(W^1\mp i W^2)
+\end{equation}
+and
+\begin{equation}
+\mqty(\PGg \\ \PZ)=\mqty(\cos \theta_W & \sin \theta_W \\ -\sin \theta_W & \cos \theta_W)\cdot \mqty(B \\ W^3),
+\end{equation}
+where $\theta_W$ is the mixing angle, or Weinberg angle. The electric charge is determined by the weak isospin and
+weak hypercharge by
+\begin{equation}
+Q=T_3+\frac{Y}{2}.
+\end{equation}
+
+Generally speaking, the weak interaction is responsible for processes such as radioactive decay. It has the ability to change flavors. In a neutron decay, for example, a down quark in the neutron emits a $\PWm$, and thereby changing into an up quark. The $\PWm$ boson then decays into an electron and an electron antineutrino. This process is not restricted to quarks within one generation. The probability of a transition from one flavour j quark to another flavour i quark is encoded in the Cabibbo–Kobayashi–Maskawa (CKM) matrix,  and is proportional to $\abs{V_{ij}}^2$. The three diagonal elements of the matrix are close to unity, which means decay processes within the same generation are favored, whereas the off-diagonal are small, especially for mixing with the third generation.
+
+The strong interaction is referred to as Quantum Chromodynamics (QCD). QCD described interactions between quarks mediated by gluons. It is a non-abelian gauge theory, with symmetry group $SU(3)$. The QCD analog of electric charge is a property called color. Gluons are the force carriers of the theory, just as photons are for the electromagnetic force in quantum electrodynamics. The six kinds of charge in QCD are referred to as \emph{color charge}: red, green, blue and their anticolors. The strong interaction is responsible for the nuclear force, and is what binds protons and neutrons in the nucleus. It also binds quarks in hadrons, including the nucleons.
+
+\subsection{Higgs Boson}
+
+As mentioned in Section~\ref{spontaneous-symmetry-breaking}, the Higgs mechanism is responsible for spontaneous symmetry breaking of the $SU(2)_L \cross U(1)_Y$ gauge group in order to generate mass for all the massive particles in the SM. The Higgs boson is a consequence of the Higgs field. The mass term arising from the Dirac Lagrangian (for any fermion $\psi$) is $-m\bar{\psi}\psi$ which is not invariant under the electroweak symmetry. In addition the W and Z bosons are massive, but unlike what is predicted without symmetry breaking. In order to solve these problems, the Higgs mechanism is introduced. In the Standard Model, the Higgs field is a complex scalar field, which is a $SU(2)_L$ doublet:
+\begin{equation}
+\phi=\frac{1}{\sqrt{2}}\mqty(\phi^+ \\ \phi^0),
+\end{equation}
+where the superscripts + and 0 indicate the electric charge (Q) of the components. The weak hypercharge ($Y_W$) of both components is 1. The Higgs potential is symmetric with respect to the origin and has a non-trivial minimum. It is given by
+\begin{equation}
+V(\phi)=\mu^2\abs{\phi}^2+\lambda\abs{\phi}^4,
+\end{equation}
+where $\lambda,\mu^2>0$. In a unitarity gauge one can set $\phi^+=0$ and make $\phi^0$ real. Then $<\phi^0>=v$ is the non-vanishing vacuum expectation value of the Higgs field, which spontaneously breaks the symmetry of the electroweak model. It generates the Higgs boson $H$ with the mass
+\begin{equation}
+m_H=\sqrt{2}\mu.
+\end{equation}
+The masses of the $\PW$ and $\PZ$ bosons are given by:
+\begin{equation}
+\begin{split}
+m_\PW&=\frac{1}{2}gv \\
+m_\PZ&=\frac{\PW}{\cos \theta_W}. \\
+\end{split}
+\end{equation}
+Self-interaction terms of the Higgs boson that are described by the coupling strength $\lambda$. The masses of the fermions are generated via the Yukawa couplings.
 
 \subsection{Shortcomings of the Standard Model}
 
+Although the SM is very successful theory, it falls short of explaining all observations and open questions. It is, therefore, not regarded a \emph{theory of everything}, and it is agreed to be incomplete. Direct experimental evidence not explained in the SM include:
+\begin{itemize}
+\item \textbf{Gravity:} The SM does not account for gravity. That is perhaps one of the biggest challenges that physicists of our time face.
+\item \textbf{Neutrino masses:} The phenomenon of neutrino oscillation suggest that the neutrinos have mass~\cite{Gonzalez_Garcia_2008}, in direct contradiction to the SM which predict that they have zero mass.
+\item \textbf{Baryon asymmetry:} The SM does not explain the observed imbalance in baryonic matter and antibaryonic matter in the observable universe~\cite{Canetti_2012}. The CP violation accounted for in the SM is too small to explain why our universe is made mainly from matter and not almost equal amounts of matter and antimatter.
+\item \textbf{Dark matter and dark energy:} The existence of dark matter is also not explained by the SM~\cite{Garrett_2011}. If it unclear yet if it is a particle, or a different kind of phenomenon, but if it is a particle, then the SM needs to be extended. The SM also does not account for the  universe's accelerating expansion as possibly described by dark energy.
+\end{itemize}
+
+In addition, the SM is seen by some to possess some conceptual deficiencies, such as:
+\begin{itemize}
+\item \textbf{Hierarchy problem:} The Higgs mechanism gives rise to the hierarchy problem if some new physics is present at high energy scales. If that is the case, severe fine tuning of the parameters is required between the bare mass of the Higgs boson, and the enormous loop corrections to the Higgs mass~\cite{Jegerlehner_2014}. A further discussion about this problem is given in Section~\ref{sec:naturalness}.
+\item \textbf{Ad-hoc-ness:} The SM requires 19 numerical constants whose values are unrelated and arbitrary. It is also unclear why there are three generations of quark and leptons.
+\item \textbf{Unification of forces:} the successful unification of the weak and electromagnetic forces suggest that a further unification with the strong force might be possible. This is referred to as a Grand-Unified-Theory (GUT) theory. In a GUT theory, the coupling strength of the interactions are expected to have the same magnitude at some high energy scale, which is not observed in the SM.
+\end{itemize}
+
+\clearpage
 \section{Supersymmetry}
 
-\section{Motivational Discussion for Supersymmetry}
+\glsreset{susy}\gls{susy} is a set of theories in which a symmetry that relates fermions and bosons is postulated~\cite{Peskin2019-bt,Garrett_2011,MARTIN_1998}. That is, a supersymmetry transformation turns a bosonic state into a fermionic state, and vice versa. The interest in \gls{susy} can be traced back to 1967, in which Coleman and Mandula proved a no-go theorem stating that spacetime and internal symmetries can only combine in a trivial way~\cite{PhysRev.159.1251}. This means that the charges associated with internal symmetries must always transform as Lorentz scalars. Also, there can be no change of the spin of particles. Fermions cannot change into bosons or vice-versa. This was evaded in the 70's by different groups of physicists~\cite{GERVAIS1971632,HAAG1975257} with the discovery of \gls{susy}. It is done by loosening the restriction on the types of symmetries of a QFT, and in addition to Lie Algebras one can consider graded Lie Algebras whose operators anticommute. The first realistic supersymmetric version of the SM was proposed by Fayet, and is known as the \gls{mssm}.
 
-\subsection{No go theorem}
-\subsection{Dark Matter Candidate}
+An operator $Q$ that generates transformations between bosonic and fermionic states must be an anti-commuting spinor, with
+\begin{equation}
+\begin{split}
+Q\ket{\text{Boson}}=\ket{\text{Fermion}},\\
+Q\ket{\text{Fermion}}=\ket{\text{Boson}}.
+\end{split}
+\end{equation}
+Since $Q$ is a complex spinor, $Q^\dagger$ is also a symmetry generator. These operators carry spin angular momentum $1/2$, so that \gls{susy} is a spacetime symmetry. It has been demonstrated that the most general possibility of such operators is a collection of spin-$1/2$ operators with the anticommutation reations
+\begin{equation}
+\pb{Q^i_\alpha}{Q^{j\dagger}_\beta}=2\delta^{ij}\sigma^\mu_{\alpha\beta}P^\mu,
+\end{equation}
+with $i,j=1,\ldots,N$. All other anticommutation relations between the $Q$s and commutation relations between the $Q$s and $P$s vanish. In this section, the simplest case $N=1$ is considered. It is the simplest supersymmetric extension of the Poincaré algebra, or the Super-Poincaré algebra. The index $\alpha=1,2$ is the left-handed spinor components of the operator, and $P^\mu$ is the total energy-momentum. 
+
+The single-particle states of a supersymmetric theory fall into irreducible representations of the supersymmetry algebra, called supermultiplets. Each supermultiplet contains both fermion and boson states, which are known as \emph{superpartners} of each other. The resulting commutation relation
+\begin{equation}
+\comm{Q}{P^2}=\comm{Q^{\dagger}_{\dot{\alpha}}}{P^2}=0
+\end{equation}
+implies that particles that are transformed into each other have the same eigenvalues of $P^2$, and therefore equal masses. The generators also commute with the generators of gauge transformations. That means that particles and their \emph{superpartners} must also share the same gauge charges.
+
+Since we do not observe a bosonic superpartner to the electron, named \emph{selectron}, with the same mass of the electron, it is clear that supersymmetry must be a spontanously brokem=n symmetry. The specific mechanism of the SUSY breaking is unknown, but usually further terms which break SUSY explicitly are added by hand to the Lagrangian. However, since naturalness is often described as a motivation for introducing SUSY, it is required that the SUSY breaking terms still provide a solution to the hierarchy problem. This means that the effective Lagrangian contain only “soft” SUSY breaking, meaning that they violate SUSY but contains only mass terms and coupling parameters with positive mass dimension.
+
+\subsection{The Minimal Supersymmetric Standard Model}
 \subsection{Naturalness}
+\label{sec:naturalness}
 
 
