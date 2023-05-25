@@ -10,7 +10,7 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref} 
 \usepackage{graphicx}
-\usepackage[xindy,toc,acronym]{glossaries}
+\usepackage[xindy,toc,acronym,nomain]{glossaries}
 \usepackage{ifthen}
 \usepackage{multirow}
 %\usepackage{utphys}
@@ -35,7 +35,7 @@ lepton tracks with the CMS experiment}, pdfauthor={Yuval Nissan}}
 \makeglossaries
 
 \input{commands}
-\input{glossary}
+%\input{glossary}
 \input{acronyms}
 
 \begin{document}
@@ -96,9 +96,9 @@ lepton tracks with the CMS experiment} \\[1.2cm]
 \include{detector}
 \include{search}
 \include{summary}
-\include{latex-stuff}
+%\include{latex-stuff}
 
-\listoffixmes
+%\listoffixmes
 %\part{Feynman Diagrams and Quantum Electrodynamics}
 %\part{Renormalization}
 %\part{Definitions and Mathematical tools}
