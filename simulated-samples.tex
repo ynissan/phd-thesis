@@ -1,25 +1,41 @@
 \clearpage
-\section{Simulated samples}
+\section{Data sets and simulated samples}
+\label{sec:datasets}
+
+This section provides details about the simulated samples and data samples used in the analysis. Simulation is used both for he signal, as well as for SM processes.
+
 \subsection{Standard Model simulated samples}
 \label{sec:sm-mc}
+
+Simulation of SM events is used for the BDT training, closure tests and to aid a general understanding. Simulated FullSim Drell-Yan (DY) samples are also used to estimate the Z$\rightarrow\tau\tau$ background and to derive a transfer factor for background between a Z$\rightarrow\tau\tau$-enriched CR and the SR.
+
+Most SM processes including QCD, leptonic W decays, top-antitop quark decays and Drell-Yan processes were simulated using \MGvATNLO~\cite{Alwall_2011} and \PYTHIA 8~\cite{Sj_strand_2015}, while single-top and leptonic WW diboson processes were simulated using \POWHEG BOX~\cite{Oleari_2010}.
+Several \CMSSW releases were used to process the SM Monte Carlo (MC) samples.
+The 2016 samples were reconstructed mainly in 9\_4\_X (RunIISummer16MiniAODv3). The 2017 MC samples were reconstructed in a 9\_4\_X (RunIIFall17MiniAODv2) release while the 2018 were reconstructed in a 10\_2\_X release. These samples use full CMS detector simulation, which is performed using the {\GEANTfour} toolkit~\cite{AGOSTINELLI2003250}.
+
+
 \subsection{Signal simulated samples}
 \label{sec:signal-simulation}
 
- The lifetimes of the electroweakinos are determined from phase space using the spectrum generator package SUSYHIT \cite{Allanach:2001kg}. A scan is performed in the dimensions of $\Delta m^{\pm}$ and the higgsino mass. 
-
-
-
-The dominant decay of the chargino in such models is to hadrons, most often a single soft pion, via an off-shell W boson; we assume a branching fraction of 100\%. The Z$^{*}$ is assumed to decay primarily to hadrons, with a branching fraction to electrons and muons of XXX each (YYY combined) [YUVAL to specify?].
-
-Signal events corresponding to the 2016, 2017, and 2018 data taking periods are simulated with the \textsc{PYTHIA} 8.205 event generator~\cite{Sjostrand:2014zea} at LO with the CUETP8M1 tune, based on the \textsc{nnpdf2.3lo}~\cite{Ball:2013hta}
-parton distribution function (PDF). All production processes are generated simultaneously using the \textsc{PYTHIA} option for inclusive production (\texttt{susy:all = on}), which includes all possible processes and not only those indicated in Fig. \ref{fig:signal-feynman-diagrams}. The relative rates of each process is proportional to its corresponding LO cross section. The total cross section is subsequently re-weighted to match the cross section computed with NLO plus next-to-leading-log (NLL) precision in the limit of mass-degenerate higgsino $\chiz_2$, $\chipm_1$,  and $\chiz_1$ with all the other 
+Signal events corresponding to the 2016, 2017, and 2018 data taking periods are simulated with the \PYTHIA 8.205 event generator at LO with the CUETP8M1 tune, based on the \textsc{nnpdf2.3lo}~\cite{Ball:2013hta} parton distribution function (PDF). All production processes are generated simultaneously using the \textsc{PYTHIA} option for inclusive production (\texttt{susy:all = on}), which includes all possible processes and not only those indicated in Fig. \ref{fig:signal-feynman-diagrams}. The relative rates of each process is proportional to its corresponding LO cross section. The total cross section is subsequently re-weighted to match the cross section computed with NLO plus next-to-leading-log (NLL) precision in the limit of mass-degenerate higgsino $\PSGczDt$, $\PSGcpmDo$,  and $\PSGczDo$ with all the other 
 sparticles assumed to be heavy and decoupled.
 
 Generated events are subsequently processed with the CMS fast detector
 simulation program FastSim~\cite{Abdullin:2011zz,Giammanco:2014bza},
-which yields results that are generally consistent with those from {\GEANTfour}. For each model point,  $5*10^5$ events have been generated in the grid represented in Fig \ref{fig:limits}. To achieve higher statistical precision for the same computing requirements, only the subset of events passing a generator-level event filter consisting of the requirement $H_{T}>180$ GeV has been simulated using FastSim. $H_{T}$ is computed as the scalar sum of the $p_{T}$ of generator-level AK4 jets with $p_{T}>30$ GeV and $\eta<5.0$ [new samples have no HT cut].
+which yields results that are generally consistent with those from {\GEANTfour}. For each model point,  $5\cdot 10^5$ events have been generated in the grid represented in Fig \ref{fig:signal-scan-grid}. To achieve higher statistical precision for the same computing requirements, only the subset of events passing a generator-level event filter consisting of the requirement $\HT>180 \GeV$ has been simulated using FastSim. $\HT$ is computed as the scalar sum of the $\pt$ of generator-level AK4 jets with $\pt>30$ GeV and $\eta<5.0$.
 
-\section{Data sets and simulated samples\label{sec:datasets}}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.80\linewidth]{plots/signal_scan/PureHiggsinoScan.pdf} \\
+\caption[Distribution of the grid of model points chosen for simulation]{Distribution of the grid of model points chosen for simulation.}
+\label{fig:signal-scan-grid}
+\end{figure}
+
+The lifetimes of the electroweakinos are determined from phase space using the spectrum generator package SUSYHIT \cite{Allanach:2001kg}. A scan is performed in the dimensions of $\Delta m^{\pm}$ and the higgsino mass.
+
+The dominant decay of the chargino in such models is to hadrons, most often a single soft pion, via an off-shell W boson; we assume a branching fraction of 100\%. The Z$^{*}$ is assumed to decay primarily to hadrons, with a branching fraction to electrons and muons of 5\% each (10\% combined).
+
+
 
 \subsection{Collected data samples}
 \label{sec:data-samples}
@@ -50,83 +66,7 @@ MET                   & 14.01          & 5.06      & 6.72 & 32.65 & --   & --   
 }
 \end{table}
 
-\subsection{Standard model MC samples}
-\label{sec:sm-mc}
 
-Simulation is used for closure tests and to aid a general understanding, as well as for the interpretation of signal events. Simulated FullSim Drell-Yan (DY) samples are also used to derive a transfer factor for the Z$\rightarrow\tau\tau$ background between a Z$\rightarrow\tau\tau$-enriched CR and the SR.
-
-Several CMSSW releases were used to process the SM Monte Carlo (MC) samples.
-The 2016 samples were reconstructed mainly in 9\_4\_X (RunIISummer16MiniAODv3). The 2017 MC samples were reconstructed in a 9\_4\_X (RunIIFall17MiniAODv2) release while the 2018 were reconstructed in a 10\_2\_X release.
-The SM samples are listed in Tables \ref{tab:mcsamples}-\ref{tab:mcsamples}.  The cross
-sections listed correspond to next-to-next-to-leading-order (NNLO) calculations
-unless otherwise noted. 
-
-%FIX THIS
-%#All samples use the ``Moriond17'' pileup scenario, which simulates a
-%pileup distribution with an average of 25 interactions per
-%bunch crossing and a 25 ns interval between bunches.
-
-\begin{table}[hp]
-\centering
-\caption{Simulated SM samples used in the analysis. The cross  sections are calculated to NNLO. }
-\label{tab:mcsamples}
-{\footnotesize
-\begin{tabular}{|lcc|}
-\hline
-2016 Dataset name & $\sigma$ (pb) & \lint (\fbinv) \\
-\hline
-WJetsToLNu\_HT-100To200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 1627.45 & 6.11     \\
-WJetsToLNu\_HT-200To400\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 435.24  & 89.57    \\
-WJetsToLNu\_HT-400To600\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 59.18   & 131.12   \\
-WJetsToLNu\_HT-600To800\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 14.58   & 1281.72  \\
-WJetsToLNu\_HT-800To1200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8  & 6.660   & 1175.76  \\
-WJetsToLNu\_HT-1200To2500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 1.608   & 4273.91  \\
-WJetsToLNu\_HT-2500ToInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.039   & 67792.88 \\
-TTJets\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8    &      831.76 & 12.26     \\
-TTJets\_SingleLeptFromT\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8                & 182.72 & 337.24    \\
-TTJets\_SingleLeptFromTbar\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8             & 182.72 & 330.25    \\
-TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 88.34  & 349.06    \\
-TTJets\_HT-600to800\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8                    & 2.685  & 5343.28   \\
-TTJets\_HT-800to1200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8                   & 1.096  & 9607.90   \\
-TTJets\_HT-1200to2500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8                  & 0.194  & 15097.94  \\
-TTJets\_HT-2500toInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.002  & 646450.58 \\
-ST\_s-channel\_4f\_leptonDecays\_13TeV-amcatnlo-pythia8\_TuneCUETP8M1                     & 3.340  & 116.20 \\
-ST\_t-channel\_top\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TC     & 136.02 & 493.35 \\
-ST\_t-channel\_antitop\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TC & 80.95  & 479.44 \\
-ST\_tW\_antitop\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1                    & 19.47  & 167.27 \\
-ST\_tW\_top\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1  & 19.47  & 167.29 \\                  
-QCD\_HT200to300\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 1717000.00 & 0.03   \\
-QCD\_HT300to500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 351300.00  & 0.15   \\
-QCD\_HT500to700\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 31630.00   & 1.98   \\
-QCD\_HT700to1000\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8  & 6802.00    & 2.30   \\
-QCD\_HT1000to1500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 1206.00    & 12.61  \\
-QCD\_HT1500to2000\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 120.40     & 98.33  \\
-QCD\_HT2000toInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8& 25.24      & 238.49 \\
-ZJetsToNuNu\_HT-100To200\_13TeV-madgraph   & 344.83 & 70.39    \\
-ZJetsToNuNu\_HT-200To400\_13TeV-madgraph   & 95.53  & 259.19   \\
-ZJetsToNuNu\_HT-400To600\_13TeV-madgraph   & 13.20  & 747.31   \\
-ZJetsToNuNu\_HT-600To800\_13TeV-madgraph   & 3.148  & 1831.99  \\
-ZJetsToNuNu\_HT-800To1200\_13TeV-madgraph  & 1.451  & 1495.71  \\
-ZJetsToNuNu\_HT-1200To2500\_13TeV-madgraph & 0.355  & 1447.84  \\
-ZJetsToNuNu\_HT-2500ToInf\_13TeV-madgraph  & 0.009  & 47414.35 \\
-DYJetsToLL\_M-50\_HT-100to200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 181.30 & 60.77    \\
-DYJetsToLL\_M-50\_HT-200to400\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 50.42  & 190.59   \\
-DYJetsToLL\_M-50\_HT-400to600\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 6.984  & 1392.58  \\
-DYJetsToLL\_M-50\_HT-600to800\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8   & 1.681  & 4932.14  \\
-DYJetsToLL\_M-50\_HT-800to1200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8  & 0.775  & 3447.37  \\
-DYJetsToLL\_M-50\_HT-1200to2500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.186  & 3200.91  \\
-DYJetsToLL\_M-50\_HT-2500toInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8& 0.004  & 91105.26 \\
-WWTo1L1Nu2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8             & 50.00 & 40.69    \\
-WWTo2L2Nu\_13TeV-powheg   &    12.18 & 164.15   \\
-WZTo1L1Nu2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8             & 10.71 & 764.54   \\
-WZTo1L3Nu\_13TeV\_amcatnloFXFX\_madspin\_pythia8               & 3.058 & 170.33   \\
-WWZ\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8   &   0.165 & 1172.24  \\
-WZZ\_TuneCP5\_13TeV-amcatnlo-pythia8   &    0.056 & 3468.14  \\
-ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8   &    0.014 & 13043.84 \\
-\hline
-\end{tabular}
-}
-\end{table}
 
 
 
