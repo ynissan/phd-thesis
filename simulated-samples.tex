@@ -2,12 +2,12 @@
 \section{Data sets and simulated samples}
 \label{sec:datasets}
 
-This section provides details about the simulated samples and data samples used in the analysis. Simulation is used both for he signal, as well as for SM processes.
+This section provides details about the simulated samples and data samples used in the analysis. Simulation is used both for the signal, as well as for SM processes.
 
 \subsection{Standard Model simulated samples}
 \label{sec:sm-mc}
 
-Simulation of SM events is used for the BDT training, closure tests and to aid a general understanding. Simulated FullSim Drell-Yan (DY) samples are also used to estimate the Z$\rightarrow\tau\tau$ background and to derive a transfer factor for background between a Z$\rightarrow\tau\tau$-enriched CR and the SR.
+Simulation of SM events is used for BDT training, closure tests, and to aid in general understanding. Simulated FullSim Drell-Yan (DY) samples are also utilized to estimate the Z$\rightarrow\tau\tau$  background and derive a transfer factor for the background between a Z$\rightarrow\tau\tau$-enriched \gls{cr} and the \gls{sr}.
 
 Most SM processes including QCD, leptonic W decays, top-antitop quark decays and Drell-Yan processes were simulated using \MGvATNLO~\cite{Alwall_2011} and \PYTHIA 8~\cite{Sj_strand_2015}, while single-top and leptonic WW diboson processes were simulated using \POWHEG BOX~\cite{Oleari_2010}.
 Several \CMSSW releases were used to process the SM Monte Carlo (MC) samples.
@@ -17,12 +17,12 @@ The 2016 samples were reconstructed mainly in 9\_4\_X (RunIISummer16MiniAODv3). 
 \subsection{Signal simulated samples}
 \label{sec:signal-simulation}
 
-Signal events corresponding to the 2016, 2017, and 2018 data taking periods are simulated with the \PYTHIA 8.205 event generator at LO with the CUETP8M1 tune, based on the \textsc{nnpdf2.3lo}~\cite{Ball:2013hta} parton distribution function (PDF). All production processes are generated simultaneously using the \textsc{PYTHIA} option for inclusive production (\texttt{susy:all = on}), which includes all possible processes and not only those indicated in Fig. \ref{fig:signal-feynman-diagrams}. The relative rates of each process is proportional to its corresponding LO cross section. The total cross section is subsequently re-weighted to match the cross section computed with NLO plus next-to-leading-log (NLL) precision in the limit of mass-degenerate higgsino $\PSGczDt$, $\PSGcpmDo$,  and $\PSGczDo$ with all the other 
+Signal events corresponding to the 2016, 2017, and 2018 data taking periods are simulated with the \PYTHIA 8.205 event generator at LO with the CUETP8M1 tune, based on the \textsc{nnpdf2.3lo}~\cite{Ball:2013hta} parton distribution function (PDF). All production processes are generated simultaneously using the \textsc{PYTHIA} option for inclusive production (\texttt{susy:all = on}), which includes all possible processes and not only those indicated in Figure~\ref{fig:signal-feynman-diagrams}. The relative rates of each process is proportional to its corresponding LO cross section. The total cross section is subsequently re-weighted to match the cross section computed with NLO plus next-to-leading-log (NLL) precision in the limit of mass-degenerate higgsino $\PSGczDt$, $\PSGcpmDo$,  and $\PSGczDo$ with all the other 
 sparticles assumed to be heavy and decoupled.
 
 Generated events are subsequently processed with the CMS fast detector
 simulation program FastSim~\cite{Abdullin:2011zz,Giammanco:2014bza},
-which yields results that are generally consistent with those from {\GEANTfour}. For each model point,  $5\cdot 10^5$ events have been generated in the grid represented in Fig \ref{fig:signal-scan-grid}. To achieve higher statistical precision for the same computing requirements, only the subset of events passing a generator-level event filter consisting of the requirement $\HT>180 \GeV$ has been simulated using FastSim. $\HT$ is computed as the scalar sum of the $\pt$ of generator-level AK4 jets with $\pt>30$ GeV and $\eta<5.0$.
+which yields results that are generally consistent with those from {\GEANTfour}. For each model point,  $5\cdot 10^5$ events have been generated in the grid represented in Figure~\ref{fig:signal-scan-grid}. To achieve higher statistical precision for the same computing requirements, only the subset of events passing a generator-level event filter consisting of the requirement $\HT>180 \GeV$ has been simulated using FastSim. $\HT$ is computed as the scalar sum of the $\pt$ of generator-level AK4 jets with $\pt>30$ GeV and $\eta<5.0$.
 
 \begin{figure}[!htb]
 \centering
@@ -33,9 +33,7 @@ which yields results that are generally consistent with those from {\GEANTfour}.
 
 The lifetimes of the electroweakinos are determined from phase space using the spectrum generator package SUSYHIT \cite{Allanach:2001kg}. A scan is performed in the dimensions of $\Delta m^{\pm}$ and the higgsino mass.
 
-The dominant decay of the chargino in such models is to hadrons, most often a single soft pion, via an off-shell W boson; we assume a branching fraction of 100\%. The Z$^{*}$ is assumed to decay primarily to hadrons, with a branching fraction to electrons and muons of 5\% each (10\% combined).
-
-
+The dominant decay of the chargino in such models is to hadrons, most often a single soft pion, via an off-shell W boson; we assume a branching fraction of 100\%. The Z$^{*}$ is assumed to decay primarily to hadrons, with a branching fraction to leptons of 10\%.
 
 \subsection{Collected data samples}
 \label{sec:data-samples}
