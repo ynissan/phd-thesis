@@ -4,7 +4,7 @@
 
 The signal signature was studied in Section~\ref{sec:signal-signature}. In this section, a set of object selection criteria is devised to obtain a sample that is as pure as possible with respect to the signal leptons, while still retaining as much signal as possible. As discussed in Section~\ref{sec:search-strategy}, the focus is on selecting opposite-charge, same-flavor leptons \ellell resulting from the \neutt that decays into a \neuto and a \PZstar, \ie, \neuttdecay. Two choices of $\dmo$ are presented in the following section: a relatively high $\dmo$ of $\dmo=5.63\GeV$ and a low $\dmo$ of $\dmo=1.92\GeV$, but not so low as to prevent enough electrons from surviving the initial reconstruction \pt threshold of $5\GeV$. The higgsino parameter is fixed at $\mu=100\GeV$.
 
-In Section~\ref{sec:signal-signature}, the base selection required at least one jet in the event with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$, without any other selection. However, unlike in that section, objects are not weighted to any luminosity in this section, as the focus is on the proportion between object types. Two types of reconstructed leptons are differentiated: those originating from the targeted decay \neuttdecay, shown in blue, and those that do not, referred to as \emph{other}, shown in yellow. Signal leptons are marked as such by matching a reconstructed lepton to a generator level lepton, which has been confirmed to have the \neutt as its parent. Leptons marked as \emph{other} may have been misreconstructed, misidentified, or may be a result of the hadronisation process in a jet (such as the \gls{isr} jet). The goal is to select as many blue leptons as possible while rejecting as many yellow ones as possible.
+In Section~\ref{sec:signal-signature}, the base selection required at least one jet in the event with $\pt \geq 30\GeV$ and $\abs{\eta}<2.4$, without any other selection. However, unlike in that section, objects are not weighted to any luminosity in this section, as the focus is on the proportion between object types. Two types of reconstructed leptons are differentiated: those originating from the targeted decay \neuttdecay, shown in blue, and those that do not, referred to as \emph{other}, shown in yellow. Signal leptons are marked as such by matching a reconstructed lepton to a generator level lepton, which has been confirmed to have the \neutt as its parent. Leptons marked as \emph{other} may have been misreconstructed, misidentified, or may be a result of the hadronisation process in a jet (such as the \gls{isr} jet).
 
 In the following sections, the term \emph{efficiency} refers to the proportion of signal leptons passing a selection, divided by the initial number of signal leptons, and the term \emph{purity} refers to the proportion of signal leptons (blue) to the sum of the signal leptons and \emph{other} leptons (yellow). The goal is to find selection criteria with high efficiency and high purity. However, these two quantities can sometimes compete with each other, requiring compromises.
 
@@ -12,9 +12,9 @@ In the following sections, the term \emph{efficiency} refers to the proportion o
 \label{sec:object-selection-electrons}
 %\subsubsection{Signal electron selection}
 
-The electrons are subject to an initial lower threshold on the reconstructed \pt $5\GeV$, and are reconstructed using a loose \gls{wp}, as described in Section~\ref{sec:reconstruction-and-identification}. The first distribution of interest regarding the electrons is their angular separation from the leading jet in the event, denoted as $\DR(\jmath_1,\Pe)$. The distributions are shown in Figure~\ref{fig:electrons-dr-lj}. Two key features are apparent. The first has already been discussed in Section~\ref{sec:signal-signature}, which is that probing lower $\dm$ necessitates access to low $\pt$ leptons. The threshold of $\pt\geq 5\GeV$ on the electrons leads to reduced signal acceptance. This is evident from the difference between the high and low $\dm$ cases. The second interesting feature is that the signal electrons are predominantly located outside the leading jet. This is because the leading jet is typically an \gls{isr} jet, which boosts the \tchiz system away from it, causing them to be back-to-back. Thus, a cut of $\DR(\jmath_1,\Pe)>0.4$ is made to account for this.
+The electrons are subject to an initial lower threshold on the reconstructed \pt of $5\GeV$, and are reconstructed using a loose \gls{wp}. The first distribution of interest regarding the electrons is their angular separation from the leading jet in the event, denoted as $\DR(\jmath_1,\Pe)$. The distributions are shown in Figure~\ref{fig:electrons-dr-lj}. The signal electrons are predominantly located outside the leading jet. This is because the leading jet is typically an \gls{isr} jet, which boosts the \tchiz system away from it, causing them to be back-to-back. Thus, a cut of $\DR(\jmath_1,\Pe)>0.4$ is made to account for this. Furthermore, as already discussed in Section~\ref{sec:signal-signature}, probing lower $\dm$ necessitates access to low $\pt$ leptons. The threshold of $\pt\geq 5\GeV$ on the electrons leads to reduced signal acceptance. This is evident from the difference between the high and low $\dm$ cases.
 
-\begin{figure}[!htb]
+\begin{figure}[p]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_rlj.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_rlj.pdf}  \\
@@ -22,9 +22,9 @@ The electrons are subject to an initial lower threshold on the reconstructed \pt
 \label{fig:electrons-dr-lj}
 \end{figure}
 
-Distributions of electron $\pt$ are examined by applying the $\DR(\jmath_1,\Pe)>0.4$ cut. It is observed that the $\pt$ distribution depends strongly on the $\dm$, as previously seen for muons in Section~\ref{sec:muon-eta-pt}. Thus, a choice must be made regarding which $\dm$ to prioritize, and the lower $\dm$ case is chosen for increased sensitivity. However, the two choices are compared in Figure~\ref{fig:electrons-selection-pt}. As expected, the $\pt$ distribution of the electrons falls more rapidly for the low \dm case. It is observed that there are very few electrons surviving above $15\GeV$. Therefore, a cut of $\pt<15\GeV$ is chosen. The $\eta$ distribution is seen in Figure~\ref{fig:electrons-selection-eta}, after the previous cuts to gain a better understanding of where most of the non-signal electrons originate from. For the $\dm=1.92\GeV$ case, it can be clearly seen that the endcaps of the \gls{ecal} are performing worse compared to the barrel ($\abs{\eta}<1.48$). The transition is easily noticeable through a sharp drop in purity at the transition. This effect is most pronounced for low-$\pt$ electrons.
+Distributions of electron $\pt$ are examined by applying the $\DR(\jmath_1,\Pe)>0.4$ cut. It is observed that the $\pt$ distribution depends strongly on the $\dm$, as previously seen for muons in Section~\ref{sec:muon-eta-pt}. Thus, a choice must be made regarding which $\dm$ to prioritize, and the lower $\dm$ case is chosen for increased sensitivity. As can be seen in  expected Figure~\ref{fig:electrons-selection-pt}, the $\pt$ distribution of the electrons falls more rapidly for the low \dm case. It is observed that there are very few electrons with \pt above $15\GeV$. Therefore, a cut of $\pt<15\GeV$ is chosen. The $\eta$ distribution is seen in Figure~\ref{fig:electrons-selection-eta}, after the previous cuts to gain a better understanding of where most of the non-signal electrons originate from. For the $\dm=1.92\GeV$ case, it can be clearly seen that the endcaps of the \gls{ecal} are performing worse compared to the barrel ($\abs{\eta}<1.48$). The transition is easily noticeable through a sharp drop in purity at the transition. This effect is most pronounced for low-$\pt$ electrons.
 
-\begin{figure}[!htb]
+\begin{figure}[p]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_pt.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_pt.pdf}  \\
@@ -32,7 +32,7 @@ Distributions of electron $\pt$ are examined by applying the $\DR(\jmath_1,\Pe)>
 \label{fig:electrons-selection-pt}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[p]
 \centering
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm5p63/none_Electrons_eta.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/lepton_selection/lepton_selection_dm1p92/none_Electrons_eta.pdf}  \\
@@ -40,9 +40,9 @@ Distributions of electron $\pt$ are examined by applying the $\DR(\jmath_1,\Pe)>
 \label{fig:electrons-selection-eta}
 \end{figure}
 
-To determine whether a tighter \gls{wp} for the electron-identification is beneficial, the effects of requiring either a Medium or a Tight \gls{wp} are investigated. The \gls{wp} previously used in the distributions is the loose \gls{wp}. Two bins labeled \emph{fail} and \emph{pass} indicate the frequency with which the electron fails or passes the identification criteria of Medium or Tight \glspl{wp}. These bins are shown in Figure~\ref{fig:electrons-selection-id}. A considerable fraction of non-signal electrons are rejected in the low \dm case by picking either a Medium or Tight \gls{wp}, but a significant number of signal electrons are also lost. Therefore, using these selections is not very efficient and results in low signal acceptance. The decision is made to use a loose \gls{wp} for the electrons, and instead rely on isolation to achieve higher purity.
+To determine whether a tighter \gls{wp} for the electron-identification is beneficial, the effects of requiring either a Medium or a Tight \gls{wp} are investigated. The \gls{wp} previously used in the distributions is the loose \gls{wp}. Two bins in Figure~\ref{fig:electrons-selection-id} labeled \emph{fail} and \emph{pass} indicate the frequency with which the electron fails or passes the identification criteria of Medium or Tight \glspl{wp}. A considerable fraction of non-signal electrons are rejected in the low \dm case by picking either a Medium or Tight \gls{wp}, but a significant number of signal electrons is also lost. Therefore, using these selections is not very efficient and results in low signal acceptance. The decision is made to use a loose \gls{wp} for the electrons, and instead rely on isolation to achieve higher purity.
 
-The effect of isolation on the purity of the electrons is also examined. The jet-based isolation is discussed in detail in Section~\ref{sec:isolation}, but for the sake of completeness, its effect on the purity of the electrons is also shown here. The custom jet-based isolation is compared with the standard definition of lepton isolation, which does not take into account the possibility that two electrons can be produced with a small angle of separation (small \DR), as is the case for signal models with small \dm. The isolation distributions are shown in Figure~\ref{fig:electrons-selection-isolation}.
+The effect of isolation on the purity of the electrons is also examined. A custom jet-based isolation is discussed in detail in Section~\ref{sec:isolation}, but for the sake of completeness, its effect on the purity of the electrons is also shown here. The custom jet-based isolation is compared with the standard definition of lepton isolation. Note that the later does not take into account the possibility that two electrons can be produced with a small angle of separation (small \DR), as is the case for signal models with small \dm. The isolation distributions are shown in Figure~\ref{fig:electrons-selection-isolation}.
 
 \begin{figure}[!htb]
 \centering
@@ -103,7 +103,7 @@ The \pt threshold for reconstructed muons is significantly lower than that of el
 \label{fig:muons-dr-lj}
 \end{figure}
 
-Distributions of muon \pt are examined having applied the previous cut of $\DR(\jmath_1,\mu)>0.4$. As seen in Section~\ref{sec:muon-eta-pt}, the \pt distribution depends strongly on $\dm$. The \pt distributions seen in Figure~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are included as input to the multivariate classifier employed at a later stage, which can effectively cut tighter on the \pt dynamically and in concert with cutting on other variables. The actual maximum value of the pT of the muons will depend on the \gls{bdt} cut being used to define the signal region. \pt of the muons will depend on the BDT cut being used to define the signal region. The feature discussed earlier, whereby the endcaps are capable of reconstructing muons with lower \pt and therefore have worse purity than the barrel, is reiterated here. It is important to stress that the worse purity is due to a much higher efficiency, and as long as the muons can be purified further, it is not necessarily a bad thing. The rate of  the non-signal muons in the region of $\pt<2\GeV$, is seen to diverge rapidly, and the ratio of signal muons to non-signal muons is very low in that region. Therefore, an additional cut of $\pt>2\GeV$ is adopted. To evaluate the effect of this cut, the $\abs{\eta}$ distribution before and after the \pt cut, is shown in Figure~\ref{fig:muons-selection-eta}.
+Distributions of muon \pt are examined having applied the previous cut of $\DR(\jmath_1,\mu)>0.4$. As seen in Section~\ref{sec:muon-eta-pt}, the \pt distribution depends strongly on $\dm$. The \pt distributions seen in Figure~\ref{fig:muons-selectrion-pt} suggest a cut identical to the electron case of $\pt<15\GeV$. It is worth mentioning that the \pt of the muons are included as input to the multivariate classifier employed at a later stage, which can effectively cut tighter on the \pt dynamically and in concert with cutting on other variables. The actual maximum value of the pT of the muons will depend on the \gls{bdt} cut being used to define the signal region. \pt of the muons will depend on the BDT cut being used to define the signal region. The feature discussed earlier, whereby the endcaps are capable of reconstructing muons with lower \pt and therefore have worse purity than the barrel, is reiterated here. It is important to stress that the worse purity is due to a much higher efficiency, and as long as the muons can be purified further, it is not necessarily a bad thing. The rate of  the non-signal muons in the region of $\pt<2\GeV$ is seen to diverge rapidly, and the ratio of signal muons to non-signal muons is very low in that region. Therefore, an additional cut of $\pt>2\GeV$ is adopted. To evaluate the effect of this cut, the $\abs{\eta}$ distribution before and after the \pt cut, is shown in Figure~\ref{fig:muons-selection-eta}.
 
 \begin{figure}[!htb]
 \centering
@@ -181,6 +181,11 @@ In summary, the following is the full set of selection criteria of the analysis 
 
 \clearpage
 
+\subsection{Jets}
+\label{subsec:jets}
+
+Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$-jets is performed using the multivariate technique \DEEPCSV with a Medium \gls{wp}, also known as the \gls{csv} algorithm~\cite{BTV-16-002}. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
+
 \subsection{Missing transverse energy}
 \label{subsec:met}
 
@@ -188,7 +193,7 @@ The importance of the missing transverse momentum (or energy) in this analysis h
 \begin{equation}
 \VEtmiss = \ptvecmiss = -\sum_i \ptvec(i),
 \end{equation}
-where the summation is done on all particle flow candidates. Therefore, the missing transverse energy serves as a measure of particles that evade detection, such as weakly interacting neutral particles. Mismeasurements of visible particles and additional energy deposits from sources such as \gls{pu}, jet energy response and detector noise can affect this observable, so it undergoes further correction to mitigate these effects. The correction process considers jets with \pt greater than $10\GeV$. Full details of the corrections can be found in~\cite{met_performance}.
+where the summation is done on all particle flow candidates. Therefore, the missing transverse energy serves as a measure of particles that evade detection, such as weakly interacting neutral particles. Mismeasurements of visible particles and additional energy deposits from sources such as \gls{pu}, jet energy response and detector noise can affect this observable. To mitigate these effects, the correction process considers jets with \pt greater than $10\GeV$. Full details of the corrections can be found in~\cite{met_performance}.
 
 An alternative measurement to the missing transverse momentum is \htvecmiss, which is sometimes referred to as \emph{missing hardronic activity}. Instead of considering all particle flow candidates in the sum, this measurement only takes into account jets with \pt greater than $30\GeV$ and $\abs{\eta}$ less than 5, and is defined as:
 \begin{equation}
@@ -197,20 +202,15 @@ An alternative measurement to the missing transverse momentum is \htvecmiss, whi
 
 The observable \htvecmiss is favored over \VEtmiss in this analysis because the jet-based isolation, defined in Section~\ref{sec:isolation}, uses jets with \pt greater than $30\GeV$, while a sideband is defined using the range of $\pt\in [15,30]\GeV$ of jets, which is then used for the estimation of the jetty background in Section~\ref{sec:jetty-background-estimation}. Both observables, \VEtmiss and \htvecmiss, have equivalent scalar quantities, \MET and \mht respectively, which can be obtained by taking the magnitude of their vectorial counterpart.
 
-\subsection{Jets}
-\label{subsec:jets}
-
-Jets used in the analysis are reconstructed by clustering the \gls{pf} candidates using $\FASTJET$ with the anti-$\kt$ algorithm~\cite{Cacciari_2008_antikt} with a size parameter of 0.4. Tagging of $b$-jets is performed using the multivariate technique \DEEPCSV with a Medium \gls{wp}, also known as the \gls{csv} algorithm~\cite{BTV-16-002}. Jets are required to have a transverse momentum $\pt>30\GeV$ and $\abs{\eta}<2.4$.
-
 \clearpage
-\subsection{Tracks and multivariate selection }
+\subsection{Tracks and multivariate selection}
 \label{sec:track-bdt}
 
-The leptons \ellell produced in the decay \neuttdecay tend to have very low transverse momentum \pt. It was shown in Section~\ref{sec:reconstruction-and-identification} that the identification and reconstruction efficiency of the muons worsens with lower \pt. Therefore, the aim of the exclusive track category is to recover lost leptons that were not reconstructed or identified. As seen in Section~\ref{sec:track-reconstruction}, the tracking efficiency for the \pt ranges used in this analysis is well above 99\%, allowing the recovery of some of the  tracks that correspond to the missing leptons.
+The leptons \ellell produced in the decay \neuttdecay tend to have very low transverse momentum \pt. The identification and reconstruction efficiency of the muons worsens with lower \pt. Therefore, the aim of the exclusive track category is to recover lost leptons that were not reconstructed or identified. The tracking efficiency for the \pt ranges used in this analysis is well above 99\%, allowing the recovery of some of the  tracks that correspond to the missing leptons.
 
-To identify which track corresponds to the target lepton in a given signal event, a \gls{bdt} classifier is trained. Four separate \glspl{bdt} are trained, corresponding to each lepton flavor (muon or electron) and each phase of the tracker (Phase 0 for 2016, and Phase 1 for 2017-2018). All \glspl{bdt} use a common structure of 200 trees with a maximum depth of 3, and are trained with AdaBoost and GiniIndex separation using the TMVA package~\cite{tmva}. The package's default values are used for all other parameters. Tracks from a dedicated \FASTSIM signal simulations described in Section~\ref{sec:signal-simulation} are used for training. A broad range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo) is considered, but only the range of \dm that this analysis targets. For Phase 0, $\dmo$ is chosen from the range $[0.3,4.3]\GeV$ and $\mu$ from $[100-130]\GeV$, while for Phase 1, $\dmpm$ is chosen from $[0.3-4.6]\GeV$ and $\mu$ from $[100-500]\GeV$. Signal events are split into signal tracks and background tracks, with signal tracks originating from leptons from the decay \neuttdecay while background tracks do not match to the leptons. The samples for muons contain 9408 (10964) signal tracks and 99996 (151380) background tracks for Phase 0 (Phase 1). For electrons the samples contain 2364 (2288) signal tracks and 104065 (159713) background tracks for Phase 0 (Phase 1). The training samples are then tested against independent samples of equal size. Distributions of the classifier score for signal and background categories with the test samples overlayed onto the training samples can be seen in Figure~\ref{fig:track-bdt-output}.
+To identify which track corresponds to the target lepton in a given signal event, \gls{bdt} classifiers are trained. Four separate \glspl{bdt} are trained, corresponding to each lepton flavor (muon or electron) and each phase of the tracker (Phase 0 for 2016, and Phase 1 for 2017-2018). All \glspl{bdt} use a common structure of 200 trees with a maximum depth of 3, and are trained with AdaBoost and GiniIndex separation using the TMVA package~\cite{tmva}. The package's default values are used for all other parameters. Tracks from a dedicated \FASTSIM signal simulations described in Section~\ref{sec:signal-simulation} are used for training. A broad range of simulated higgsino parameter $\mu$ (or the mass of \PSGcpmDo) is considered, but only the range of \dm that this analysis targets. For Phase 0, $\dmo$ is chosen from the range $[0.3,4.3]\GeV$ and $\mu$ from $[100-130]\GeV$, while for Phase 1, $\dmpm$ is chosen from $[0.3-4.6]\GeV$ and $\mu$ from $[100-500]\GeV$. Signal events are split into signal tracks and background tracks, with signal tracks originating from leptons from the decay \neuttdecay while background tracks do not match to the leptons. The samples for muons contain 9408 (10964) signal tracks and 99996 (151380) background tracks for Phase 0 (Phase 1). For electrons the samples contain 2364 (2288) signal tracks and 104065 (159713) background tracks for Phase 0 (Phase 1). The training samples is then tested with independent samples of equal size. 
 
-Pre-selection is applied to all tracks in the collection obtained by the standard track reconstruction sequences. This pre-selection ensures that only properly-reconstructed, isolated, and prompt tracks are considered. The selected tracks must also have trajectories passing through the region near the primary vertex (PV) with the largest sum of charged-tracks, jets, and missing energy values. The full set of track pre-selection criteria are
+Pre-selection is applied to all tracks in the collection obtained by the standard track reconstruction sequences. This pre-selection ensures that only properly-reconstructed, isolated, and prompt tracks are considered. The selected tracks must also have trajectories passing through the region near the primary vertex (PV). The full set of track pre-selection criteria are
 \begin{itemize}
 \item $ \pt > 1.9 \GeV$;
 \item $ \abs{\eta} < 2.4$;
@@ -219,7 +219,7 @@ Pre-selection is applied to all tracks in the collection obtained by the standar
 \item $d_z(\text{track, PV}) < 0.02\, \cm$ w.r.t the PV
 \item no match to an electron or muon within a cone of size 0.01.
 \end{itemize}
-For the training, a set of 10 variables, listed in decreasing order of their importance ranking in Table~\ref{tab:track-bdt-variables} (in the muon case of Phase 0) is used.
+For the training, a set of 10 variables, listed in Table~\ref{tab:track-bdt-variables} in decreasing order of their importance ranking of the BDT training (in the muon case of Phase 0) is used.
 
 \begin{table}[!htb]
 	\centering
@@ -233,7 +233,7 @@ For the training, a set of 10 variables, listed in decreasing order of their imp
 			3 & $\pt(\ell)$ & \\
 			
 			4 & $\abs{\Delta\phi\left(t, \htvecmiss \right)}$ & \\
-			5 & $\abs{\Delta\eta\left(t, j_1 \right)}$ & $j_1$ is the leading jet\\
+			5 & $\abs{\Delta\eta\left(t, j_1 \right)}$ & $j_1$ is the leading \pt jet\\
 			6 & $\abs{\Delta\phi\left(t, \ell \right)}$ & \\
 			7 & $\abs{\eta\left(t\right)}$ & \\
 			8 & $\abs{\eta\left(\ell\right)}$ & \\
@@ -267,7 +267,7 @@ Figure~\ref{fig:muon-track-bdt-inputs} shows the distribution of input variables
 \label{fig:muon-track-bdt-inputs}
 \end{figure}
 
-The classifier output score for the 4 \glspl{bdt} is displayed in Figure~\ref{fig:track-bdt-output}, where the test distributions are superimposed on the training sample. No obvious over-training is observed. The ROC curves are plotted in Figure~\ref{fig:track-bdt-roc}, where the red point indicates the efficiency of the signal and background tracks of the minimum BDT cut, which is taken to be 0.0. Good separation between signal tracks and fake tracks is obtained, as evidenced by the relatively high signal efficiency of over 90\% (86\%) for muons (electrons) and background rejection of around 86\% (76\%) for muons (electrons).
+The classifier output score for the 4 \glspl{bdt} is displayed in Figure~\ref{fig:track-bdt-output}, where the test distributions are superimposed on the training sample. No obvious over-training is observed. The ROC curves are plotted in Figure~\ref{fig:track-bdt-roc}, where the red points indicate the efficiency of the signal and background tracks of the minimum BDT cut, which is taken to be 0.0. Good separation between signal tracks and fake tracks is obtained, as evidenced by the relatively high signal efficiency of over 90\% (86\%) for muons (electrons) and background rejection of around 86\% (76\%) for muons (electrons).
 
 \begin{figure}[!htb]
 \centering
@@ -275,7 +275,7 @@ The classifier output score for the 4 \glspl{bdt} is displayed in Figure~\ref{fi
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Muons_Phase_1.pdf}  \\
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_0.pdf} \,
 \includegraphics[width=0.48\linewidth]{plots/track_bdt/overtraining_Tracks_Electrons_Phase_1.pdf} \\
-\caption[Track BDT output plots]{Track BDT output plots for Muons (top) and Electrons (bottom) in Phase 0 (left) and Phase 1 (right). Blue shows signal tracks, while Red are fake tracks. Test sample overlay on top of training sample.}
+\caption[Track BDT output plots]{Track BDT output plots for muons (top) and electrons (bottom) in Phase 0 (left) and Phase 1 (right). Blue shows signal tracks, while red are fake tracks. Test sample overlay on top of training sample.}
 \label{fig:track-bdt-output}
 \end{figure}
 
@@ -295,7 +295,7 @@ The track with the maximum \gls{bdt} score is selected as the signal candidate t
 \subsection{Isolation}
 \label{sec:isolation}
 
-The leptons produced from the neutralino decay \neuttdecay are typically clean and isolated, with very little hadronic activity n their vicinity. This is because the only jets in the event come from initial state radiation, which boosts the produced electroweakinos in the opposite direction. Therefore, the leptons originating from those electroweakinos will not propagate collinear to these jets. The characteristic signal event topology can be exploited to distinguish signal events from background originating from \gls{sm} processes. At \gls{cms}, various standard isolation criteria are used. The three most widely used isolation criteria are track relative isolation~\cite{muon-pog-recommendations}, \gls{pf} relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version referred to as relative mini-isolation ($\mathrm{miniRelIso}$), described in~\cite{Rehermann_2011}.
+The leptons produced from the neutralino decay \neuttdecay are typically isolated, with very little hadronic activity n their vicinity. This is because the only jets in the event come from initial state radiation, which boosts the produced electroweakinos in the opposite direction. Therefore, the leptons originating from those electroweakinos will not propagate collinear to these jets. The characteristic signal event topology can be exploited to distinguish signal events from background originating from \gls{sm} processes. At \gls{cms}, various standard isolation criteria are used. The three most widely used isolation criteria are track relative isolation~\cite{muon-pog-recommendations}, \gls{pf} relative isolation ($\mathrm{RelIso}$), which was first described in~\cite{Chatrchyan_2011}, and a modified version referred to as relative mini-isolation ($\mathrm{miniRelIso}$), described in~\cite{Rehermann_2011}.
 
 Track relative isolation is defined as the \pt sum of all tracks around a given track (or lepton) within an angular separation $\DR$ of 0.3:
 
@@ -318,7 +318,7 @@ The last term in the definition is a correction for \gls{pu} effects. A lepton i
 \end{equation}
 The variable size cone allows for the recovery of efficiency when leptons are produced in the decay chain of a boosted object. In such cases, when the boost is large, the lepton is likely to overlap with another lepton produced at a common decay vertex, failing a standard isolation cut. The parameters are tuned to, and thus well-suited to, leptons from the decay of on-shell \PW and \PZ bosons, but are not suitable for low-mass resonances. 
 
-The drawback of standard isolation criteria in the case of this analysis’s  signal, the leptons can compromise each other's isolation. As shown in Section~\ref{sec:lepton-dr}, access to low \dm model-points requires including the $\DR<0.3$ phasespace region. Requiring any of the standard isolation criteria will thus result in rejecting valuable signal events. An alternative isolation criterion is proposed to help retain some of the desired phasespace while rejecting the majority of the standard model background. This alternative isolation proves to be useful not only for optimally selecting leptons, but also for defining a sideband control region needed for the jetty background estimation, as described in Section~\ref{sec:jetty-background-estimation}. The steps to construct the alternative \emph{jet-based isolation} are described algorithmically below.
+The drawback of standard isolation criteria in the case of this analysis, is that the two leptons can compromise each other's isolation. As shown in Section~\ref{sec:lepton-dr}, access to low \dm model-points requires including the $\DR<0.3$ phasespace region. Requiring any of the standard isolation criteria will thus result in rejecting valuable signal events. An alternative isolation criterion is proposed to help retain some of the desired phasespace while rejecting the majority of the standard model background. This alternative isolation proves to be useful not only for optimally selecting leptons, but also for defining a sideband control region needed for the jetty background estimation, as described in Section~\ref{sec:jetty-background-estimation}. The steps to construct the alternative \emph{jet-based isolation} are described algorithmically below.
 \begin{enumerate}
 \item Subtract the vector 4-momenta of candidate leptons of a given flavor from any reconstructed jet $\DR$ smaller than 0.4
 \item The lepton is said to pass isolation if it does not lie within $\DR<r$ of any \emph{lepton-corrected} jet with $\pt > p$. 
@@ -438,4 +438,4 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
   \end{tabular}
 \end{table}
 
-From Table~\ref{tab:iso-scan-transfer-factor}, it is evident that the transfer factor of the jetty background estimation method increases with larger $p$ and with smaller $r$. A transfer factor that is less than unity is preferred in order to ensure a high likelihood of well-populated control regions, and choices that do not meet this criterion are excluded. After taking into account all factors, the vaules $(p,r)=(10\GeV,0.6)$ are selected for muons and $(p,r)=(10\GeV,0.5)$ for electrons.
+From Table~\ref{tab:iso-scan-transfer-factor}, it is evident that the transfer factor of the jetty background estimation method, described in Section~\ref{sec:jetty-background-estimation}, increases with larger $p$ and with smaller $r$. A transfer factor that is less than unity is preferred in order to ensure a high likelihood of well-populated control regions, and choices that do not meet this criterion are excluded. After taking into account all factors, the values $(p,r)=(10\GeV,0.6)$ are selected for muons and $(p,r)=(10\GeV,0.5)$ for electrons.
