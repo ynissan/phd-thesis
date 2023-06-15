@@ -223,8 +223,8 @@ For the training, a set of 10 variables, listed in Table~\ref{tab:track-bdt-vari
 
 \begin{table}[!htb]
 	\centering
-	\label{tab:track-bdt-variables}
-		\caption{Input variables to the in-signal track selecting classifier.}
+	
+		\caption{\label{tab:track-bdt-variables}Input variables to the in-signal track selecting classifier.}
 		%\vspace{1mm}
 			\begin{tabular}{cll} \hline
 			Rank & Variable & Description \\ \hline
@@ -324,12 +324,12 @@ The drawback of standard isolation criteria in the case of this analysis, is tha
 \item The lepton is said to pass isolation if it does not lie within $\DR<r$ of any \emph{lepton-corrected} jet with $\pt > p$. 
 \item Lepton is said to fail isolation for background estimation if it fails \emph{jet-based isolation}, and the nearest uncorrected jet has $15<\pt<30\GeV$ (see~\ref{sec:jetty-background-estimation} for use of such lepton)
 \end{enumerate}
-The main idea behind defining jet-isolation is to reject leptons with hadronic activity around them while not losing a lepton that is close to another lepton of the same flavor. The process described introduces two free parameters: the \pt threshold of the lepton-corrected jets that cause a lepton's isolation to fail ($p$), and the cone size ($r$), which determines how close a corrected jet is allowed to be to a lepton. To choose the thresholds for these parameters, a scan is performed ranging over $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. For each step in the scan, the full analysis is performed, including the background estimation procedure which makes use of the jet-based isolation, and various performance criteria are extracted to inform the choice of optimum $r$ and $p$.  The criteria of interest include signal efficiency (which should be high), background efficiency (which should be low), signal contamination in control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which should be maximized). The scan is carried out for muons using 2016 \gls{mc} and data, and the results are shown in Tables~\ref{tab:iso-scan-signal-efficiency}-~\ref{tab:iso-scan-significance}.
+The main idea behind defining jet-isolation is to reject leptons with hadronic activity around them while not losing a lepton that is close to another lepton of the same flavor. The process described introduces two free parameters: the \pt threshold of the lepton-corrected jets that cause a lepton's isolation to fail ($p$), and the cone size ($r$), which determines how close a corrected jet is allowed to be to a lepton. To choose the thresholds for these parameters, a scan is performed ranging over $p\in [0,20]\GeV$ and $r\in[0.4,0.6]$. For each step in the scan, the full analysis is performed, including the background estimation procedure which makes use of the jet-based isolation, and various performance criteria are extracted to inform the choice of optimum $r$ and $p$.  The criteria of interest include signal efficiency (which should be high), background efficiency (which should be low), signal contamination in control-regions (ideally low), jetty-background transfer factor (ideally less than 1), and lastly, the significance, which is computed taking into account transfer factor error on the background (which should be maximized). The scan is carried out for muons using 2016 \gls{mc} and data, and the results are shown in Tables~\ref{tab:iso-scan-signal-efficiency}-\ref{tab:iso-scan-significance}.
 
 \begin{table}[!htb]
 	\centering
-	\label{tab:iso-scan-signal-efficiency}
-		\caption{Signal efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
+	
+		\caption{\label{tab:iso-scan-signal-efficiency}Signal efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
     			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
@@ -356,8 +356,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 
 \begin{table}[!htb]
 	\centering
-	\label{tab:iso-scan-bg-efficiency}
-		\caption{Background efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
+	
+		\caption{\label{tab:iso-scan-bg-efficiency}Background efficiency for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
     			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
@@ -384,8 +384,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 
 \begin{table}[!htb]
 	\centering
-	\label{tab:iso-scan-transfer-factor}
-		\caption{Transfer factor for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
+	
+		\caption{\label{tab:iso-scan-transfer-factor}Transfer factor for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
     			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
@@ -412,8 +412,8 @@ The main idea behind defining jet-isolation is to reject leptons with hadronic a
 
 \begin{table}[!htb]
 	\centering
-	\label{tab:iso-scan-significance}
-		\caption{Significance $s/\sqrt{b+\upvarepsilon^2_b}$ for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples.}
+	
+		\caption{\label{tab:iso-scan-significance}Significance $s/\sqrt{b+\upvarepsilon^2_b}$ for the jet-based isolation scan for the dimuon channel, based on 2016 MC samples. The error $\upvarepsilon^2_b$ takes into account the statistical uncertainty on the background, as well as the statistical uncertainty on the transfer factor that was computed in MC.}
 		%\vspace{1mm}
 			\begin{tabular}{cc|ccccc}
     			&\multicolumn{1}{c}{} & \multicolumn{5}{c}{$r$} \\
