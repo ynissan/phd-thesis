@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[ngerman,11pt,a4paper,twoside,openright]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
@@ -7,7 +7,28 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{enumitem}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{stfloats}
+\usepackage{dashrule}
+\usepackage{tocbibind}
+\usepackage{verbatim}
+
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{geometry}
+%\geometry{verbose,tmargin=2.5cm,bmargin=3cm,lmargin=2.0cm,rmargin=2.5cm}
+\geometry{verbose,tmargin=2.5cm,bmargin=3cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\thepage} 
+\pagestyle{headings}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+% MAKES THE FONTS FANCY 
+\usepackage{mathpazo}
+\usepackage[hang, small, bf, margin=20pt, tableposition=top]{caption} 
+\setlength{\abovecaptionskip}{0pt}
+
 \usepackage{hyperref} 
 \usepackage{graphicx}
 \usepackage[xindy,toc,acronym,nomain]{glossaries}
@@ -20,13 +41,13 @@ lepton tracks with the CMS experiment}, pdfauthor={Yuval Nissan}}
 %\usepackage{heppennames2}
 \usepackage[pazoGreek]{heppennames2}
 %\usepackage[italic,italicGreek]{heppennames2}
-\usepackage[nomargin,inline,index]{fixme}
+%\usepackage[nomargin,inline,index]{fixme}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{tensor} 
 %remove the headers
 %\pagestyle{myheadings}
 
-\fxsetup{inline=true,status=draft}
+%\fxsetup{inline=true,status=draft}
 % this is to make table captions on top
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
@@ -40,6 +61,31 @@ lepton tracks with the CMS experiment}, pdfauthor={Yuval Nissan}}
 %\input{glossary}
 \input{acronyms}
 
+% Page layout
+\parindent 0pt
+\parskip 1ex
+%~ \renewcommand{\baselinestretch}{1.33}
+\numberwithin{equation}{section}
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Contents}
+
+% Customising headers (optional) - see fancyhdr.pdf
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%~ \rhead{x}
+%~ \lhead{\nouppercase{\textsc{\leftmark}}}
+%~ \fancyhead[LE,RO]{\slshape \rightmark}
+%~ \fancyhead[LO,RE]{\slshape \leftmark}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+
+\renewcommand{\headrulewidth}{0pt}
+\makeatletter
+%~ \renewcommand{\chaptermark}[1]{\markboth{\textsc{\@chapapp}\ \thechapter:\ #1}{}}
+%~ \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\makeatother
+
+
 \begin{document}
 
 % this is for book class what comes as the front
@@ -49,16 +95,18 @@ lepton tracks with the CMS experiment}, pdfauthor={Yuval Nissan}}
 
 \title{
         \LARGE \textbf{Search for compressed mass Higgsino production with low-momentum
-lepton tracks with the CMS experiment} \\[1.2cm]
+lepton tracks with the CMS experiment} \\[2.2cm]
         %~ {\normalsize\textsc{
         {\large\textsc{
-		Von der Fakult\"at für Physik
-		der Universit\"at Hamburg zur Erlangung des akademischen Grades eines
-		Doktors der Naturwissenschaften genehmigte Dissertation
-		\\[1.2cm]
+        Dissertation\\
+		zur Erlangung des Doktorgrades\\
+		an der Fakultät für Mathematik, Informatik und Naturwissenschaften\\
+		Fachbereich Physik\\
+		der Universität Hamburg
+		\\[2.2cm]
 		vorgelegt von
-		\\[1.2cm]
-		Yuval Nissan\\
+		\\[0.5cm]
+		Yuval Nissan\\[1.2cm]
 		Hamburg\\
 		2023
         }}
@@ -70,19 +118,37 @@ lepton tracks with the CMS experiment} \\[1.2cm]
 }
 \author{}
 \date{}
+\pagenumbering{gobble}
+\thispagestyle{empty}
 \maketitle
+%\pagenumbering{gobble}
+%\thispagestyle{empty}
+\pdfbookmark[0]{Titlepage}{title}
 
 
 \pagenumbering{gobble}
 \thispagestyle{empty}
-
-\pdfbookmark[0]{Titlepage}{title}
-
+%\null
+%\thispagestyle{empty}
+\newpage
 \thispagestyle{empty}
+%
+
+%\thispagestyle{empty}
 \null\vfill
 
 
-\pagebreak
+\begin{table*}[bp]
+\begin{tabular}{ll}
+\multirow{2}{*}{} Gutachter/innen der Dissertation: &  Prof. Dr. Peter Schleper\\
+& Prof. Dr. Gudrid Moortgat-Pick\\
+Vorsitzender des Fach-Promotionsausschusses PHYSIK:  &  Prof. Dr. Günter H. W. Sigl\\
+Leiter des Fachbereichs Physik: & Prof. Dr. Wolfgang J. Parak \\
+Dekan der Fakultät MIN: & Prof. Dr.-Ing. Norbert Ritter
+\end{tabular}
+\end{table*}
+
+%\pagebreak
 %\pagenumbering{roman}
 %\setcounter{page}{1}
 \include{abstract}
@@ -100,13 +166,8 @@ lepton tracks with the CMS experiment} \\[1.2cm]
 \include{search}
 \include{summary}
 \include{acknowledgments}
-%\include{latex-stuff}
 
-%\listoffixmes
-%\part{Feynman Diagrams and Quantum Electrodynamics}
-%\part{Renormalization}
-%\part{Definitions and Mathematical tools}
-%\printglossary[type=\acronymtype]
+
 \printglossaries
 \bibliographystyle{utphys}
 \bibliography{references} 
@@ -116,6 +177,6 @@ lepton tracks with the CMS experiment} \\[1.2cm]
 % this is for book class what comes as the back of book 
 \backmatter
 \newpage{}
-
+\include{oath}
 
 \end{document}
