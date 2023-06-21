@@ -9,7 +9,7 @@
 \usepackage{enumitem}
 \usepackage{stfloats}
 \usepackage{dashrule}
-\usepackage{tocbibind}
+\usepackage[nottoc]{tocbibind}
 \usepackage{verbatim}
 
 %\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
@@ -67,7 +67,7 @@ lepton tracks with the CMS experiment}, pdfauthor={Yuval Nissan}}
 %~ \renewcommand{\baselinestretch}{1.33}
 \numberwithin{equation}{section}
 \renewcommand{\bibname}{References}
-\renewcommand{\contentsname}{Contents}
+%\renewcommand{\contentsname}{Contents}
 
 % Customising headers (optional) - see fancyhdr.pdf
 \usepackage{fancyhdr}
@@ -151,6 +151,9 @@ Dekan der Fakultät MIN: & Prof. Dr.-Ing. Norbert Ritter
 %\pagebreak
 %\pagenumbering{roman}
 %\setcounter{page}{1}
+
+%\renewcommand\contentsname{}
+
 \include{abstract}
 \tableofcontents
 
@@ -159,7 +162,7 @@ Dekan der Fakultät MIN: & Prof. Dr.-Ing. Norbert Ritter
 %\pagenumbering{arabic}
 %\setcounter{page}{1}
 
-
+\pagestyle{fancy}
 \include{introduction}
 \include{theory}
 \include{detector}

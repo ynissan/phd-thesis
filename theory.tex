@@ -3,7 +3,7 @@
 
 The search presented in this thesis is for a simplified model of a supersymmetric theory. The amount of theoretical background required to fully understand this theory can fill many books, and therefore, this document does not attempt to give an exhaustive description of it. Instead, I attempt to give a brief tour of topics that contribute to the understanding of the subject, which are also of personal interest. In addition, I explore the theoretical motivation for supersymmetry, alongside part of the philosophical discussion that normally accompanies such arguments. Whenever possible, I pick a description of a concept that I find intriguing and inspiring in a way that reminds me of my initial spark and inspiration for pursuing a PhD in physics. Good sources for these topics are~\cite{Peskin2019-bt,Srednicki2007-mn}.
 
-\section{Principle of Least Action}
+\section{Principle of least action}
 \label{sec:least-action}
 The earliest formulation of classical mechanics is normally attributed to the works of Sir Isaac Newton from the 17th century, which is also referred to as Newtonian mechanics. It is based on the then-newly developed mathematics of calculus. A central theorem in calculus is Fermat's theorem, which states that if a function has a local extremum at some point and is differentiable there, then the function's derivative at that point must be zero. The equation of motion is given by Newton's second law, which is an ordinary differential equation given by:
 \begin{equation}
@@ -30,7 +30,7 @@ The principle of least action has been preceded by earlier ideas in optics, such
 \end{equation}
 Solving Euler–Lagrange equations gives the equations of motion of the system. In field theory, an analogous equation is used to calculate the dynamics of a field.
 
-\section{The Quantum}
+\section{The quantum}
 \label{sec:quantum}
 
 The main object that is the subject of research in particle physics is, of course, a particle. More precisely, an elementary particle or fundamental particle is a subatomic particle that is not composed of other particles. The electron is an example of such a fundamental particle, which was also the first to be discovered by Thomson in 1897. The descriptions and properties of the particles have radically evolved over time, and so did the mathematical language that is used to describe them. In classical electromagnetism, for example, one can use abstractions such as a point charge, point mass, or the concept of an electron as a point using a Dirac delta function $\delta$ in the charge and mass distributions. In quantum mechanics, a wave function $\Psi(\vb{x},t)$ is used, which assigns a complex number to each point $\vb{x}$ at each time $t$. The wave function is governed by the Schrödinger equation~\cite{Liboff2002-vc,Cohen-Tannoudji1977-ms,Cohen-Tannoudji1977-rq}. The time-dependent Schrödinger equation is:
@@ -63,7 +63,7 @@ E_n=\hbar\omega\qty(n+\frac{1}{2})=\qty(2n+1)\frac{\hbar}{2}\omega.
 \end{equation}
 It is interesting to note that the energies are quantized and equally spaced with discrete energy values of integer-plus-half multiples of $\hbar\omega$.
 
-\subsection{Annihilation and Creation Operators}
+\subsection{Annihilation and creation operators}
 \label{sec:ladder-operators}
 We define ladder operators
 \begin{equation}
@@ -109,7 +109,7 @@ N\hat{a}\ket{n} &= (n-1)\hat{a}\ket{n}.
 \end{equation}
 Due to this, $\hat{a}$ is called annihilation operator ("lowering operator"), and $\hat{a}^\dagger$ creation operator ("raising operator"). The two operators together are called ladder operators. In quantum field theory, these operators destroy and create particles, which correspond here to a quanta of energy of $\hbar\omega$.
 
-\section{Relativistic Quantum Field Theory}
+\section{Relativistic quantum field theory}
 \label{sec:rqft}
 
 In the first quarter of the twentieth century, two of the most successful theories in modern physics were developed: special relativity and quantum mechanics. Special relativity was necessary to solve the incompatibility between Maxwell's equations of electromagnetism and Newtonian mechanics. In addition, experimentally, the null result of the Michelson–Morley experiment demonstrated that the historically hypothesized aether did not exist. Special relativity diverges from classical mechanics at high-velocities. Quantum mechanics, on the other hand, arose gradually from theories that aimed to explain observations that could not be reconciled with classical physics, such as Max Planck's solution to the black-body radiation problem and the correspondence between energy and frequency in Albert Einstein's photoelectric effect. Quantum mechanics differs from classical physics in several aspects: energy, angular momentum, and other quantities of a bound system are restricted to discrete values; objects have characteristics of both particles and waves; and there are limits to how accurately the value of a physical quantity can be predicted prior to its measurement, given a complete set of initial conditions (the uncertainty principle).
@@ -118,7 +118,7 @@ Since classical mechanics diverged into two different directions, namely, quantu
 
 Quantum field theory successfully combines classical field theory, special relativity, and quantum mechanics. QFT treats particles as excited states (also called quanta) of their underlying quantum fields, which are more fundamental than the particles. The equation of motion of the particle is determined by minimization of the Lagrangian, a functional of fields associated with the particle. Interactions between particles are described by interaction terms in the Lagrangian involving their corresponding quantum fields. Each interaction can be visually represented by Feynman diagrams according to perturbation theory in quantum mechanics.
 
-\subsection{Attempts at Relativistic Quantum Mechanics}
+\subsection{Attempts at relativistic quantum mechanics}
 \label{sec:attempts-rqt}
 
 At first glance, fields are not the only way to try and reconcile quantum mechanics and relativity. A naive attempt~\cite{Srednicki2007-mn} could be to take the Schrödinger equation~\ref{eq:schrodinger-eq} and write a Hamiltonian in a relativistic notion $H=\sqrt{\hat{\vb{p}}^2+m^2}$ (taking as usual $\hbar=c=1$). Plugging it as is into the Schrödinger equation will result in the time derivative outside the square root, while the space derivatives under it, which is not in the spirits of relativity. Squaring the differential operators before applying them to the wave function and collecting terms results in the \emph{Klein-Gordon equation}:
@@ -146,7 +146,7 @@ It turns out that the Dirac equation is fully consistent with relativity. Howeve
 
 The problem with this solution though, is that we've started by trying to describe a theory of a single half-spin particle, and ended up describing a theory with infinite amount of particles. Even if this is taken to be satisfactory, this theory still cannot describe particles that do not obey Pauli exclusion, such as photons or pions. The problem lies in the difference between the way that nonrelativistic quantum mechanics and special relativity treats space and time. In special relativity, space and time are treated on equal footing. In nonrelativistic quantum mechanics, however, space is an operator, while time isn't. It turns out that turning time into an operator is a very difficult problem. The approach that proved to be fruitful is to make space a \emph{label}, just as time is, by turning the wave function $\Psi$ into a \emph{field}. Space and time are now labels in a \emph{quantum field} $\varphi(\vb{x},t)$ of operators. Each point in space and time now point to an operator. This allows one to really treat space and time on an equal footing.
 
-\subsection{Classical Field Theory}
+\subsection{Classical field theory}
 \label{sec:classical-field}
 
 After the naive attempts at a relativistic quantum mechanics introduced in Section~\ref{sec:attempts-rqt}, two successful and widely used methods of constructing quantum field theories are described in Section~\ref{sec:quantization}. The first is the canonical quantization in Section~\ref{sec:canonical}, and the second is the path integrals formalism in Section~\ref{sec:path-integrals}. They involve starting from a classical field theory and quantizing it. In a classical field theory, the equation of motion can be derived from variation of an action $\mathcal{S}=\int \dd{t}L$, where $L$ is the Lagrangian, which is the spatial integral of a Lagrangian density $\mathcal{L}$, so that $L=\int \dd[3]x\mathcal{L}$. The Lagrangian density is a function of one or more fields $\phi(x)$, and their derivatives $\partial_{\mu}\phi$, so that
@@ -196,7 +196,7 @@ H = \int \mathrm{d}^3x\left[ \frac{1}{2}\pi^2 + \frac{1}{2}\left( \nabla\phi \ri
 
 As described in Section~\ref{sec:classical-field}, two methods of constructing quantum field theories are widely used. The first is the canonical quantization in Section~\ref{sec:canonical}, and the second is the path integrals formalism in Section~\ref{sec:path-integrals}. The path integrals formalism has an advantage in that it uses the Lagrangian formalism rather than the Hamiltonian. The Lagrangian formalism is explicitly Lorentz invariant, and in general, it is in practice easier to guess the correct form of the Lagrangian of a theory, which naturally enters the path integrals than the Hamiltonian. The advantage of the canonical quantization is that unitarity of the S-matrix is more explicit than in the path integral approach. The methods are described here in a very qualitatively manner. For an explicit mathematical formulation, Ref.~\cite{Peskin2019-bt,Srednicki2007-mn} are great sources for that.
 
-\subsubsection{Canonical Quantization}
+\subsubsection{Canonical quantization}
 \label{sec:canonical}
 
 Canonical quantization starts with a classical field theory, and \emph{quantized} by promoting the dynamical variables to operators that obey canonical commutation relations. It can be demonstrated with the example of the Klein-Gordon case, which has the classical Lagrangian~\ref{eq:kg-lagrangian}. Promoting the field and momentum density to operators, the commutation relations generalize to:
@@ -216,7 +216,7 @@ H=\int \frac{\dd^2 p}{(2\pi)^3} \omega_{\vb{p}}\qty(a^\dagger_{\vb{p}}a_{\vb{p}}
 \end{equation}
 The operator $a^\dagger_{\vb{p}}$ created a particle with momentum $\vb{p}$ and energy $\omega_{\vb{p}}=\sqrt{\abs{\vb{p}^2+m^2}}$. The particles follow the proper relativistic energy-momentum relation, and have strictly positive energy. Since $a^\dagger_{\vb{p}}$ and $a^\dagger_{\vb{q}}$ commute, two particles are interchangeable. Moreover, since arbitrarily many particles can be produced for a single mode $\vb{p}$, the particles obey \emph{Bose-Einstein statistics}. In a theory of half-integer spin particles, anticommutators are to be used. The next steps in this formalism is to compute correlation functions, and eventually write down the full Feynman rules for the theory, in order to compute cross sections and decay rates.
 
-\subsubsection{Path Integrals}
+\subsubsection{Path integrals}
 \label{sec:path-integrals}
 
 The path integral formalism is an alternative construction to quantum mechanics developed by Richard Feynman, and is proven to be equivalent to the wave equation of Schrödinger, and the matrix algebra of Heisenberg, Born and Jordan. It is also used as an alternative way to construct quantum field theories, as an alternative to the canonical quantization. Using this formalism, it is easier to compute propagators and derive Feynman rules. It also generalizes better to non-Abelian gauge theories. Moreover, since it uses the Lagrangian, rather than the Hamiltonian, as its fundamental quantity, it explicitly preserves all symmetries of a theory. Using path integrals allows the direct computation of the scattering amplitude of a certain interaction process, rather than the establishment of operators and state spaces. 
@@ -235,7 +235,7 @@ where $S\qty[x(t)]$ is the classical action, and $\int \mathcal{D}x(t)$ is anoth
 
 The goal of every scientific theory is to make predictions about measurements. In the context of QFT, it is normally one of two generic cases: one incoming particle, for which a decay rate is computed, or two incoming particles, for which a cross section is computed. For this, a recipe for computing a scattering amplitude and converting it into a measurable quantity is needed.
 
-\subsubsection{The Cross Section and Decay Rate}
+\subsubsection{The cross section and decay rate}
 \label{sec:cross-section}
 
 The \emph{cross section} is the likelihood of any particular final state from the collusion of two beams of particles with well-defined momenta. The \emph{cross section}, which has the units of area and is denoted by $\sigma$, is proportional to the total number of events (of whatever desired type):
@@ -251,7 +251,7 @@ The \emph{differential cross section} is $d\sigma/(d^3 p_1\ldots d^3p_n)$ which 
 \Gamma \equiv \frac{\text{Number of decays per unit time}}{\text{Number of $\mathcal{A}$ particles present}}.
 \end{equation}
 
-\subsubsection{Interacting Fields}
+\subsubsection{Interacting fields}
 
 The example that was used in previous sections, the Klein-Gordon field, was a free field theory. No interactions and no scattering were involved. In reality, particles do interact and scatter of each other. In order to obtain such interactions, nonlinear terms must added to the Lagrangian. One example of such an interacting Lagrangian is the "phi-fourth" theory,
 \begin{equation}
@@ -259,7 +259,7 @@ The example that was used in previous sections, the Klein-Gordon field, was a fr
 \end{equation}
 where $\lambda$ is a dimensionless \emph{coupling constant}. The goal is to be able to compute scattering amplitudes for an interacting theory, in order to convert them into cross sections. This is generally impossible to solve exactly. Instead it is computed in the framework of \emph{perturbation theory}. It turns out that the perturbation series is quite simple in structure, and can be visualized with the use of \emph{Feynman diagrams}.
 
-\subsection{Feynman Diagrams}
+\subsection{Feynman diagrams}
 
 In order to compute cross sections and decay rates, one must compute matrix elements of the S-matrix. The S-matrix gives the probability amplitude for a scattering event between \emph{in} and \emph{out} states. The probability amplitude for producing the final state is simply related to the cross section. Computing the S-matrix elements, or scattering amplitudes, is done differently depending on the quantization scheme, canonical or path integrals. As previously mentioned, the computation is done in a perturbation series. A Feynman diagram is a graphical representation of a perturbative contribution to the transition amplitude or correlation function. In the canonical quantization, a Feynman diagram represents a term in the Wick expansion of the perturbative S-matrix. 
 
@@ -299,7 +299,7 @@ Now the question is, how can we tell him which side is the left side?
 
 To put it shortly, the riddle is how to communicate the concept of left and right via radio signals to an alien civilization without reference to common sightings. Most physicists attempt to solve this problem by thinking of the right-hand rule in electromagnetism. Unfortunately, that would not work. The correct solution is very unexpected and one of the most surprising results of modern physics. The solution is explained in the section about discrete symmetries~\ref{sec:discrete-symmetries}.
 
-\subsection{Conservation Laws}
+\subsection{Conservation laws}
 
 A conservation law states that a particular measurable property of an isolated physical system does not change as the system evolves over time. Conservation laws are useful because they describe which processes can or cannot occur in nature. They also allow properties of the motion to be derived without solving the equations of motion. Conservation laws have changed throughout history, and some are a part of one theory but not another. Mass, for example, is conserved in classical mechanics, but not in relativity due to the principle of mass–energy equivalence. However, it is a good approximation when the assumptions of classical mechanics hold, such as low velocities and energies, and large enough objects. Most conservation laws are exact, or absolute, in the sense that they apply to all possible processes. Some conservation laws are partial, in that they hold for some processes but not for others.
 
@@ -311,7 +311,7 @@ where $\rho$ is the density of $q$ (amount per unit volume), $\vb{j}$ is the flu
 
 Currently, exact conservation laws that have never been proven to be violated include conservation of mass-energy $E$, conservation of linear momentum $\vb{p}$, conservation of angular momentum $\vb{L}$, conservation of electric charge, conservation of weak isospin, conservation of color charge, and conservation of CPT parity. Approximate conservation laws, \ie, conservation laws which are approximately true in particular situations, such as low speeds, short time scales, or certain interactions include conservation of mechanical energy, mass, flavor, strangeness, space-parity, charge-parity, time-parity, and CP parity.
 
-\subsection{Noether's Theorem}
+\subsection{Noether's theorem}
 \label{sec:noethers-theorem}
 
 In 1915, German-Jewish female mathematician Amalie Emmy Noether proved one of the most fundamental theorems of 20th-century modern physics. In the spring of that year, she was invited by David Hilbert and Felix Klein to join the Göttingen mathematics department, challenging the views of some of his colleagues that a woman should not be allowed to teach at a university. Soon after arriving at Göttingen, she demonstrated her capabilities by proving the theorem now known as Noether's theorem, which shows that a conservation law is associated with any differentiable symmetry of a physical system~\cite{Lederman2004-fl}. That made modern theoretical physicists much more focused on symmetries.
@@ -367,7 +367,7 @@ such that
 \end{equation}
 In other words, a representation assigns a matrix to each element of the group, while the operation is represented by regular matrix multiplication and preserves the group multiplication table. A subspace $W$ of $V$ that is invariant under the group action is called a \emph{subrepresentation}. If $V$ has exactly two subrepresentations, namely the zero-dimensional subspace and $V$ itself, then the representation is said to be \emph{irreducible}; if it has a proper subrepresentation of nonzero dimension, the representation is said to be \emph{reducible}. 
 
-\subsubsection{Lie Groups}
+\subsubsection{Lie groups}
 
 Symmetries in the SM are usually parameterized by continuous variables. This means that we are no longer talking about $g_i$'s but about $g(\theta)$. Groups that are parameterized by one or more continuous variables are called \emph{Lie Groups}. In continuously generated groups, there are elements close to the identity such that a general element can be reached by repeated action of these infinitesimal elements. Any infinitesimal group element $g$ can be written
 \begin{equation}
@@ -386,7 +386,7 @@ If the structure constants are known, the entire group can be determined in any 
 D(\alpha)=e^{i\alpha^{a}T^{a}}.
 \end{equation}
 
-\subsection{Gauge Theory}
+\subsection{Gauge theory}
 \label{sec:gauge-theory}
 
 As described before, a gauge theory is a type of field theory in which the Lagrangian is invariant under local transformations according to certain smooth families of operations, which form Lie groups. The groups formed by the gauge transformations are referred to as the symmetry groups or the gauge groups of the theory. For each group generator, there necessarily arises a corresponding field (usually a vector field) called the gauge field. When such a theory is quantized, the quanta of the gauge fields are called gauge bosons. If the symmetry group is non-commutative, then the gauge theory is referred to as a non-abelian gauge theory, with the usual example being the Yang–Mills theory. The SM is a non-abelian gauge theory with the symmetry group $U(1)\cross SU(2)\cross SU(3)$, which demonstrate the successful central role that gauge theory plays in theories explaining the dynamics of elementary particles.
@@ -438,7 +438,7 @@ The gauge symmetry $U(1)$ created therefore a theory with electromagnetism. The 
 
 The symmetries of the SM arise from  global spacetime symmetries involving transformations of space and time, and from local gauge symmetries, explained in Section~\ref{sec:gauge-theory}. The fields in the theory then fall into representations of these groups.
 
-\subsubsection{Poincaré Group}
+\subsubsection{Poincaré group}
 
 The Poincaré group represents the full spacetime symmetry of special relativity. It is this group that makes the Standard Model a relativistic quantum theory. As a result, all elementary particles fall in representations of this group. The Poincaré group is a ten-dimensional noncompact Lie group, and a semi-direct product of the translations group and the Lorentz group. It includes:
 \begin{itemize}
@@ -490,7 +490,7 @@ Therefore, we see that we have two copies of $SU(2)$. This is a very useful fact
 \end{split}
 \end{equation}
 
-\subsubsection{Discrete Symmetries: P, T, C}
+\subsubsection{Discrete symmetries: P, T, C}
 \label{sec:discrete-symmetries}
 
 A theory can possess or be tested against discrete symmetries. In addition to continuous Lorentz transformations, there are two other spacetime operations that are potential symmetries of the Lagrangian: \emph{parity} and \emph{time reversal}. Parity, denoted by $P$, sends $(t,\vb{x})\rightarrow(t,-\vb{x})$, reversing the handedness of space. Time reversal, denoted $T$, sends $(t,\vb{x})\rightarrow(-t,\vb{x})$, interchanging the forward and backward light-cones. A third (non-spacetime) discrete operation is \emph{charge conjugation}, denoted by $C$. Under this operation, particles and antiparticles are interchanged.
@@ -506,11 +506,11 @@ It has been observed that most of the electrons favored a very specific directio
 Then when we go finally to meet this man (after he tells us how to build a sufficiently good spaceship), we go to meet this man, and you walk up to him and you put out your right hand to shake hands—if he puts out his right hand, okay, but if he puts out his left hand, watch out, because the two of you will annihilate with each other!
 \end{quote}
 
-\subsubsection{Gauge Symmetries}
+\subsubsection{Gauge symmetries}
 
 The local $SU(3)\times SU(2) \times U(1)$ gauge symmetry is an internal symmetry that essentially defines the SM. Roughly, the three factors of the gauge symmetry give rise to the three fundamental interactions. The fields fall into different representations of the various symmetry groups of the Standard Model. It has been explained in Section~\ref{sec:gauge-theory} how gauging a symmetry gives rise to interactions. The electroweak sector is a Yang–Mills gauge theory with the symmetry group $SU(2)_L \times U(1)_Y$, while quantum chromodynamics is a Yang–Mills gauge theory with $SU(3)$ symmetry. The massless gauge bosons of the electroweak $SU(2)_L \times U(1)_Y$ mix after spontaneous symmetry breaking to produce the 3 massive weak bosons ($\PWp$, $\PWm$, and $\PZ$) as well as the still-massless photon field. The dynamics of the photon field and its interactions with matter are, in turn, governed by the $U(1)$ gauge theory of quantum electrodynamics.
 
-\subsubsection{Spontaneous Symmetry Breaking}
+\subsubsection{Spontaneous symmetry breaking}
 \label{spontaneous-symmetry-breaking}
 
 Spontaneous symmetry breaking is a process by which a physical system in a symmetric state spontaneously ends up in an asymmetric state. It can describe systems where the equations of motion or the Lagrangian obey symmetries, but the lowest-energy vacuum solutions do not exhibit the same symmetry. In the SM, without spontaneous symmetry breaking, all particles would be massless due to the gauge symmetries. The Higgs mechanism provides a spontaneous symmetry breaking mechanism, which is essential to explain the generation mechanism of mass for gauge bosons as well as the fermions. It was developed by Higgs, Brout and Englert in the 1960s~\cite{Higgs:1964ia,Higgs:1964pj,Englert:1964et,Guralnik:1964eu,Higgs:1966ev}. Based on work from Sheldon~\cite{PhysRev.155.1554} it was later applied to $SU(2)_L \times U(1)_Y$ gauge theory by Weinberg and Salam~\cite{GLASHOW1961579,Weinberg:1967tq,Salam:1968rm}.
@@ -570,7 +570,7 @@ Generally speaking, the weak interaction is responsible for processes such as ra
 
 The strong interaction is referred to as Quantum Chromodynamics (QCD). QCD describes interactions between quarks mediated by gluons. It is a non-abelian gauge theory, with symmetry group $SU(3)$. The QCD analogue of electric charge is a property called color. Gluons are the force carriers of the theory, just as photons are for the electromagnetic force in quantum electrodynamics. The three kinds of charge in QCD are referred to as \emph{color charge}: red, green, blue, and their anticolors. The strong interaction is responsible for the nuclear force, which binds protons and neutrons in the nucleus. It also binds quarks together to form hadrons, including nucleons.
 
-\subsection{Higgs Boson}
+\subsection{Higgs boson}
 
 As mentioned in Section~\ref{spontaneous-symmetry-breaking}, the Higgs mechanism is responsible for the spontaneous symmetry breaking of the $SU(2)_L \times U(1)_Y$ gauge group, which generates mass for all the massive particles in the SM. The Higgs boson is a consequence of the Higgs field. The mass term arising from the Dirac Lagrangian (for any fermion $\psi$) is $-m\bar{\psi}\psi$, which is not invariant under the chiral electroweak symmetry. In addition, the W and Z bosons are massive, which is unlike what is predicted without symmetry breaking. To solve these problems, the Higgs mechanism is introduced. In the Standard Model, the Higgs field is a complex scalar field that forms an $SU(2)_L$ doublet:
 \begin{equation}
@@ -636,7 +636,7 @@ implies that particles that are transformed into each other have the same eigenv
 
 Since we do not observe a bosonic superpartner to the electron, named \emph{selectron}, with the same mass as the electron, it is clear that supersymmetry must be a spontaneously broken symmetry. The specific mechanism of SUSY breaking is unknown, but usually, further terms that break SUSY explicitly are added by hand to the Lagrangian. However, since naturalness is often described as a motivation for introducing SUSY, it is required that the SUSY breaking terms still provide a solution to the hierarchy problem. This means that the effective Lagrangian contains only "soft" SUSY breaking, meaning that they violate SUSY but contain only mass terms and coupling parameters with a positive mass dimension.
 
-\subsection{The Minimal Supersymmetric Standard Model}
+\subsection{The minimal supersymmetric Standard Model}
 \label{sec:MSSM}
 
 The \glsreset{mssm}\gls{mssm} is an extension to the SM that realizes SUSY~\cite{MARTIN_1998}. It is minimal in regards to the number of new particle states and new interactions. In this extension, each of the known fundamental particles is in either a chiral or gauge supermultiplet, and must have a superpartner with spin differing by $1/2$ unit. The names for the spin-0 partners of the quarks and leptons are constructed by prepending an “s”, for scalar. They can therefore be called \emph{squarks} and \emph{sleptons}, or generally \emph{sfermions}. Their symbols normally contain a tilde ($\widetilde{\,\,\,}$). The MSSM contains two Higgs supermultiplets in order to prevent an electroweak gauge anomaly. The generic nomenclature for a spin-$1/2$ superpartner is to append “-ino” to the name of the SM particle, so the fermionic partners of the Higgs scalars are called \emph{higgsinos}. The vector bosons of the SM clearly reside in gauge supermultiplets. Their fermionic superpartners are generically referred to as \emph{gauginos}. The spin-$1/2$ superpartners of the electroweak gauge bosons are called \emph{winos} and \emph{binos}. Table~\ref{tab:chiral-supermultiplets} lists the chiral supermultiplets of the MSSM, while Table~\ref{tab:gauge-supermultiplets} lists the gauge supermultiplets of the MSSM.
@@ -644,7 +644,7 @@ The \glsreset{mssm}\gls{mssm} is an extension to the SM that realizes SUSY~\cite
 \begin{table}[!htp]
 	\centering
 	
-		\caption{\label{tab:chiral-supermultiplets}Chiral supermultiplets of the MSSM. The spin-0 fields are complex scalars, and the spin-$1/2$ fields are left-handed two-component Weyl fermions.
+		\caption[Chiral supermultiplets of the MSSM]{\label{tab:chiral-supermultiplets}Chiral supermultiplets of the MSSM. The spin-0 fields are complex scalars, and the spin-$1/2$ fields are left-handed two-component Weyl fermions.
 }
 		%\vspace{1mm}
 			\begin{tabular}{|l|c|c|c|}
@@ -663,7 +663,7 @@ Names                  & spin 0  & spin $1/2$ & $SU(3)_C,SU(2)_L,U(1)_Y$ \\ \hli
 \begin{table}[!htp]
 	\centering
 	
-		\caption{\label{tab:gauge-supermultiplets}Gauge supermultiplets of the MSSM.
+		\caption[Gauge supermultiplets of the MSSM]{\label{tab:gauge-supermultiplets}Gauge supermultiplets of the MSSM.
 }
 		%\vspace{1mm}
 			\begin{tabular}{|l|c|c|c|}
